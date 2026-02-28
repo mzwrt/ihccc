@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IHCCC - 中国互联网安全合规中心，致力于推广CIS基准和PCI-DSS支付安全标准的中文化资源与最佳实践。">
+    <meta name="keywords" content="CIS, PCI-DSS, 网络安全, 合规, 安全标准, 中文, 信息安全, 安全基准">
+    <title>IHCCC - 中国互联网安全合规中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">&#128737;</span>
+                    <span class="logo-text">IHCCC</span>
+                    <span class="logo-subtitle">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="#home" class="nav-link active">首页</a>
+                    <a href="#about" class="nav-link">关于我们</a>
+                    <a href="#standards" class="nav-link">安全标准</a>
+                    <a href="#resources" class="nav-link">资源中心</a>
+                    <a href="#news" class="nav-link">新闻动态</a>
+                    <a href="#contact" class="nav-link">联系我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄横幅 -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">非营利组织 · 公益服务</div>
+                <h1 class="hero-title">
+                    守护数字世界的<br>
+                    <span class="highlight">安全基石</span>
+                </h1>
+                <p class="hero-desc">
+                    IHCCC 致力于推广 CIS 安全基准与 PCI-DSS 支付安全标准的中文化资源，<br>
+                    为中国企业和安全从业者提供权威、免费的安全合规指导。
+                </p>
+                <div class="hero-actions">
+                    <a href="#standards" class="btn btn-primary btn-lg">了解安全标准</a>
+                    <a href="#about" class="btn btn-outline btn-lg">关于我们</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="200">200+</span>
+                        <span class="stat-label">安全基准文档</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">50+</span>
+                        <span class="stat-label">合作机构</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10000">10,000+</span>
+                        <span class="stat-label">服务企业</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="#ffffff"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">关于我们</span>
+                <h2 class="section-title">致力于中文安全合规标准的推广</h2>
+                <p class="section-desc">IHCCC（中国互联网安全合规中心）是一个非营利组织，专注于将国际安全标准本地化，为中文社区提供高质量的安全合规资源。</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>我们的使命</h3>
+                    <p>消除语言障碍，让中国企业和安全从业者能够便捷地获取、理解和实施国际安全标准，提升整体网络安全水平。</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>我们的愿景</h3>
+                    <p>成为中文世界最权威的安全合规标准平台，构建安全从业者社区，推动中国网络安全行业的规范化发展。</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>我们的价值观</h3>
+                    <p>开放共享、专业严谨、社区驱动、持续创新。我们相信安全知识应该无障碍地服务于每一个需要它的人。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安全标准 -->
+    <section class="section standards-section" id="standards">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">核心标准</span>
+                <h2 class="section-title">国际安全标准中文化</h2>
+                <p class="section-desc">我们专注于CIS安全基准和PCI-DSS支付安全标准的中文翻译、解读与实施指导。</p>
+            </div>
+            <div class="standards-grid">
+                <div class="standard-card cis-card">
+                    <div class="standard-header">
+                        <div class="standard-badge">CIS</div>
+                        <h3>CIS 安全基准</h3>
+                        <p class="standard-full-name">Center for Internet Security Benchmarks</p>
+                    </div>
+                    <div class="standard-body">
+                        <p>CIS基准是全球公认的安全配置最佳实践标准，涵盖操作系统、云平台、网络设备、数据库等多个领域的安全加固指南。</p>
+                        <ul class="standard-features">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                操作系统安全基准（Windows、Linux、macOS）
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                云平台安全基准（AWS、Azure、GCP、阿里云）
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                数据库安全基准（MySQL、PostgreSQL、Oracle）
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                容器与编排安全（Docker、Kubernetes）
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                网络设备安全基准（Cisco、Palo Alto）
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="standard-footer">
+                        <a href="pages/cis.html" class="btn btn-primary">查看 CIS 基准</a>
+                    </div>
+                </div>
+                <div class="standard-card pci-card">
+                    <div class="standard-header">
+                        <div class="standard-badge pci-badge">PCI-DSS</div>
+                        <h3>PCI-DSS 支付安全标准</h3>
+                        <p class="standard-full-name">Payment Card Industry Data Security Standard</p>
+                    </div>
+                    <div class="standard-body">
+                        <p>PCI-DSS是保护持卡人数据安全的全球性标准，适用于所有存储、处理或传输支付卡数据的组织，是支付行业合规的基石。</p>
+                        <ul class="standard-features">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                PCI-DSS v4.0 标准全文中文翻译
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                12项核心安全要求详解
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                自评估问卷（SAQ）中文指南
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                合规实施路线图与最佳实践
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                支付安全案例分析与经验分享
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="standard-footer">
+                        <a href="pages/pci-dss.html" class="btn btn-secondary">查看 PCI-DSS 标准</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资源中心 -->
+    <section class="section resources-section" id="resources">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">资源中心</span>
+                <h2 class="section-title">免费安全合规资源</h2>
+                <p class="section-desc">所有资源均为中文，免费向社区开放，帮助企业和个人提升安全合规能力。</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                    </div>
+                    <h3>技术文档</h3>
+                    <p>标准原文翻译、技术白皮书、配置加固手册等专业文档。</p>
+                    <a href="pages/resources.html" class="resource-link">浏览文档 →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>在线培训</h3>
+                    <p>免费的安全合规在线课程、视频教程和实操演练。</p>
+                    <a href="pages/resources.html" class="resource-link">开始学习 →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>合规指南</h3>
+                    <p>分行业的合规实施指南，帮助企业快速达到安全标准要求。</p>
+                    <a href="pages/resources.html" class="resource-link">查看指南 →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>工具推荐</h3>
+                    <p>安全扫描、合规检查、自动化审计等开源工具推荐与使用教程。</p>
+                    <a href="pages/resources.html" class="resource-link">探索工具 →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h3>社区论坛</h3>
+                    <p>安全从业者交流平台，分享经验、讨论问题、共同成长。</p>
+                    <a href="pages/resources.html" class="resource-link">加入社区 →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3>国际合作</h3>
+                    <p>与国际安全组织合作，引进最新标准与最佳实践资源。</p>
+                    <a href="pages/resources.html" class="resource-link">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻动态 -->
+    <section class="section news-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">新闻动态</span>
+                <h2 class="section-title">最新资讯</h2>
+                <p class="section-desc">了解安全合规领域的最新动态与我们的工作进展。</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card featured">
+                    <div class="news-image">
+                        <div class="news-placeholder-img">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">2026年2月28日</span>
+                        <h3>IHCCC 正式成立，开启中文安全合规标准新篇章</h3>
+                        <p>中国互联网安全合规中心（IHCCC）于今日正式成立，作为非营利组织，我们将致力于将国际安全标准如CIS基准和PCI-DSS标准进行中文化，填补中文安全合规资源的空白。</p>
+                        <a href="#" class="news-link">阅读全文 →</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-content">
+                        <span class="news-date">2026年2月</span>
+                        <h3>CIS Benchmark v8.0 中文版翻译计划启动</h3>
+                        <p>我们正在组织志愿者团队翻译最新版CIS安全基准，涵盖Windows Server、Ubuntu Linux等主流操作系统。</p>
+                        <a href="#" class="news-link">了解详情 →</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-content">
+                        <span class="news-date">2026年2月</span>
+                        <h3>PCI-DSS v4.0 中文解读系列即将上线</h3>
+                        <p>针对PCI-DSS v4.0的12项核心安全要求，我们将推出详细的中文解读系列文章，帮助企业理解并实施标准。</p>
+                        <a href="#" class="news-link">了解详情 →</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-content">
+                        <span class="news-date">2026年3月（即将）</span>
+                        <h3>志愿者招募 — 共建中文安全合规社区</h3>
+                        <p>诚邀安全领域专业人士加入我们的志愿者团队，共同翻译、审校安全标准文档，为中文社区贡献力量。</p>
+                        <a href="#" class="news-link">立即报名 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 行动号召 -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>加入我们，共建安全合规生态</h2>
+                <p>无论你是安全从业者、企业管理者还是技术爱好者，都欢迎加入IHCCC，<br>共同推动中国网络安全合规事业的发展。</p>
+                <div class="cta-actions">
+                    <a href="#contact" class="btn btn-white btn-lg">成为志愿者</a>
+                    <a href="#contact" class="btn btn-outline-white btn-lg">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">联系我们</span>
+                <h2 class="section-title">与我们取得联系</h2>
+                <p class="section-desc">如果您有任何问题、建议或合作意向，欢迎随时联系我们。</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>电子邮件</h4>
+                            <p>contact@ihccc.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>网站</h4>
+                            <p>www.ihccc.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>地址</h4>
+                            <p>中国 · 线上运营</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>关注我们</h4>
+                        <div class="social-links">
+                            <a href="https://github.com/mzwrt/ihccc" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">主题</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">请选择主题</option>
+                                <option value="volunteer">成为志愿者</option>
+                                <option value="cooperation">合作咨询</option>
+                                <option value="feedback">意见反馈</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言</label>
+                            <textarea id="message" name="message" rows="5" placeholder="请输入您的留言内容" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon">&#128737;</span>
+                        <span class="logo-text">IHCCC</span>
+                    </div>
+                    <p>中国互联网安全合规中心（IHCCC）是一个非营利组织，致力于推广CIS安全基准和PCI-DSS支付安全标准的中文化资源。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#standards">安全标准</a></li>
+                        <li><a href="#resources">资源中心</a></li>
+                        <li><a href="#news">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>安全标准</h4>
+                    <ul>
+                        <li><a href="pages/cis.html">CIS 安全基准</a></li>
+                        <li><a href="pages/pci-dss.html">PCI-DSS 标准</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>支持我们</h4>
+                    <ul>
+                        <li><a href="#contact">成为志愿者</a></li>
+                        <li><a href="#contact">合作咨询</a></li>
+                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 所有内容遵循 CC BY-NC-SA 4.0 协议</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

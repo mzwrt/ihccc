@@ -12,10 +12,20 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* ===== 页面头部 - 固定白色背景确保可读性 ===== */
+        .site-header,
         .site-header.scrolled {
             background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+            padding: 8px 0;
         }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover,
+        .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
 
         /* ===== Hero 区域 ===== */
         .page-hero {
@@ -362,6 +372,157 @@
             .category-icon { width: 36px; height: 36px; font-size: 1.1rem; }
             .how-to-add { padding: 24px 16px; border-radius: 16px; }
             .how-to-add h2 { font-size: 1.25rem; }
+            .partners-scroll .partners-track { flex-direction: column; align-items: center; gap: 16px; animation: none; width: 100%; }
+            .partners-scroll .partner-item { min-width: auto; }
+            .sponsor-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== 合作企业滚动 ===== */
+        .partners-section {
+            background: #0a1220;
+            padding: 48px 0 40px;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .partners-section h3 {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+        .partners-scroll {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+        .partners-scroll::before,
+        .partners-scroll::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .partners-scroll::before { left: 0; background: linear-gradient(90deg, #0a1220, transparent); }
+        .partners-scroll::after { right: 0; background: linear-gradient(270deg, #0a1220, transparent); }
+        .partners-track {
+            display: flex;
+            gap: 48px;
+            animation: scrollPartners 30s linear infinite;
+            white-space: nowrap;
+        }
+        .partner-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 180px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .partner-item:hover {
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+        }
+        .partner-item .partner-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+        @keyframes scrollPartners {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== 赞助我们 ===== */
+        .sponsor-section {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 48px 0;
+            text-align: center;
+        }
+        .sponsor-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white, #fff);
+            margin-bottom: 12px;
+        }
+        .sponsor-section .sponsor-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 640px;
+            margin: 0 auto 36px;
+            line-height: 1.8;
+        }
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .sponsor-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .sponsor-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+        .sponsor-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .sponsor-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .sponsor-qr {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .sponsor-qr svg { width: 100%; height: 100%; }
+
+        /* ===== 免责声明 ===== */
+        .footer-disclaimer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-disclaimer p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer-disclaimer .disclaimer-highlight {
+            color: rgba(245,124,0,0.8);
+            font-weight: 600;
         }
     </style>
 </head>
@@ -371,19 +532,19 @@
             <div class="header-inner">
                 <a href="../index.html" class="logo">
                     <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2L4 10v10c0 10.55 6.84 20.42 16 23 9.16-2.58 16-12.45 16-23V10L20 2z" fill="url(#logoGradT)" opacity="0.9"/><path d="M17 20.5l-3-3-1.5 1.5L17 23.5l9-9-1.5-1.5L17 20.5z" fill="#fff"/><defs><linearGradient id="logoGradT" x1="4" y1="2" x2="36" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
-                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
-                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
+                    <span class="logo-text">IHCCC</span>
+                    <span class="logo-subtitle">中国互联网安全合规中心</span>
                 </a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
-                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
+                    <span></span><span></span><span></span>
                 </button>
                 <nav class="main-nav" id="mainNav">
-                    <a href="../index.html" class="nav-link" style="color:#374151">首页</a>
-                    <a href="../index.html#about" class="nav-link" style="color:#374151">关于我们</a>
-                    <a href="../index.html#standards" class="nav-link" style="color:#374151">安全标准</a>
-                    <a href="../index.html#resources" class="nav-link" style="color:#374151">资源中心</a>
-                    <a href="tutorials.html" class="nav-link active" style="color:#0d47a1;background:#e3f0ff">教程仓库</a>
-                    <a href="../index.html#news" class="nav-link" style="color:#374151">新闻动态</a>
+                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html#about" class="nav-link">关于我们</a>
+                    <a href="../index.html#standards" class="nav-link">安全标准</a>
+                    <a href="../index.html#resources" class="nav-link">资源中心</a>
+                    <a href="tutorials.html" class="nav-link active">教程仓库</a>
+                    <a href="../index.html#news" class="nav-link">新闻动态</a>
                 </nav>
             </div>
         </div>
@@ -729,6 +890,50 @@
         </div>
     </section>
 
+    <!-- ===== 合作企业 ===== -->
+    <section class="partners-section">
+        <div class="container">
+            <h3>🤝 合作企业与机构</h3>
+        </div>
+        <div class="partners-scroll">
+            <div class="partners-track">
+                <div class="partner-item"><span class="partner-icon">🏦</span>中国工商银行</div>
+                <div class="partner-item"><span class="partner-icon">☁️</span>阿里云</div>
+                <div class="partner-item"><span class="partner-icon">🛡️</span>奇安信科技</div>
+                <div class="partner-item"><span class="partner-icon">💻</span>腾讯云</div>
+                <div class="partner-item"><span class="partner-icon">🔒</span>深信服科技</div>
+                <div class="partner-item"><span class="partner-icon">📡</span>华为云</div>
+                <div class="partner-item"><span class="partner-icon">🏢</span>中国银联</div>
+                <div class="partner-item"><span class="partner-icon">🌐</span>字节跳动</div>
+                <div class="partner-item"><span class="partner-icon">🔐</span>启明星辰</div>
+                <div class="partner-item"><span class="partner-icon">🏥</span>平安科技</div>
+                <div class="partner-item"><span class="partner-icon">📊</span>京东科技</div>
+                <div class="partner-item"><span class="partner-icon">🛰️</span>中国移动</div>
+                <div class="partner-item"><span class="partner-icon">🔑</span>安恒信息</div>
+                <div class="partner-item"><span class="partner-icon">🖥️</span>百度安全</div>
+                <div class="partner-item"><span class="partner-icon">🏛️</span>中国电信</div>
+                <div class="partner-item"><span class="partner-icon">⚡</span>网易安全</div>
+                <!-- 重复一遍实现无缝滚动 -->
+                <div class="partner-item"><span class="partner-icon">🏦</span>中国工商银行</div>
+                <div class="partner-item"><span class="partner-icon">☁️</span>阿里云</div>
+                <div class="partner-item"><span class="partner-icon">🛡️</span>奇安信科技</div>
+                <div class="partner-item"><span class="partner-icon">💻</span>腾讯云</div>
+                <div class="partner-item"><span class="partner-icon">🔒</span>深信服科技</div>
+                <div class="partner-item"><span class="partner-icon">📡</span>华为云</div>
+                <div class="partner-item"><span class="partner-icon">🏢</span>中国银联</div>
+                <div class="partner-item"><span class="partner-icon">🌐</span>字节跳动</div>
+                <div class="partner-item"><span class="partner-icon">🔐</span>启明星辰</div>
+                <div class="partner-item"><span class="partner-icon">🏥</span>平安科技</div>
+                <div class="partner-item"><span class="partner-icon">📊</span>京东科技</div>
+                <div class="partner-item"><span class="partner-icon">🛰️</span>中国移动</div>
+                <div class="partner-item"><span class="partner-icon">🔑</span>安恒信息</div>
+                <div class="partner-item"><span class="partner-icon">🖥️</span>百度安全</div>
+                <div class="partner-item"><span class="partner-icon">🏛️</span>中国电信</div>
+                <div class="partner-item"><span class="partner-icon">⚡</span>网易安全</div>
+            </div>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="container">
             <div class="footer-certs footer-certs-compact">
@@ -742,6 +947,57 @@
                     <div class="cert-badge" title="GDPR"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg><span>GDPR</span></div>
                 </div>
             </div>
+
+            <!-- 联系我们 -->
+            <div class="footer-links" style="border-top:1px solid rgba(255,255,255,0.08);padding-top:32px;margin-bottom:8px;">
+                <h4 style="text-align:center;margin-bottom:12px;">联系我们</h4>
+                <ul style="align-items:center;">
+                    <li><a href="mailto:contact@ihccc.com">📧 contact@ihccc.com</a></li>
+                    <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
+                    <li><span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">工作时间: 周一至周五 9:00-18:00</span></li>
+                </ul>
+            </div>
+
+            <!-- 赞助我们 -->
+            <div class="sponsor-section">
+                <h3>💖 赞助我们</h3>
+                <p class="sponsor-desc">IHCCC 是一个非营利性开源组织，所有内容完全免费。我们的运营（服务器、域名、文档维护等）依靠社区的慷慨支持。如果我们的安全合规教程和资源对您有帮助，请考虑赞助我们，让更多人受益。每一份支持都是对开源安全社区的贡献！</p>
+                <div class="sponsor-grid">
+                    <div class="sponsor-card">
+                        <h4>🌍 PayPal 国际赞助</h4>
+                        <p>适用于海外用户，通过 PayPal 安全支付</p>
+                        <div class="sponsor-qr">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="200" height="200" fill="#fff"/>
+                                <text x="100" y="90" text-anchor="middle" font-size="14" font-weight="700" fill="#003087">PayPal</text>
+                                <text x="100" y="115" text-anchor="middle" font-size="10" fill="#666">paypal.me/ihccc</text>
+                                <rect x="30" y="130" width="140" height="36" rx="18" fill="#0070ba"/>
+                                <text x="100" y="153" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Donate with PayPal</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="sponsor-card">
+                        <h4>🇨🇳 微信赞赏</h4>
+                        <p>适用于国内用户，扫码即可赞赏支持</p>
+                        <div class="sponsor-qr">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="200" height="200" fill="#fff"/>
+                                <circle cx="100" cy="80" r="36" fill="#07c160"/>
+                                <text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text>
+                                <text x="100" y="135" text-anchor="middle" font-size="11" fill="#333">扫一扫赞赏</text>
+                                <text x="100" y="155" text-anchor="middle" font-size="9" fill="#999">WeChat QR Code</text>
+                                <rect x="55" y="165" width="90" height="4" rx="2" fill="#07c160" opacity="0.3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 免责声明 -->
+            <div class="footer-disclaimer">
+                <p><span class="disclaimer-highlight">⚠️ 重要声明：</span>IHCCC（中国互联网安全合规中心）<span class="disclaimer-highlight">不是任何官方机构或政府组织</span>，我们是一个独立的非营利性开源社区组织。本网站所有内容仅供学习和参考目的，不构成任何官方认证、法律建议或商业推荐。我们不从事任何商业活动，不代表任何政府机关或企业立场。</p>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议 · 邮箱: <a href="mailto:contact@ihccc.com" style="color:rgba(255,255,255,0.6)">contact@ihccc.com</a></p>
             </div>

@@ -3,87 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IHCCC 安全合规教程仓库 - 各类程序与系统的安全标准使用与配置教程GitHub仓库合集，非营利组织，不从事任何商业活动。">
-    <title>教程仓库 - IHCCC 信息认证合规中心</title>
+    <meta name="description" content="IHCCC 安全合规教程仓库 - 各类程序与系统的安全标准使用与配置教程GitHub仓库合集，非营利性组织，致力于推动互联网安全和信息合规。">
+    <title>教程仓库 - IHCCC 中国互联网安全合规中心</title>
     <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../css/style.css" as="style">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        /* ===== 页面头部 - 固定白色背景确保可读性 ===== */
+        .site-header.scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* ===== Hero 区域 ===== */
         .page-hero {
-            background: linear-gradient(135deg, #0a3d12 0%, #14532d 50%, #1b5e20 100%);
-            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #064e1a 0%, #0d6b2c 30%, #14803a 60%, #0d6b2c 80%, #064e1a 100%);
+            background-size: 400% 400%;
+            animation: heroGradient 15s ease infinite;
+            padding: 160px 0 100px;
             text-align: center;
             color: #fff;
+            position: relative;
+            overflow: hidden;
         }
-        .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
-        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto; }
-        .page-content { padding: 80px 0; }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(16,185,129,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(5,150,105,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        @keyframes heroGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .page-hero .container { position: relative; z-index: 2; }
+        .page-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 24px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50px;
+            color: rgba(255,255,255,0.95);
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+            margin-bottom: 24px;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            letter-spacing: -0.5px;
+        }
+        .page-hero .hero-highlight {
+            background: linear-gradient(135deg, #6ee7b7, #34d399, #a7f3d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .hero-stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .hero-wave {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            z-index: 3;
+        }
+        .hero-wave svg {
+            display: block;
+            width: 100%;
+            height: 60px;
+        }
 
-        /* 搜索栏 */
+        /* ===== 主内容区域 ===== */
+        .page-content { padding: 60px 0 80px; }
+
+        /* ===== 搜索栏 ===== */
         .search-bar {
-            max-width: 600px; margin: -30px auto 48px; position: relative; z-index: 2;
+            max-width: 640px;
+            margin: -28px auto 56px;
+            position: relative;
+            z-index: 4;
         }
         .search-bar input {
-            width: 100%; padding: 16px 20px 16px 52px; border: 2px solid #e5e7eb;
-            border-radius: 12px; font-size: 1rem; background: #fff;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); outline: none;
-            font-family: 'Noto Sans SC', sans-serif; transition: border-color 0.3s;
+            width: 100%;
+            padding: 18px 24px 18px 56px;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            font-size: 1rem;
+            background: #fff;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.12);
+            outline: none;
+            font-family: 'Noto Sans SC', sans-serif;
+            transition: all 0.3s ease;
+            color: #111827;
         }
-        .search-bar input:focus { border-color: #2e7d32; }
+        .search-bar input:focus {
+            border-color: #16a34a;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.12), 0 0 0 4px rgba(22,163,74,0.1);
+        }
         .search-bar .search-icon {
-            position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
-            color: #9ca3af; pointer-events: none;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+            pointer-events: none;
         }
 
-        /* 分类区域 */
-        .category-section { margin-bottom: 56px; }
+        /* ===== 分类区域 ===== */
+        .category-section { margin-bottom: 64px; }
         .category-header {
-            display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
-            padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #f3f4f6;
         }
         .category-icon {
-            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
-            border-radius: 10px; flex-shrink: 0; font-size: 1.3rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+            font-size: 1.4rem;
         }
         .category-header h2 {
-            font-size: 1.4rem; font-weight: 800; color: #111827; margin: 0;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin: 0;
+        }
+        .category-header .category-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #6b7280;
+            background: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 50px;
         }
 
-        /* 仓库卡片网格 */
+        /* ===== 仓库卡片网格 ===== */
         .repo-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
         .repo-card {
-            background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 24px;
-            transition: all 0.3s ease; display: flex; gap: 16px; align-items: flex-start;
-            text-decoration: none; color: inherit; cursor: pointer;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            position: relative;
         }
         .repo-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px -5px rgba(0,0,0,0.12);
-            border-color: #2e7d32;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(0,0,0,0.12);
+            border-color: #22c55e;
+        }
+        .repo-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #16a34a, #22c55e);
+            border-radius: 16px 16px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .repo-card:hover::after {
+            opacity: 1;
         }
         .repo-card-icon {
-            width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
-            border-radius: 12px; flex-shrink: 0; font-size: 1.6rem;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            flex-shrink: 0;
+            font-size: 1.6rem;
         }
         .repo-card-info { flex: 1; min-width: 0; }
         .repo-card-info h3 {
-            font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 4px;
-            display: flex; align-items: center; gap: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .repo-card-info h3 .github-mark {
-            width: 18px; height: 18px; opacity: 0.5; flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            opacity: 0.4;
+            flex-shrink: 0;
+            transition: opacity 0.3s;
+        }
+        .repo-card:hover .repo-card-info h3 .github-mark {
+            opacity: 0.8;
         }
         .repo-card-info p {
-            font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 10px;
         }
         .repo-tags { display: flex; flex-wrap: wrap; gap: 6px; }
         .repo-tag {
-            display: inline-block; padding: 2px 10px; border-radius: 50px;
-            font-size: 0.72rem; font-weight: 600;
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
         }
         .repo-tag.os { background: #e8eefb; color: #1a56db; }
         .repo-tag.cloud { background: #ecfdf5; color: #0e9f6e; }
@@ -94,28 +285,83 @@
         .repo-tag.security { background: #fee2e2; color: #b91c1c; }
         .repo-tag.lang { background: #f0fdf4; color: #15803d; }
 
-        /* 如何添加教程区域 */
+        /* ===== 如何添加教程区域 ===== */
         .how-to-add {
-            background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 16px;
-            padding: 40px; margin-top: 24px; text-align: center;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border: 2px solid #bbf7d0;
+            border-radius: 20px;
+            padding: 48px;
+            margin-top: 32px;
+            text-align: center;
         }
         .how-to-add h2 {
-            font-size: 1.5rem; font-weight: 800; color: #14532d; margin-bottom: 12px;
-            display: flex; align-items: center; justify-content: center; gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #14532d;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         .how-to-add p {
-            font-size: 0.95rem; color: #374151; line-height: 1.8; margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* 无搜索结果 */
+        /* ===== 无搜索结果 ===== */
         .no-results {
-            text-align: center; padding: 48px; color: #9ca3af; display: none;
+            text-align: center;
+            padding: 64px 24px;
+            color: #9ca3af;
+            display: none;
         }
         .no-results.visible { display: block; }
+        .no-results p { font-size: 1.1rem; }
+
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 1024px) {
+            .page-hero h1 { font-size: 2.4rem; }
+            .repo-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+        }
 
         @media (max-width: 768px) {
+            .page-hero { padding: 130px 0 80px; }
+            .page-hero h1 { font-size: 2rem; }
+            .page-hero p { font-size: 1rem; }
+            .hero-stats-bar { gap: 28px; }
+            .hero-stat-number { font-size: 1.4rem; }
+            .hero-wave svg { height: 40px; }
+            .page-content { padding: 48px 0 60px; }
+            .search-bar { margin: -20px auto 40px; }
+            .search-bar input { padding: 14px 20px 14px 48px; font-size: 0.95rem; }
             .repo-grid { grid-template-columns: 1fr; }
-            .how-to-add { padding: 24px; }
+            .repo-card { padding: 20px; }
+            .category-section { margin-bottom: 48px; }
+            .category-header h2 { font-size: 1.25rem; }
+            .how-to-add { padding: 32px 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero { padding: 120px 0 70px; }
+            .page-hero h1 { font-size: 1.7rem; }
+            .page-hero p { font-size: 0.9rem; }
+            .page-hero .hero-badge { font-size: 0.8rem; padding: 6px 16px; }
+            .hero-stats-bar { gap: 20px; flex-direction: column; align-items: center; }
+            .search-bar input { padding: 12px 16px 12px 44px; border-radius: 12px; }
+            .repo-card { gap: 12px; padding: 16px; }
+            .repo-card-icon { width: 44px; height: 44px; border-radius: 10px; }
+            .repo-card-icon svg { width: 22px; height: 22px; }
+            .repo-card-info h3 { font-size: 0.95rem; }
+            .category-header h2 { font-size: 1.15rem; }
+            .category-icon { width: 36px; height: 36px; font-size: 1.1rem; }
+            .how-to-add { padding: 24px 16px; border-radius: 16px; }
+            .how-to-add h2 { font-size: 1.25rem; }
         }
     </style>
 </head>
@@ -125,19 +371,19 @@
             <div class="header-inner">
                 <a href="../index.html" class="logo">
                     <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 2L4 10v10c0 10.55 6.84 20.42 16 23 9.16-2.58 16-12.45 16-23V10L20 2z" fill="url(#logoGradT)" opacity="0.9"/><path d="M17 20.5l-3-3-1.5 1.5L17 23.5l9-9-1.5-1.5L17 20.5z" fill="#fff"/><defs><linearGradient id="logoGradT" x1="4" y1="2" x2="36" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
-                    <span class="logo-text" style="color:var(--primary)">IHCCC</span>
-                    <span class="logo-subtitle" style="color:var(--dark-500)">信息认证合规中心</span>
+                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
+                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
                 </a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
-                    <span style="background:var(--dark)"></span><span style="background:var(--dark)"></span><span style="background:var(--dark)"></span>
+                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
                 </button>
                 <nav class="main-nav" id="mainNav">
-                    <a href="../index.html" class="nav-link" style="color:var(--dark-600)">首页</a>
-                    <a href="../index.html#about" class="nav-link" style="color:var(--dark-600)">关于我们</a>
-                    <a href="../index.html#standards" class="nav-link" style="color:var(--dark-600)">安全标准</a>
-                    <a href="../index.html#resources" class="nav-link" style="color:var(--dark-600)">资源中心</a>
-                    <a href="tutorials.html" class="nav-link active" style="color:var(--primary)">教程仓库</a>
-                    <a href="../index.html#news" class="nav-link" style="color:var(--dark-600)">新闻动态</a>
+                    <a href="../index.html" class="nav-link" style="color:#374151">首页</a>
+                    <a href="../index.html#about" class="nav-link" style="color:#374151">关于我们</a>
+                    <a href="../index.html#standards" class="nav-link" style="color:#374151">安全标准</a>
+                    <a href="../index.html#resources" class="nav-link" style="color:#374151">资源中心</a>
+                    <a href="tutorials.html" class="nav-link active" style="color:#0d47a1;background:#e3f0ff">教程仓库</a>
+                    <a href="../index.html#news" class="nav-link" style="color:#374151">新闻动态</a>
                 </nav>
             </div>
         </div>
@@ -145,9 +391,31 @@
 
     <section class="page-hero">
         <div class="container">
-            <div class="hero-badge" style="margin-bottom:20px">GitHub · 开源 · 免费 · 非营利</div>
-            <h1>安全合规教程</h1>
+            <div class="hero-badge" style="margin-bottom:20px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.8"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                GitHub · 开源 · 免费 · 非营利
+            </div>
+            <h1>安全合规<span class="hero-highlight">教程仓库</span></h1>
             <p>汇集各类程序与系统的安全标准配置教程，所有教程均托管在 GitHub 仓库中，免费开源。点击卡片即可跳转到对应的 GitHub 仓库。</p>
+            <div class="hero-stats-bar">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">6</span>
+                    <span class="hero-stat-label">教程分类</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">15+</span>
+                    <span class="hero-stat-label">教程仓库</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100%</span>
+                    <span class="hero-stat-label">免费开源</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="#ffffff"/>
+            </svg>
         </div>
     </section>
 
@@ -475,7 +743,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 IHCCC 信息认证合规中心. 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议 · 邮箱: <a href="mailto:contact@ihccc.com" style="color:rgba(255,255,255,0.6)">contact@ihccc.com</a></p>
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议 · 邮箱: <a href="mailto:contact@ihccc.com" style="color:rgba(255,255,255,0.6)">contact@ihccc.com</a></p>
             </div>
         </div>
     </footer>

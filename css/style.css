@@ -952,11 +952,16 @@ img {
     color: rgba(255,255,255,0.7);
 }
 
+.site-footer .container {
+    max-width: 1400px;
+}
+
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 48px;
+    width: 100%;
 }
 
 .footer-logo {

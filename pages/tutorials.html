@@ -7,11 +7,12 @@
     <title>教程仓库 - IHCCC 信息认证合规中心</title>
     <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../css/style.css" as="style">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .page-hero {
-            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+            background: linear-gradient(135deg, #0a3d12 0%, #14532d 50%, #1b5e20 100%);
             padding: 140px 0 80px;
             text-align: center;
             color: #fff;
@@ -96,28 +97,14 @@
         /* 如何添加教程区域 */
         .how-to-add {
             background: #f0fdf4; border: 2px solid #bbf7d0; border-radius: 16px;
-            padding: 40px; margin-top: 24px;
+            padding: 40px; margin-top: 24px; text-align: center;
         }
         .how-to-add h2 {
-            font-size: 1.5rem; font-weight: 800; color: #14532d; margin-bottom: 20px;
-            display: flex; align-items: center; gap: 10px;
+            font-size: 1.5rem; font-weight: 800; color: #14532d; margin-bottom: 12px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-        .how-to-add h3 {
-            font-size: 1.1rem; font-weight: 700; color: #166534; margin: 20px 0 8px;
-        }
-        .how-to-add p, .how-to-add li {
-            font-size: 0.92rem; color: #374151; line-height: 1.8;
-        }
-        .how-to-add ol { padding-left: 20px; margin-bottom: 16px; }
-        .how-to-add ol li { margin-bottom: 8px; }
-        .how-to-add code {
-            background: #dcfce7; padding: 2px 8px; border-radius: 4px;
-            font-family: 'Courier New', monospace; font-size: 0.85rem; color: #14532d;
-        }
-        .how-to-add pre {
-            background: #14532d; color: #bbf7d0; padding: 20px; border-radius: 10px;
-            overflow-x: auto; font-size: 0.82rem; line-height: 1.7; margin: 12px 0 20px;
-            font-family: 'Courier New', monospace;
+        .how-to-add p {
+            font-size: 0.95rem; color: #374151; line-height: 1.8; margin-bottom: 20px;
         }
 
         /* 无搜索结果 */
@@ -129,7 +116,6 @@
         @media (max-width: 768px) {
             .repo-grid { grid-template-columns: 1fr; }
             .how-to-add { padding: 24px; }
-            .how-to-add pre { font-size: 0.75rem; padding: 14px; }
         }
     </style>
 </head>
@@ -151,6 +137,7 @@
                     <a href="../index.html#standards" class="nav-link" style="color:var(--dark-600)">安全标准</a>
                     <a href="../index.html#resources" class="nav-link" style="color:var(--dark-600)">资源中心</a>
                     <a href="tutorials.html" class="nav-link active" style="color:var(--primary)">教程仓库</a>
+                    <a href="../index.html#news" class="nav-link" style="color:var(--dark-600)">新闻动态</a>
                 </nav>
             </div>
         </div>
@@ -467,89 +454,8 @@
             <!-- ==================== 如何添加新教程 ==================== -->
             <div class="how-to-add" id="howToAdd">
                 <h2>📖 如何添加新的教程仓库</h2>
-                <p>如果你想向本页面添加新的安全合规教程仓库，请按照以下步骤操作：</p>
-
-                <h3>第一步：确定分类</h3>
-                <p>找到你的教程应该归属的分类区域（操作系统、云平台、容器、数据库、Web服务、网络设备），或在需要时新增一个分类区域。</p>
-
-                <h3>第二步：准备图标</h3>
-                <p>为你的程序准备一个 SVG 图标。你可以从 <a href="https://simpleicons.org/" target="_blank" rel="noopener noreferrer" style="color:#166534;">Simple Icons</a> 或 <a href="https://devicon.dev/" target="_blank" rel="noopener noreferrer" style="color:#166534;">Devicon</a> 获取常见程序的 SVG 图标。</p>
-
-                <h3>第三步：复制下方模板代码</h3>
-                <p>在对应分类的 <code>&lt;div class="repo-grid"&gt;</code> 内，添加以下卡片代码：</p>
-                <pre>&lt;a href="https://github.com/你的用户名/仓库名"
-   target="_blank" rel="noopener noreferrer"
-   class="repo-card"
-   data-keywords="搜索关键词1 关键词2 关键词3"&gt;
-    &lt;div class="repo-card-icon" style="background:#图标背景色;"&gt;
-        &lt;!-- 在这里粘贴你的 SVG 图标，建议宽高 28x28 --&gt;
-        &lt;svg width="28" height="28" ...&gt;...&lt;/svg&gt;
-    &lt;/div&gt;
-    &lt;div class="repo-card-info"&gt;
-        &lt;h3&gt;程序名称 安全加固
-            &lt;svg class="github-mark" viewBox="0 0 24 24"
-                 fill="currentColor"&gt;
-                &lt;path d="M12 0c-6.626 0-12 5.373-12 12
-                0 5.302 3.438 9.8 8.207 11.387.599.111
-                .793-.261.793-.577v-2.234c-3.338.726-4.033
-                -1.416-4.033-1.416-.546-1.387-1.333-1.756
-                -1.333-1.756-1.089-.745.083-.729.083-.729
-                1.205.084 1.839 1.237 1.839 1.237 1.07
-                1.834 2.807 1.304 3.492.997.107-.775.418
-                -1.305.762-1.604-2.665-.305-5.467-1.334
-                -5.467-5.931 0-1.311.469-2.381 1.236
-                -3.221-.124-.303-.535-1.524.117-3.176 0
-                0 1.008-.322 3.301 1.23.957-.266 1.983
-                -.399 3.003-.404 1.02.005 2.047.138
-                3.006.404 2.291-1.552 3.297-1.23 3.297
-                -1.23.653 1.653.242 2.874.118 3.176.77
-                .84 1.235 1.911 1.235 3.221 0 4.609
-                -2.807 5.624-5.479 5.921.43.372.823
-                1.102.823 2.222v3.293c0 .319.192.694
-                .801.576 4.765-1.589 8.199-6.086 8.199
-                -11.386 0-6.627-5.373-12-12-12z"/&gt;
-            &lt;/svg&gt;
-        &lt;/h3&gt;
-        &lt;p&gt;简短描述你的教程内容。&lt;/p&gt;
-        &lt;div class="repo-tags"&gt;
-            &lt;span class="repo-tag os"&gt;标签1&lt;/span&gt;
-            &lt;span class="repo-tag security"&gt;标签2&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/a&gt;</pre>
-
-                <h3>第四步：修改关键信息</h3>
-                <ol>
-                    <li>将 <code>href</code> 改为你的 GitHub 仓库地址</li>
-                    <li>将 <code>data-keywords</code> 填写与该教程相关的搜索关键词（中英文均可，空格分隔）</li>
-                    <li>替换图标 SVG 为你的程序图标，设置合适的 <code>background</code> 背景色</li>
-                    <li>修改 <code>&lt;h3&gt;</code> 中的标题名称</li>
-                    <li>修改 <code>&lt;p&gt;</code> 中的描述文字</li>
-                    <li>修改 <code>&lt;span class="repo-tag ..."&gt;</code> 中的标签，可用的标签样式类有：
-                        <code>os</code>（蓝色）、<code>cloud</code>（绿色）、<code>db</code>（黄色）、<code>web</code>（粉色）、<code>container</code>（紫色）、<code>network</code>（浅蓝）、<code>security</code>（红色）、<code>lang</code>（浅绿）</li>
-                </ol>
-
-                <h3>第五步：新增分类（可选）</h3>
-                <p>如需新增一个分类区域，请复制以下结构并放置在 <code>&lt;div id="repoContainer"&gt;</code> 内：</p>
-                <pre>&lt;div class="category-section" data-category="自定义分类名"&gt;
-    &lt;div class="category-header"&gt;
-        &lt;div class="category-icon" style="background:#背景色;"&gt;
-            图标emoji
-        &lt;/div&gt;
-        &lt;h2&gt;分类标题&lt;/h2&gt;
-    &lt;/div&gt;
-    &lt;div class="repo-grid"&gt;
-        &lt;!-- 在这里添加该分类下的 repo-card --&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-                <h3>第六步：提交 Pull Request</h3>
-                <ol>
-                    <li>Fork 本仓库：<a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" style="color:#166534;">https://github.com/mzwrt/ihccc</a></li>
-                    <li>编辑 <code>pages/tutorials.html</code> 文件，按上述模板添加你的教程卡片</li>
-                    <li>提交 Pull Request 并说明添加了什么内容</li>
-                    <li>审核通过后即可合并上线</li>
-                </ol>
+                <p>如果你想添加新的安全合规教程仓库，请查看我们的贡献指南了解详细步骤。</p>
+                <a href="https://github.com/mzwrt/ihccc/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">查看贡献指南</a>
             </div>
 
         </div>
@@ -559,13 +465,13 @@
         <div class="container">
             <div class="footer-certs footer-certs-compact">
                 <div class="footer-certs-icons">
-                    <div class="cert-badge" title="ISO 27001"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(13,71,161,0.6)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27001</text></svg><span>ISO 27001</span></div>
-                    <div class="cert-badge" title="PCI-DSS"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><rect x="12" y="16" width="24" height="16" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.5)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">PCI-DSS</text></svg><span>PCI-DSS</span></div>
-                    <div class="cert-badge" title="SOC 2"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="22" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(13,71,161,0.5)"/><path d="M21 22l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="38" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-weight="700">SOC 2</text></svg><span>SOC 2</span></div>
-                    <div class="cert-badge" title="NIST CSF"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M16 14h16v20H16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.4)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">NIST</text></svg><span>NIST CSF</span></div>
-                    <div class="cert-badge" title="CIS"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(0,137,123,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">CIS</text></svg><span>CIS</span></div>
-                    <div class="cert-badge" title="等保2.0"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(183,28,28,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">等保2.0</text></svg><span>等保2.0</span></div>
-                    <div class="cert-badge" title="GDPR"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg><span>GDPR</span></div>
+                    <div class="cert-badge" title="ISO 27001"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(13,71,161,0.6)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27001</text></svg><span>ISO 27001</span></div>
+                    <div class="cert-badge" title="PCI-DSS"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><rect x="12" y="16" width="24" height="16" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.5)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">PCI-DSS</text></svg><span>PCI-DSS</span></div>
+                    <div class="cert-badge" title="SOC 2"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="22" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(13,71,161,0.5)"/><path d="M21 22l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="38" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-weight="700">SOC 2</text></svg><span>SOC 2</span></div>
+                    <div class="cert-badge" title="NIST CSF"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M16 14h16v20H16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.4)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">NIST</text></svg><span>NIST CSF</span></div>
+                    <div class="cert-badge" title="CIS"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(0,137,123,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">CIS</text></svg><span>CIS</span></div>
+                    <div class="cert-badge" title="等保2.0"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(183,28,28,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">等保2.0</text></svg><span>等保2.0</span></div>
+                    <div class="cert-badge" title="GDPR"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg><span>GDPR</span></div>
                 </div>
             </div>
             <div class="footer-bottom">

@@ -1061,6 +1061,11 @@ img {
     white-space: nowrap;
 }
 
+.footer-certs-compact {
+    border-top: none;
+    padding: 20px 0 0;
+}
+
 /* ===== Back to Top ===== */
 .back-to-top {
     position: fixed;

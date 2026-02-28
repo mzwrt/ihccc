@@ -1011,6 +1011,56 @@ img {
     color: rgba(255,255,255,0.4);
 }
 
+/* ===== Footer Certification Badges ===== */
+.footer-certs {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 32px 0;
+    text-align: center;
+}
+
+.footer-certs h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-certs-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.cert-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.cert-badge:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.cert-badge svg {
+    width: 48px;
+    height: 48px;
+}
+
+.cert-badge span {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 /* ===== Back to Top ===== */
 .back-to-top {
     position: fixed;
@@ -1162,6 +1212,15 @@ img {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 28px;
+    }
+
+    .footer-certs-icons {
+        gap: 14px;
+    }
+
+    .cert-badge svg {
+        width: 40px;
+        height: 40px;
     }
 }
 

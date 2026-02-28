@@ -6,6 +6,9 @@
     <meta name="description" content="IHCCC - 信息认证合规中心，非营利安全标准中文资源平台，致力于网络安全、信息安全与合规性审查，推广等保2.0、GB/T 22239、网络安全法及CIS、PCI-DSS、ISO 27001、NIST、SOC 2等中外安全标准资源与最佳实践。">
     <meta name="keywords" content="CIS, PCI-DSS, ISO 27001, NIST, SOC 2, 网络安全, 合规, 安全标准, 中文, 信息安全, 安全基准, 等保2.0, GB/T 22239, 网络安全法, 数据安全法, 个人信息保护法, 密码法, 非营利组织, 合规性审查">
     <title>IHCCC - 信息认证合规中心 | 非营利安全标准中文资源平台</title>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -582,11 +585,57 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>联系方式</h4>
+                    <h4>联系我们</h4>
                     <ul>
-                        <li><a href="mailto:contact@ihccc.com">contact@ihccc.com</a></li>
-                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="mailto:contact@ihccc.com">📧 contact@ihccc.com</a></li>
+                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
+                        <li><span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">工作时间: 周一至周五 9:00-18:00</span></li>
                     </ul>
+                </div>
+            </div>
+            <div class="footer-certs">
+                <h4>全球安全认证与标准</h4>
+                <div class="footer-certs-icons">
+                    <div class="cert-badge" title="ISO/IEC 27001 信息安全管理体系">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(13,71,161,0.6)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27001</text></svg>
+                        <span>ISO 27001</span>
+                    </div>
+                    <div class="cert-badge" title="PCI-DSS 支付卡行业数据安全标准">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><rect x="12" y="16" width="24" height="16" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.5)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">PCI-DSS</text></svg>
+                        <span>PCI-DSS</span>
+                    </div>
+                    <div class="cert-badge" title="SOC 2 服务组织控制报告">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="22" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(13,71,161,0.5)"/><path d="M21 22l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="38" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-weight="700">SOC 2</text></svg>
+                        <span>SOC 2</span>
+                    </div>
+                    <div class="cert-badge" title="NIST 网络安全框架">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M16 14h16v20H16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.4)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">NIST</text></svg>
+                        <span>NIST CSF</span>
+                    </div>
+                    <div class="cert-badge" title="CIS 互联网安全中心基准">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(0,137,123,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">CIS</text></svg>
+                        <span>CIS Benchmarks</span>
+                    </div>
+                    <div class="cert-badge" title="等保2.0 网络安全等级保护">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(183,28,28,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">等保2.0</text></svg>
+                        <span>等保2.0</span>
+                    </div>
+                    <div class="cert-badge" title="ISO/IEC 27701 隐私信息管理">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(106,27,154,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27701</text></svg>
+                        <span>ISO 27701</span>
+                    </div>
+                    <div class="cert-badge" title="GDPR 通用数据保护条例">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg>
+                        <span>GDPR</span>
+                    </div>
+                    <div class="cert-badge" title="CSA STAR 云安全联盟">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><polygon points="24,10 27,19 37,19 29,25 32,35 24,29 16,35 19,25 11,19 21,19" fill="rgba(245,124,0,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/><text x="24" y="44" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="4" font-weight="600">CSA STAR</text></svg>
+                        <span>CSA STAR</span>
+                    </div>
+                    <div class="cert-badge" title="HIPAA 健康保险可携性和责任法案">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 14c-3 0-6 2-6 5s3 5 6 8c3-3 6-5 6-8s-3-5-6-5z" fill="rgba(211,47,47,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5" font-weight="700">HIPAA</text></svg>
+                        <span>HIPAA</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -602,6 +651,6 @@
         </svg>
     </button>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

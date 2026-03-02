@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DORA数字运营韧性法案中文指南 - IHCCC解读欧盟金融科技合规要求，覆盖ICT风险管理、事件报告、韧性测试和第三方风险管理">
+    <meta name="keywords" content="DORA, 数字运营韧性法案, 欧盟金融, ICT风险管理, TLPT测试, 第三方风险, 金融合规, 欧盟监管">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <link rel="canonical" href="https://ihccc.com/pages/dora.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="DORA 数字运营韧性法案 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="DORA数字运营韧性法案中文指南，解读五大支柱：ICT风险管理、事件报告、韧性测试、第三方风险和信息共享。">
+    <meta property="og:url" content="https://ihccc.com/pages/dora.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DORA 数字运营韧性法案 - IHCCC">
+    <meta name="twitter:description" content="欧盟DORA数字运营韧性法案中文解读，适用于欧盟各类金融实体。">
+    <title>DORA 数字运营韧性法案 | 欧盟金融科技合规中文指南 - IHCCC</title>
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .site-header, .site-header.scrolled { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05); }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover, .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
+        .dropdown-menu { border: 1px solid #e5e7eb; }
+        .dropdown-item { color: #374151 !important; }
+        .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
+        .page-hero { background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #00897b 100%); padding: 140px 0 80px; text-align: center; color: #fff; }
+        .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 48px; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-size: 2.2rem; font-weight: 900; color: #fff; }
+        .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .content-section { padding: 80px 0; }
+        .content-section.alt-bg { background: #f9fafb; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .section-header p { color: #6b7280; font-size: 1rem; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+        .info-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; transition: all 0.3s; }
+        .info-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .info-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #111827; }
+        .info-card p { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
+        .card-icon { font-size: 2rem; margin-bottom: 12px; }
+        .law-content h3 { font-size: 1.2rem; font-weight: 700; color: #111827; margin: 28px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+        .law-content p { font-size: 0.95rem; color: #374151; line-height: 1.8; margin-bottom: 16px; }
+        .law-content ul { padding-left: 20px; margin-bottom: 16px; }
+        .law-content ul li { font-size: 0.92rem; color: #374151; line-height: 1.8; margin-bottom: 6px; }
+        .info-box { border-left: 4px solid; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
+        .info-box p { font-size: 0.9rem; line-height: 1.7; margin: 0; }
+        .page-cta { background: #f9fafb; padding: 60px 0; text-align: center; }
+        .page-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+        .page-cta p { color: #4b5563; margin-bottom: 24px; }
+        .pillar-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; transition: all 0.3s; }
+        .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .pillar-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #004d40, #00897b); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; margin-bottom: 16px; }
+        .pillar-card h3 { font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .pillar-card p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; }
+    </style>
+</head>
+<body>
+    <header class="site-header scrolled" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgX)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgX" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
+                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">首页</a>
+                    <div class="nav-dropdown">
+                        <a href="gdpr.html" class="nav-link dropdown-toggle active">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="gdpr.html" class="dropdown-item">🇪🇺 GDPR 通用数据保护条例</a>
+                            <a href="nis2.html" class="dropdown-item">🔐 NIS2 网络与信息安全指令</a>
+                            <a href="dora.html" class="dropdown-item">⚡ DORA 数字运营韧性法案</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="nist-csf.html" class="nav-link dropdown-toggle">美国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="nist-csf.html" class="dropdown-item">🏛️ NIST CSF 网络安全框架</a>
+                            <a href="cis.html" class="dropdown-item">🛡️ CIS 安全基准</a>
+                            <a href="pci-dss.html" class="dropdown-item">💳 PCI-DSS 支付安全标准</a>
+                            <a href="soc2.html" class="dropdown-item">📋 SOC 2 审计标准</a>
+                            <a href="iso27001.html" class="dropdown-item">🌐 ISO 27001 信息安全管理体系</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="laws.html" class="nav-link dropdown-toggle">中国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="laws.html#djbh" class="dropdown-item">🔒 等保2.0 网络安全等级保护</a>
+                            <a href="laws.html#csl" class="dropdown-item">⚖️ 《网络安全法》</a>
+                            <a href="laws.html#dsl" class="dropdown-item">📊 《数据安全法》</a>
+                            <a href="laws.html#pipl" class="dropdown-item">👤 《个人信息保护法》</a>
+                            <a href="laws.html#mima" class="dropdown-item">🔑 《密码法》与商用密码管理</a>
+                            <a href="laws.html#guiji" class="dropdown-item">🏗️ 关键信息基础设施保护</a>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="nav-link ">实用工具</a>
+                    <a href="tutorials.html" class="nav-link ">合规仓库</a>
+                    <a href="about.html" class="nav-link ">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-badge">欧盟 · 2025年1月17日适用</div>
+            <h1>DORA 数字运营韧性法案</h1>
+            <p>数字运营韧性法案（Digital Operational Resilience Act）是欧盟专门针对金融行业数字韧性的法规，旨在确保金融实体能够抵御、响应和恢复重大ICT相关事件。</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">合规支柱</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">受监管金融实体类型</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">4h</div><div class="hero-stat-label">重大事件初始报告</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">2025</div><div class="hero-stat-label">正式适用年份</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>DORA 适用范围</h2>
+                <p>DORA适用于欧盟境内广泛的金融实体，以及向其提供关键ICT服务的第三方提供商。</p>
+            </div>
+            <div style="max-width:860px;margin:0 auto">
+                <div class="law-content">
+                    <h3>受监管金融实体（部分示例）</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:16px">
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🏦 信贷机构（银行）</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">💳 支付机构</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">📈 投资公司</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🛡️ 保险公司</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🔄 中央对手方（CCP）</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🪙 加密资产服务商</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🏪 交易场所</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">☁️ 关键ICT第三方提供商</div>
+                    </div>
+                    <div class="info-box" style="background:#f0fdfa;border-left-color:#00897b"><p style="color:#065f46"><strong>💡 对中国企业的影响：</strong>向欧盟金融实体提供云计算、数据分析、支付处理等ICT服务的中国企业，可能被认定为DORA下的"关键ICT第三方服务提供商"，须接受欧盟监管机构的监督，包括审计和检查。</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>DORA 五大合规支柱</h2>
+                <p>DORA构建了五个相互关联的合规支柱，全面覆盖金融实体的数字运营韧性要求。</p>
+            </div>
+            <div class="card-grid">
+                <div class="pillar-card"><div class="pillar-num">1</div><h3>ICT风险管理框架</h3><p>建立完整的ICT风险管理框架，包括ICT资产识别、风险评估、安全措施实施和定期审查。管理层对框架负有直接责任。</p></div>
+                <div class="pillar-card"><div class="pillar-num">2</div><h3>ICT相关事件管理</h3><p>建立事件分类标准（包括主要ICT事件判定标准）、响应流程，并按规定时间线向主管机构报告重大事件。</p></div>
+                <div class="pillar-card"><div class="pillar-num">3</div><h3>数字运营韧性测试</h3><p>定期开展韧性测试，包括基础测试（漏洞扫描、渗透测试）和重要金融实体须实施的高级威胁导向渗透测试（TLPT）。</p></div>
+                <div class="pillar-card"><div class="pillar-num">4</div><h3>ICT第三方风险管理</h3><p>建立管理ICT第三方风险的政策框架，评估关键和重要功能的供应商，签订包含DORA要求条款的合同。</p></div>
+                <div class="pillar-card"><div class="pillar-num">5</div><h3>信息情报共享</h3><p>鼓励金融实体之间共享网络威胁信息和情报，提升整个金融行业的集体防御能力。</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>重大ICT事件报告时间线</h2>
+                <p>DORA对重大ICT事件建立了严格的分阶段报告机制。</p>
+            </div>
+            <div style="max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px">
+                <div class="info-card" style="border-top:4px solid #dc2626"><div class="card-icon">⚡</div><h3>4小时内：初始通知</h3><p>如事件满足重大事件标准，须在知悉后4小时内向主管机构提交初始通知。</p></div>
+                <div class="info-card" style="border-top:4px solid #f59e0b"><div class="card-icon">📊</div><h3>72小时内：中期报告</h3><p>提交中期报告，更新初始通知内容，包括影响评估、已采取缓解措施。</p></div>
+                <div class="info-card" style="border-top:4px solid #10b981"><div class="card-icon">📋</div><h3>1个月内：最终报告</h3><p>提交最终报告，包括根本原因分析、已实施的纠正措施和经验教训。</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-cta">
+        <div class="container">
+            <h2>DORA 合规支持</h2>
+            <p>IHCCC提供DORA合规资源，帮助金融机构和ICT服务商了解欧盟数字韧性要求。</p>
+            <a href="mailto:contact@ihccc.com" class="btn btn-primary btn-lg">邮件联系</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-certs footer-certs-compact">
+                <div class="footer-certs-icons">
+                    <div class="cert-badge" title="ISO 27001"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(13,71,161,0.6)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27001</text></svg><span>ISO 27001</span></div>
+                    <div class="cert-badge" title="PCI-DSS"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><rect x="12" y="16" width="24" height="16" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.5)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">PCI-DSS</text></svg><span>PCI-DSS</span></div>
+                    <div class="cert-badge" title="SOC 2"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="22" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(13,71,161,0.5)"/><path d="M21 22l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="38" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-weight="700">SOC 2</text></svg><span>SOC 2</span></div>
+                    <div class="cert-badge" title="NIST CSF"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M16 14h16v20H16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.4)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">NIST</text></svg><span>NIST CSF</span></div>
+                    <div class="cert-badge" title="CIS"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(0,137,123,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">CIS</text></svg><span>CIS</span></div>
+                    <div class="cert-badge" title="等保2.0"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(183,28,28,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">等保2.0</text></svg><span>等保2.0</span></div>
+                    <div class="cert-badge" title="GDPR"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg><span>GDPR</span></div>
+                </div>
+            </div>
+            <div class="footer-sponsor">
+                <p class="sponsor-label">�� 赞助我们 — 支持开源安全社区</p>
+                <div class="sponsor-buttons">
+                    <a href="https://paypal.me/ihccc" class="sponsor-btn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z"/></svg>PayPal</a>
+                    <button class="sponsor-btn" onclick="openSponsorModal('crypto')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.546z"/></svg>加密货币</button>
+                    <button class="sponsor-btn" onclick="openSponsorModal('wechat')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348z"/></svg>微信赞赏</button>
+                </div>
+                <p class="sponsor-note">IHCCC 是非营利性开源组织，所有内容完全免费。您的赞助将用于服务器、域名及文档维护，帮助更多人获取安全合规资源。</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 所有内容遵循 CC BY-NC-SA 4.0 协议 · 邮箱: <a href="mailto:contact@ihccc.com" style="color:rgba(255,255,255,0.6)">contact@ihccc.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sponsor-modal-overlay" id="sponsorModal">
+        <div class="sponsor-modal">
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
+            <div id="sponsorModalContent"></div>
+        </div>
+    </div>
+
+    <script src="../js/main.js" defer></script>
+    <script>
+    function openSponsorModal(type) {
+        var modal = document.getElementById('sponsorModal');
+        var content = document.getElementById('sponsorModalContent');
+        if (type === 'wechat') {
+            content.innerHTML = '<h4>🇨🇳 微信赞赏</h4><p>扫描下方二维码支持我们</p><div class="qr-placeholder"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#fff"/><circle cx="100" cy="80" r="36" fill="#07c160"/><text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text></svg></div>';
+        } else if (type === 'crypto') {
+            content.innerHTML = '<h4>🪙 加密货币赞助</h4><p>您可以通过以下地址赞助我们</p><div style="text-align:left;font-size:0.82rem;color:#444;line-height:2;word-break:break-all;"><strong>BTC:</strong> bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><strong>ETH:</strong> 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>';
+        }
+        modal.classList.add('active');
+    }
+    function closeSponsorModal() { document.getElementById('sponsorModal').classList.remove('active'); }
+    document.getElementById('sponsorModal').addEventListener('click', function(e) { if (e.target === this) closeSponsorModal(); });
+    </script>
+</body>
+</html>

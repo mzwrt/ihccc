@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IHCCC合规实用工具集 - 免费下载GDPR、PCI-DSS、ISO 27001、等保2.0、NIST CSF合规检查清单、风险评估模板、安全政策模板">
+    <meta name="keywords" content="合规工具, 检查清单, 风险评估模板, 安全政策模板, GDPR检查清单, ISO 27001检查清单, 等保2.0, PCI-DSS, 合规下载, 免费资源">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <link rel="canonical" href="https://ihccc.com/pages/tools.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="合规实用工具 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="IHCCC合规实用工具集，免费下载合规检查清单、风险评估模板、安全政策模板和培训资料。">
+    <meta property="og:url" content="https://ihccc.com/pages/tools.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="合规实用工具 - IHCCC">
+    <meta name="twitter:description" content="IHCCC合规实用工具集 — 合规检查清单、风险评估模板、安全政策模板免费下载。">
+    <title>合规实用工具 | 安全合规工具集免费下载 - IHCCC</title>
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .site-header, .site-header.scrolled { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05); }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover, .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
+        .dropdown-menu { border: 1px solid #e5e7eb; }
+        .dropdown-item { color: #374151 !important; }
+        .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
+        .page-hero { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%); padding: 140px 0 80px; text-align: center; color: #fff; }
+        .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 48px; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-size: 2.2rem; font-weight: 900; color: #fff; }
+        .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .content-section { padding: 80px 0; }
+        .content-section.alt-bg { background: #f9fafb; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .section-header p { color: #6b7280; font-size: 1rem; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+        .info-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; transition: all 0.3s; }
+        .info-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .info-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #111827; }
+        .info-card p { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
+        .card-icon { font-size: 2rem; margin-bottom: 12px; }
+        .law-content h3 { font-size: 1.2rem; font-weight: 700; color: #111827; margin: 28px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
+        .law-content p { font-size: 0.95rem; color: #374151; line-height: 1.8; margin-bottom: 16px; }
+        .law-content ul { padding-left: 20px; margin-bottom: 16px; }
+        .law-content ul li { font-size: 0.92rem; color: #374151; line-height: 1.8; margin-bottom: 6px; }
+        .info-box { border-left: 4px solid; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
+        .info-box p { font-size: 0.9rem; line-height: 1.7; margin: 0; }
+        .page-cta { background: #f9fafb; padding: 60px 0; text-align: center; }
+        .page-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+        .page-cta p { color: #4b5563; margin-bottom: 24px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+        .tool-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; transition: all 0.3s; }
+        .tool-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .tool-icon { font-size: 2.4rem; margin-bottom: 14px; }
+        .tool-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .tool-title { font-size: 1rem; font-weight: 700; color: #111827; }
+        .format-badge { font-size: 0.72rem; font-weight: 700; padding: 2px 10px; border-radius: 50px; }
+        .format-pdf { background: #fee2e2; color: #b91c1c; }
+        .format-xlsx { background: #dcfce7; color: #15803d; }
+        .format-docx { background: #dbeafe; color: #1d4ed8; }
+        .format-pptx { background: #fef9c3; color: #b45309; }
+        .tool-desc { font-size: 0.87rem; color: #4b5563; line-height: 1.7; flex: 1; margin-bottom: 16px; }
+        .tool-download { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: #0d47a1; color: #fff; border-radius: 8px; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; text-align: center; justify-content: center; }
+        .tool-download:hover { background: #1565c0; transform: translateY(-1px); }
+        .category-title { font-size: 1.4rem; font-weight: 800; color: #111827; margin-bottom: 8px; }
+        .category-desc { font-size: 0.95rem; color: #6b7280; margin-bottom: 28px; }
+    </style>
+</head>
+<body>
+    <header class="site-header scrolled" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgX)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgX" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
+                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">首页</a>
+                    <div class="nav-dropdown">
+                        <a href="gdpr.html" class="nav-link dropdown-toggle">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="gdpr.html" class="dropdown-item">🇪🇺 GDPR 通用数据保护条例</a>
+                            <a href="nis2.html" class="dropdown-item">🔐 NIS2 网络与信息安全指令</a>
+                            <a href="dora.html" class="dropdown-item">⚡ DORA 数字运营韧性法案</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="nist-csf.html" class="nav-link dropdown-toggle">美国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="nist-csf.html" class="dropdown-item">🏛️ NIST CSF 网络安全框架</a>
+                            <a href="cis.html" class="dropdown-item">🛡️ CIS 安全基准</a>
+                            <a href="pci-dss.html" class="dropdown-item">💳 PCI-DSS 支付安全标准</a>
+                            <a href="soc2.html" class="dropdown-item">📋 SOC 2 审计标准</a>
+                            <a href="iso27001.html" class="dropdown-item">🌐 ISO 27001 信息安全管理体系</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="laws.html" class="nav-link dropdown-toggle">中国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="laws.html#djbh" class="dropdown-item">🔒 等保2.0 网络安全等级保护</a>
+                            <a href="laws.html#csl" class="dropdown-item">⚖️ 《网络安全法》</a>
+                            <a href="laws.html#dsl" class="dropdown-item">📊 《数据安全法》</a>
+                            <a href="laws.html#pipl" class="dropdown-item">👤 《个人信息保护法》</a>
+                            <a href="laws.html#mima" class="dropdown-item">🔑 《密码法》与商用密码管理</a>
+                            <a href="laws.html#guiji" class="dropdown-item">🏗️ 关键信息基础设施保护</a>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="nav-link active">实用工具</a>
+                    <a href="tutorials.html" class="nav-link ">合规仓库</a>
+                    <a href="about.html" class="nav-link ">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-badge">免费下载 · 开源共享</div>
+            <h1>合规实用工具</h1>
+            <p>IHCCC精心整理的合规工具包，涵盖检查清单、风险评估模板、安全政策模板和培训资料，帮助组织高效开展合规工作。所有工具免费开放，遵循CC BY-NC-SA 4.0协议。</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">可用工具</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">免费下载</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">工具类别</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">覆盖合规框架</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="category-title">📋 合规检查清单</div>
+            <div class="category-desc">覆盖主流合规框架的完整检查清单，帮助您系统评估合规现状与差距。</div>
+            <div class="tool-grid">
+                <div class="tool-card"><div class="tool-icon">🇪🇺</div><div class="tool-meta"><span class="tool-title">GDPR合规检查清单</span><span class="format-badge format-pdf">PDF</span></div><p class="tool-desc">涵盖数据处理合法性、数据主体权利、安全措施、DPO任命、数据泄露通知等87项检查点，全面覆盖GDPR核心要求。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">💳</div><div class="tool-meta"><span class="tool-title">PCI-DSS v4.0检查清单</span><span class="format-badge format-xlsx">Excel</span></div><p class="tool-desc">PCI-DSS v4.0完整检查清单，涵盖12个主要需求，适用于持卡人数据环境（CDE）自评和合规差距分析。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🌐</div><div class="tool-meta"><span class="tool-title">ISO 27001:2022检查清单</span><span class="format-badge format-xlsx">Excel</span></div><p class="tool-desc">信息安全管理体系93项附录A控制措施自查表，含控制说明、实施指导和证据要求，便于差距分析和认证准备。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🔒</div><div class="tool-meta"><span class="tool-title">等保2.0三级检查清单</span><span class="format-badge format-pdf">PDF</span></div><p class="tool-desc">网络安全等级保护2.0三级测评检查清单，覆盖安全物理环境、通信网络、区域边界、计算环境、管理中心等层面。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🏛️</div><div class="tool-meta"><span class="tool-title">NIST CSF 2.0评估清单</span><span class="format-badge format-xlsx">Excel</span></div><p class="tool-desc">网络安全框架六大功能（治理、识别、保护、检测、响应、恢复）成熟度自评工具，支持当前状态与目标状态对比。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">📋</div><div class="tool-meta"><span class="tool-title">SOC 2 Type II准备清单</span><span class="format-badge format-pdf">PDF</span></div><p class="tool-desc">SOC 2审计准备工作清单，涵盖五大信任服务准则的控制措施要求，帮助服务组织系统性准备外部审计。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section alt-bg">
+        <div class="container">
+            <div class="category-title">⚠️ 风险评估模板</div>
+            <div class="category-desc">基于国际标准的风险评估工具，帮助组织识别、分析和管理信息安全风险。</div>
+            <div class="tool-grid">
+                <div class="tool-card"><div class="tool-icon">📊</div><div class="tool-meta"><span class="tool-title">信息安全风险评估模板</span><span class="format-badge format-xlsx">Excel</span></div><p class="tool-desc">基于ISO 27005的风险识别、分析和评估模板，包含资产清单、威胁目录、脆弱性列表和风险计算公式，支持定量和定性评估。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🤝</div><div class="tool-meta"><span class="tool-title">供应商安全风险评估问卷</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">第三方供应商安全能力评估问卷，涵盖信息安全管理、数据保护、业务连续性、合规认证等维度，适用于供应商准入审查。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🏗️</div><div class="tool-meta"><span class="tool-title">业务影响分析（BIA）模板</span><span class="format-badge format-xlsx">Excel</span></div><p class="tool-desc">识别关键业务流程和恢复优先级，评估系统停机影响，确定RTO/RPO目标，为业务连续性规划提供数据基础。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🔍</div><div class="tool-meta"><span class="tool-title">数据保护影响评估（DPIA）模板</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">符合GDPR要求的DPIA模板，包含处理活动描述、必要性评估、风险识别和缓解措施，适用于高风险数据处理项目。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="category-title">📜 安全政策模板</div>
+            <div class="category-desc">符合国际标准的安全政策文档模板，可直接定制使用，快速建立组织政策体系。</div>
+            <div class="tool-grid">
+                <div class="tool-card"><div class="tool-icon">🛡️</div><div class="tool-meta"><span class="tool-title">信息安全政策框架</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">符合ISO 27001要求的顶层信息安全政策，涵盖安全目标、范围、职责、合规要求等核心内容，可直接定制为组织级政策。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🗂️</div><div class="tool-meta"><span class="tool-title">数据分类与处理政策</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">数据分级分类管理政策，包含数据分类标准（公开/内部/机密/绝密）、标记要求、处理规则和数据全生命周期管理。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🚨</div><div class="tool-meta"><span class="tool-title">安全事件响应计划模板</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">网络安全事件响应计划和程序模板，涵盖事件分类、响应团队职责、处置流程、通知程序、证据保全和事后复盘。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🔑</div><div class="tool-meta"><span class="tool-title">访问控制政策模板</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">身份和访问管理政策及程序，包含账号管理、权限申请审批、特权账号管理、定期复审、MFA要求等完整框架。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🏠</div><div class="tool-meta"><span class="tool-title">远程办公安全政策</span><span class="format-badge format-docx">Word</span></div><p class="tool-desc">远程访问和BYOD安全管理政策，涵盖VPN使用规范、设备安全要求、公共WiFi限制、数据保护要求等。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section alt-bg">
+        <div class="container">
+            <div class="category-title">🎓 培训资料</div>
+            <div class="category-desc">专业的安全意识培训材料，帮助组织提升全员安全意识和合规素养。</div>
+            <div class="tool-grid">
+                <div class="tool-card"><div class="tool-icon">🎓</div><div class="tool-meta"><span class="tool-title">员工信息安全意识培训</span><span class="format-badge format-pptx">PPT</span></div><p class="tool-desc">适用于全员的安全意识基础培训材料，涵盖密码安全、钓鱼识别、数据保护、移动设备安全等核心主题。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🇪🇺</div><div class="tool-meta"><span class="tool-title">GDPR数据保护培训</span><span class="format-badge format-pptx">PPT</span></div><p class="tool-desc">员工数据保护意识培训课件，介绍GDPR基本原则、个人数据处理规范、数据主体权利响应、数据泄露报告义务。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+                <div class="tool-card"><div class="tool-icon">🎣</div><div class="tool-meta"><span class="tool-title">钓鱼攻击防范培训</span><span class="format-badge format-pdf">PDF</span></div><p class="tool-desc">通过真实案例帮助员工识别钓鱼邮件、虚假网站和电话欺诈，掌握正确的应对方法，降低社会工程学攻击风险。</p><a href="#" class="tool-download">⬇ 即将发布</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-cta">
+        <div class="container">
+            <h2>需要定制化工具？</h2>
+            <p>如果现有模板无法满足您的需求，欢迎联系我们定制专属合规工具和培训材料。所有定制内容开源发布，回馈社区。</p>
+            <a href="mailto:contact@ihccc.com" class="btn btn-primary btn-lg">邮件联系</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-certs footer-certs-compact">
+                <div class="footer-certs-icons">
+                    <div class="cert-badge" title="ISO 27001"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(13,71,161,0.6)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27001</text></svg><span>ISO 27001</span></div>
+                    <div class="cert-badge" title="PCI-DSS"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><rect x="12" y="16" width="24" height="16" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.5)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">PCI-DSS</text></svg><span>PCI-DSS</span></div>
+                    <div class="cert-badge" title="SOC 2"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="22" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(13,71,161,0.5)"/><path d="M21 22l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="38" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-weight="700">SOC 2</text></svg><span>SOC 2</span></div>
+                    <div class="cert-badge" title="NIST CSF"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M16 14h16v20H16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.4)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">NIST</text></svg><span>NIST CSF</span></div>
+                    <div class="cert-badge" title="CIS"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(0,137,123,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">CIS</text></svg><span>CIS</span></div>
+                    <div class="cert-badge" title="等保2.0"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(183,28,28,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">等保2.0</text></svg><span>等保2.0</span></div>
+                    <div class="cert-badge" title="GDPR"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg><span>GDPR</span></div>
+                </div>
+            </div>
+            <div class="footer-sponsor">
+                <p class="sponsor-label">�� 赞助我们 — 支持开源安全社区</p>
+                <div class="sponsor-buttons">
+                    <a href="https://paypal.me/ihccc" class="sponsor-btn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z"/></svg>PayPal</a>
+                    <button class="sponsor-btn" onclick="openSponsorModal('crypto')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.546z"/></svg>加密货币</button>
+                    <button class="sponsor-btn" onclick="openSponsorModal('wechat')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348z"/></svg>微信赞赏</button>
+                </div>
+                <p class="sponsor-note">IHCCC 是非营利性开源组织，所有内容完全免费。您的赞助将用于服务器、域名及文档维护，帮助更多人获取安全合规资源。</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 所有内容遵循 CC BY-NC-SA 4.0 协议 · 邮箱: <a href="mailto:contact@ihccc.com" style="color:rgba(255,255,255,0.6)">contact@ihccc.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sponsor-modal-overlay" id="sponsorModal">
+        <div class="sponsor-modal">
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
+            <div id="sponsorModalContent"></div>
+        </div>
+    </div>
+
+    <script src="../js/main.js" defer></script>
+    <script>
+    function openSponsorModal(type) {
+        var modal = document.getElementById('sponsorModal');
+        var content = document.getElementById('sponsorModalContent');
+        if (type === 'wechat') {
+            content.innerHTML = '<h4>🇨🇳 微信赞赏</h4><p>扫描下方二维码支持我们</p><div class="qr-placeholder"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#fff"/><circle cx="100" cy="80" r="36" fill="#07c160"/><text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text></svg></div>';
+        } else if (type === 'crypto') {
+            content.innerHTML = '<h4>🪙 加密货币赞助</h4><p>您可以通过以下地址赞助我们</p><div style="text-align:left;font-size:0.82rem;color:#444;line-height:2;word-break:break-all;"><strong>BTC:</strong> bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><strong>ETH:</strong> 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>';
+        }
+        modal.classList.add('active');
+    }
+    function closeSponsorModal() { document.getElementById('sponsorModal').classList.remove('active'); }
+    document.getElementById('sponsorModal').addEventListener('click', function(e) { if (e.target === this) closeSponsorModal(); });
+    </script>
+</body>
+</html>

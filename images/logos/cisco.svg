@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#f0f8f8"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16" fill="#049fd9">CISCO</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#f0f8fc"/>
+  <g fill="#049FD9">
+    <rect x="7" y="25" width="5" height="10" rx="2.5"/>
+    <rect x="15" y="20" width="5" height="18" rx="2.5"/>
+    <rect x="23" y="16" width="5" height="22" rx="2.5"/>
+    <rect x="31" y="16" width="5" height="22" rx="2.5"/>
+    <rect x="39" y="20" width="5" height="18" rx="2.5"/>
+    <rect x="47" y="25" width="5" height="10" rx="2.5"/>
+  </g>
 </svg>

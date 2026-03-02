@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#fff5f0"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="13" fill="#ff6b35">Palo Alto</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#fff5f0"/>
+  <g transform="translate(6,6) scale(2.0)">
+    <path d="M12.288 0L.085 6.948v10.08L12.288 24 24.49 17.028V6.948zm-1.208 3.496l1.208 2.102L13.496 3.5l3.625 6.3-3.625 1.99V5.6l-1.208 2.098L11.08 5.6v6.194l-3.625-1.99zm2.416 13.012l-1.208-2.102-1.208 2.102L7.455 10.2l3.625 1.99v6.194l1.208-2.098 1.208 2.097V12.19l3.625-1.99z" fill="#FA582D"/>
+  </g>
 </svg>

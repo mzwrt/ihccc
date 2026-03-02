@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#f0f7ff"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16" fill="#0078d4">Azure</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#f0f7ff"/>
+  <g transform="translate(6,6) scale(2.0)">
+    <path d="M22.379 23.343H7.986c-.477 0-.733-.55-.427-.918l9.934-11.708-4.163-8.935c-.152-.326.079-.68.44-.68h3.921c.234 0 .447.14.54.357l5.636 13.2a.572.572 0 0 1 .01.436L22.9 22.97a.574.574 0 0 1-.521.373zM7.115 22.2H1.62a.574.574 0 0 1-.518-.823L9.65 3.658a.574.574 0 0 1 1.052.019l2.31 5.457L7.52 16.95a.574.574 0 0 0 .44.918h5.697L7.115 22.2z" fill="#0078D4"/>
+  </g>
 </svg>

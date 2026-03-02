@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#f0f6ff"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="11" fill="#f6821f">Cloudflare</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#fff8f0"/>
+  <g transform="translate(6,6) scale(2.0)">
+    <path d="M16.608 15.895H6.922a.202.202 0 0 0-.202.174l-.433 2.755a.202.202 0 0 0 .2.23h2.698l.27 1.693a.143.143 0 0 0 .14.12h1.929a.143.143 0 0 0 .14-.12l.607-4.59a.143.143 0 0 0-.143-.162zM18.8 9.48c-.107.005-.213.01-.32.024a3.88 3.88 0 0 0-6.893-1.76 2.53 2.53 0 0 0-3.623 2.311c.001.128.012.256.031.383A3.055 3.055 0 0 0 5 13.52a3.055 3.055 0 0 0 3.055 3.055h10.745a2.946 2.946 0 0 0 0-5.892v-.001a3 3 0 0 0 0-.202z" fill="#F38020"/>
+  </g>
 </svg>

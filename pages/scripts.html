@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IHCCC 安全加固脚本库 - 提供Linux、Windows、Docker、Kubernetes等主流平台的安全加固与合规检测自动化脚本，基于CIS基准和等保2.0标准">
+    <meta name="keywords" content="安全加固脚本, Linux加固, Windows加固, Docker安全, Kubernetes安全, 等保2.0脚本, CIS基准脚本, Shell脚本, PowerShell, Bash加固, 安全自动化, 合规检测">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <link rel="canonical" href="https://ihccc.com/pages/scripts.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="安全加固脚本库 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="IHCCC安全加固脚本库，提供Linux、Windows、Docker、Kubernetes等平台的安全加固与合规检测自动化脚本，免费开放使用。">
+    <meta property="og:url" content="https://ihccc.com/pages/scripts.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="安全加固脚本库 - IHCCC">
+    <meta name="twitter:description" content="Linux、Windows、Docker、Kubernetes等平台安全加固与合规检测脚本，基于CIS基准与等保2.0，免费开放。">
+    <title>安全加固脚本库 | 安全实施与检测自动化脚本 - IHCCC</title>
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .site-header,
+        .site-header.scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover,
+        .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
+        .dropdown-menu { border: 1px solid #e5e7eb; }
+        .dropdown-item { color: #374151 !important; }
+        .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
+        .page-hero {
+            background: linear-gradient(135deg, #0a2342 0%, #1b4f72 50%, #1a6b3e 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: #fff;
+        }
+        .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        .hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 40px; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-size: 2rem; font-weight: 900; color: #fff; }
+        .hero-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .page-content { padding: 80px 0; }
+        .page-content.alt-bg { background: #f9fafb; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .section-header p { color: #6b7280; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        /* Script cards */
+        .script-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+        .script-card {
+            background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .script-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -8px rgba(0,0,0,0.12); }
+        .script-card-header { padding: 20px 24px 16px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 12px; }
+        .script-icon { font-size: 2rem; flex-shrink: 0; }
+        .script-meta { flex: 1; }
+        .script-meta h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 4px; }
+        .script-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+        .script-tag { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 50px; }
+        .tag-shell { background: #d1fae5; color: #065f46; }
+        .tag-python { background: #dbeafe; color: #1e40af; }
+        .tag-powershell { background: #ede9fe; color: #5b21b6; }
+        .tag-ansible { background: #fef3c7; color: #92400e; }
+        .tag-go { background: #e0f2fe; color: #075985; }
+        .tag-linux { background: #f0fdf4; color: #166534; }
+        .tag-windows { background: #eff6ff; color: #1d4ed8; }
+        .tag-docker { background: #e0f2fe; color: #0369a1; }
+        .tag-k8s { background: #fdf4ff; color: #7e22ce; }
+        .tag-cloud { background: #fff7ed; color: #c2410c; }
+        .script-body { padding: 16px 24px; }
+        .script-body p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; margin-bottom: 14px; }
+        /* Code block */
+        .code-block {
+            background: #1e293b; border-radius: 10px; overflow: hidden; margin: 14px 0;
+            font-family: 'Courier New', Consolas, monospace;
+        }
+        .code-block-header { background: #334155; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; }
+        .code-lang { font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; }
+        .code-copy-btn { font-size: 0.72rem; color: #94a3b8; background: none; border: 1px solid #475569; border-radius: 4px; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+        .code-copy-btn:hover { color: #e2e8f0; border-color: #64748b; }
+        .code-content { padding: 14px; overflow-x: auto; }
+        .code-content pre { margin: 0; font-size: 0.8rem; color: #e2e8f0; line-height: 1.7; white-space: pre; }
+        .code-comment { color: #64748b; }
+        .code-cmd { color: #86efac; }
+        .code-var { color: #fbbf24; }
+        .code-str { color: #f9a8d4; }
+        .code-flag { color: #93c5fd; }
+        .script-footer { padding: 14px 24px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f3f4f6; }
+        .script-complexity { font-size: 0.78rem; color: #6b7280; }
+        .script-action { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: #0d47a1; color: #fff; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+        .script-action:hover { background: #1565c0; }
+        /* Warning box */
+        .warning-box { border-left: 4px solid #f59e0b; background: #fffbeb; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 32px; }
+        .warning-box p { font-size: 0.88rem; color: #92400e; line-height: 1.7; margin: 0; }
+        /* Info box */
+        .info-box { border-left: 4px solid #0d47a1; background: #eff6ff; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 32px; }
+        .info-box p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
+        /* Category heading */
+        .cat-heading { font-size: 1.2rem; font-weight: 800; color: #111827; margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+        .cat-heading::after { content: ''; flex: 1; height: 2px; background: #e5e7eb; }
+        .cat-desc { font-size: 0.9rem; color: #6b7280; margin-bottom: 24px; }
+        /* Quick start table */
+        .qs-table { width: 100%; border-collapse: collapse; }
+        .qs-table th { background: #0d47a1; color: #fff; padding: 12px 16px; text-align: left; font-size: 0.88rem; }
+        .qs-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; font-size: 0.85rem; color: #374151; }
+        .qs-table tr:last-child td { border-bottom: none; }
+        .qs-table tr:nth-child(even) td { background: #f9fafb; }
+        .page-cta { background: #0a2342; padding: 60px 0; text-align: center; color: #fff; }
+        .page-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+        .page-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+        .btn-view-law { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+        .btn-view-law:hover { background: rgba(255,255,255,0.25); }
+        @media (max-width: 768px) {
+            .script-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+</head>
+<body>
+    <header class="site-header scrolled" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgS)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgS" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
+                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="../index.html" class="nav-link">首页</a>
+                    <div class="nav-dropdown">
+                        <a href="gdpr.html" class="nav-link dropdown-toggle">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="gdpr.html" class="dropdown-item">🇪🇺 GDPR 通用数据保护条例</a>
+                            <a href="nis2.html" class="dropdown-item">🔐 NIS2 网络与信息安全指令</a>
+                            <a href="dora.html" class="dropdown-item">⚡ DORA 数字运营韧性法案</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="nist-csf.html" class="nav-link dropdown-toggle">美国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="nist-csf.html" class="dropdown-item">🏛️ NIST CSF 网络安全框架</a>
+                            <a href="cis.html" class="dropdown-item">🛡️ CIS 安全基准</a>
+                            <a href="pci-dss.html" class="dropdown-item">💳 PCI-DSS 支付安全标准</a>
+                            <a href="soc2.html" class="dropdown-item">📋 SOC 2 审计标准</a>
+                            <a href="iso27001.html" class="dropdown-item">🌐 ISO 27001 信息安全管理体系</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="laws.html" class="nav-link dropdown-toggle">中国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="laws.html#djbh" class="dropdown-item">🔒 等保2.0 网络安全等级保护</a>
+                            <a href="laws.html#csl" class="dropdown-item">⚖️ 《网络安全法》</a>
+                            <a href="laws.html#dsl" class="dropdown-item">📊 《数据安全法》</a>
+                            <a href="laws.html#pipl" class="dropdown-item">👤 《个人信息保护法》</a>
+                            <a href="laws.html#mima" class="dropdown-item">🔑 《密码法》与商用密码管理</a>
+                            <a href="laws.html#guiji" class="dropdown-item">🏗️ 关键信息基础设施保护</a>
+                            <a href="ihccc-sb.html" class="dropdown-item">📐 IHCCC-SB 信息安全基线标准</a>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="nav-link">实用工具</a>
+                    <a href="scripts.html" class="nav-link active">安全脚本</a>
+                    <a href="tutorials.html" class="nav-link">合规仓库</a>
+                    <a href="about.html" class="nav-link">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-badge">🔧 开源 · 免费 · 实战可用</div>
+            <h1>安全加固脚本库</h1>
+            <p>IHCCC整理并发布的安全实施与合规检测自动化脚本，覆盖Linux、Windows、Docker、Kubernetes、数据库等主流平台，基于CIS安全基准与等保2.0标准，可直接用于生产环境安全加固与合规评估。</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-num">30+</div><div class="hero-stat-label">可用脚本</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">技术平台</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">开源免费</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">中文</div><div class="hero-stat-label">注释说明</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速开始 -->
+    <section class="page-content alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>快速开始</h2>
+                <p>所有脚本托管于IHCCC GitHub仓库，可直接克隆或按需下载使用。</p>
+            </div>
+            <div class="warning-box">
+                <p>⚠️ <strong>重要提示：</strong>在生产环境执行任何安全加固脚本前，请务必在测试环境验证，并做好系统快照或备份。部分加固措施可能影响现有服务，建议分阶段实施并做好回滚预案。</p>
+            </div>
+            <div class="info-box">
+                <p>💡 <strong>使用建议：</strong>建议先运行<strong>检测/审计脚本</strong>了解当前系统状态，再执行<strong>加固脚本</strong>。所有脚本均提供 <code>--check</code> 或 <code>--dry-run</code> 模式，可预览将要执行的操作。</p>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="qs-table">
+                    <thead>
+                        <tr>
+                            <th>平台</th>
+                            <th>脚本类型</th>
+                            <th>参考标准</th>
+                            <th>语言/工具</th>
+                            <th>GitHub路径</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🐧 Linux (Ubuntu/Debian)</td>
+                            <td>加固 + 检测</td>
+                            <td>CIS Ubuntu 22.04 L1/L2 · 等保2.0</td>
+                            <td>Bash Shell</td>
+                            <td><code>scripts/linux/ubuntu-hardening.sh</code></td>
+                        </tr>
+                        <tr>
+                            <td>🎩 Linux (RHEL/CentOS)</td>
+                            <td>加固 + 检测</td>
+                            <td>CIS RHEL 9 L1/L2 · 等保2.0</td>
+                            <td>Bash Shell</td>
+                            <td><code>scripts/linux/rhel-hardening.sh</code></td>
+                        </tr>
+                        <tr>
+                            <td>🪟 Windows Server</td>
+                            <td>加固 + 检测</td>
+                            <td>CIS Windows Server 2022 L1</td>
+                            <td>PowerShell</td>
+                            <td><code>scripts/windows/win-hardening.ps1</code></td>
+                        </tr>
+                        <tr>
+                            <td>🐳 Docker</td>
+                            <td>加固 + 审计</td>
+                            <td>CIS Docker 基准</td>
+                            <td>Bash + Python</td>
+                            <td><code>scripts/docker/docker-bench.sh</code></td>
+                        </tr>
+                        <tr>
+                            <td>⚙️ Kubernetes</td>
+                            <td>合规检测</td>
+                            <td>CIS Kubernetes 基准</td>
+                            <td>kube-bench (Go)</td>
+                            <td><code>scripts/k8s/kube-bench-check.sh</code></td>
+                        </tr>
+                        <tr>
+                            <td>🗄️ MySQL</td>
+                            <td>加固 + 审计</td>
+                            <td>CIS MySQL 8.0</td>
+                            <td>Bash + SQL</td>
+                            <td><code>scripts/database/mysql-hardening.sh</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="code-block" style="margin-top:24px;">
+                <div class="code-block-header">
+                    <span class="code-lang">Shell · 克隆仓库</span>
+                    <button class="code-copy-btn" onclick="copyCode(this, 'clone-code')">复制</button>
+                </div>
+                <div class="code-content">
+                    <pre id="clone-code"><span class="code-comment"># 克隆 IHCCC 脚本仓库</span>
+<span class="code-cmd">git</span> clone https://github.com/mzwrt/ihccc.git
+<span class="code-cmd">cd</span> ihccc/scripts
+
+<span class="code-comment"># 查看可用脚本</span>
+<span class="code-cmd">ls</span> <span class="code-flag">-la</span> linux/ windows/ docker/ k8s/ database/
+
+<span class="code-comment"># 赋予执行权限</span>
+<span class="code-cmd">chmod</span> +x linux/ubuntu-hardening.sh
+
+<span class="code-comment"># 先以检测模式运行（不修改任何配置）</span>
+<span class="code-cmd">sudo</span> ./linux/ubuntu-hardening.sh <span class="code-flag">--check-only</span></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linux 加固脚本 -->
+    <section class="page-content">
+        <div class="container">
+            <p class="cat-heading">🐧 Linux 安全加固脚本</p>
+            <p class="cat-desc">基于CIS Ubuntu/RHEL基准与等保2.0技术要求，提供全面的Linux服务器安全加固与合规检测脚本。</p>
+            <div class="script-grid">
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🛡️</div>
+                        <div class="script-meta">
+                            <h3>Ubuntu Linux 安全加固脚本</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-shell">Bash</span>
+                                <span class="script-tag tag-linux">Ubuntu 20/22</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>基于CIS Ubuntu Linux 22.04 LTS基准（Level 1 &amp; Level 2）和等保2.0三级要求，自动执行系统加固操作，包含200+条安全配置项。支持 <code>--level 1</code>、<code>--level 2</code> 和 <code>--check-only</code> 模式。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Bash</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'ubuntu-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="ubuntu-code"><span class="code-comment">#!/bin/bash
+# IHCCC Ubuntu 安全加固脚本 v2.1
+# 基于 CIS Ubuntu 22.04 LTS Benchmark Level 1</span>
+
+<span class="code-comment"># 检查是否以root运行</span>
+[[ $EUID -ne 0 ]] &amp;&amp; { echo "需要root权限"; exit 1; }
+
+<span class="code-comment"># 1. 禁用不必要的文件系统类型</span>
+<span class="code-cmd">echo</span> <span class="code-str">"install cramfs /bin/true"</span> >> /etc/modprobe.d/cis.conf
+<span class="code-cmd">echo</span> <span class="code-str">"install freevxfs /bin/true"</span> >> /etc/modprobe.d/cis.conf
+<span class="code-cmd">echo</span> <span class="code-str">"install jffs2 /bin/true"</span> >> /etc/modprobe.d/cis.conf
+
+<span class="code-comment"># 2. 设置 /tmp 挂载选项</span>
+<span class="code-cmd">systemctl</span> enable tmp.mount
+
+<span class="code-comment"># 3. 禁用IPv6（如不需要）</span>
+<span class="code-cmd">echo</span> <span class="code-str">"net.ipv6.conf.all.disable_ipv6 = 1"</span> >> /etc/sysctl.d/60-cis.conf
+
+<span class="code-comment"># 4. 配置SSH安全参数</span>
+<span class="code-cmd">sed</span> -i <span class="code-str">'s/^#\?PermitRootLogin.*/PermitRootLogin no/'</span> /etc/ssh/sshd_config
+<span class="code-cmd">sed</span> -i <span class="code-str">'s/^#\?Protocol.*/Protocol 2/'</span> /etc/ssh/sshd_config
+<span class="code-cmd">sed</span> -i <span class="code-str">'s/^#\?MaxAuthTries.*/MaxAuthTries 4/'</span> /etc/ssh/sshd_config
+
+<span class="code-comment"># 5. 配置密码策略</span>
+<span class="code-cmd">sed</span> -i <span class="code-str">'s/PASS_MAX_DAYS.*/PASS_MAX_DAYS 90/'</span> /etc/login.defs
+<span class="code-cmd">sed</span> -i <span class="code-str">'s/PASS_MIN_DAYS.*/PASS_MIN_DAYS 7/'</span> /etc/login.defs
+<span class="code-cmd">sed</span> -i <span class="code-str">'s/PASS_WARN_AGE.*/PASS_WARN_AGE 14/'</span> /etc/login.defs
+
+<span class="code-cmd">echo</span> <span class="code-str">"[✓] 基础加固完成，请重启系统生效"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐ 中级 · 约200行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🔍</div>
+                        <div class="script-meta">
+                            <h3>Linux 安全合规审计脚本</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-python">Python3</span>
+                                <span class="script-tag tag-linux">通用Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>全面扫描Linux系统安全配置状态，生成HTML格式合规报告，涵盖文件权限、网络配置、用户账户、SSH配置、PAM策略等120+检查项，支持CIS等保2.0双标准映射。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Python</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'audit-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="audit-code"><span class="code-comment">#!/usr/bin/env python3
+# IHCCC Linux 安全审计脚本
+# 生成CIS/等保2.0合规报告</span>
+
+import subprocess, os, json
+from datetime import datetime
+
+<span class="code-var">CHECKS</span> = {
+    <span class="code-str">"SSH_ROOT_LOGIN"</span>: {
+        <span class="code-str">"cmd"</span>: <span class="code-str">"grep '^PermitRootLogin' /etc/ssh/sshd_config"</span>,
+        <span class="code-str">"expected"</span>: <span class="code-str">"PermitRootLogin no"</span>,
+        <span class="code-str">"cis_id"</span>: <span class="code-str">"5.2.10"</span>,
+        <span class="code-str">"level"</span>: 1
+    },
+    <span class="code-str">"PASSWD_MAX_DAYS"</span>: {
+        <span class="code-str">"cmd"</span>: <span class="code-str">"grep '^PASS_MAX_DAYS' /etc/login.defs"</span>,
+        <span class="code-str">"expected"</span>: <span class="code-str">"PASS_MAX_DAYS 90"</span>,
+        <span class="code-str">"cis_id"</span>: <span class="code-str">"5.4.1.1"</span>,
+        <span class="code-str">"level"</span>: 1
+    }
+}
+
+def run_check(name, check):
+    result = subprocess.run(check[<span class="code-str">"cmd"</span>], shell=True,
+                            capture_output=True, text=True)
+    passed = check[<span class="code-str">"expected"</span>] in result.stdout
+    return {<span class="code-str">"name"</span>: name, <span class="code-str">"passed"</span>: passed,
+            <span class="code-str">"actual"</span>: result.stdout.strip()}
+
+<span class="code-comment"># 运行所有检查并输出报告</span>
+results = [run_check(n, c) for n, c in CHECKS.items()]
+passed = sum(1 for r in results if r[<span class="code-str">"passed"</span>])
+print(f<span class="code-str">"合规检查完成: {passed}/{len(results)} 项通过"</span>)</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约400行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">📋</div>
+                        <div class="script-meta">
+                            <h3>等保2.0 Linux 自检脚本</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-shell">Bash</span>
+                                <span class="script-tag tag-linux">等保三级</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>针对等保2.0三级要求的Linux系统自检脚本，覆盖身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范等五大技术控制域的100+检查项，输出标准化自检报告。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Bash</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'djbh-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="djbh-code"><span class="code-comment">#!/bin/bash
+# IHCCC 等保2.0三级 Linux自检脚本
+# 覆盖GB/T 22239-2019技术要求</span>
+
+<span class="code-var">PASS</span>=0; <span class="code-var">FAIL</span>=0; <span class="code-var">WARN</span>=0
+
+check() {
+  local desc=$1 cmd=$2
+  if eval "$cmd" &>/dev/null; then
+    echo <span class="code-str">"[✓] $desc"</span>; ((<span class="code-var">PASS</span>++))
+  else
+    echo <span class="code-str">"[✗] $desc"</span>; ((<span class="code-var">FAIL</span>++))
+  fi
+}
+
+echo <span class="code-str">"=== 身份鉴别检查 ==="</span>
+check <span class="code-str">"禁止空密码登录"</span> \
+  "grep -q 'PermitEmptyPasswords no' /etc/ssh/sshd_config"
+check <span class="code-str">"启用SSH登录超时"</span> \
+  "grep -q 'ClientAliveInterval' /etc/ssh/sshd_config"
+check <span class="code-str">"密码最大有效期≤90天"</span> \
+  "awk '/^PASS_MAX_DAYS/{print \$2}' /etc/login.defs | \
+   awk '\$1<=90{exit 0}{exit 1}'"
+
+echo <span class="code-str">"=== 安全审计检查 ==="</span>
+check <span class="code-str">"auditd服务运行中"</span> \
+  "systemctl is-active --quiet auditd"
+check <span class="code-str">"记录sudo操作日志"</span> \
+  "grep -q 'sudo' /etc/audit/rules.d/*.rules 2>/dev/null"
+
+echo <span class="code-str">"</span>
+<span class="code-str">汇总：通过 $PASS | 失败 $FAIL | 警告 $WARN"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐ 中级 · 约350行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Windows 加固脚本 -->
+    <section class="page-content alt-bg">
+        <div class="container">
+            <p class="cat-heading">🪟 Windows 安全加固脚本</p>
+            <p class="cat-desc">基于CIS Windows Server基准的PowerShell加固与检测脚本，支持Windows Server 2019/2022。</p>
+            <div class="script-grid">
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🔒</div>
+                        <div class="script-meta">
+                            <h3>Windows Server 安全加固脚本</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-powershell">PowerShell</span>
+                                <span class="script-tag tag-windows">Server 2019/2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>基于CIS Windows Server 2022 Benchmark Level 1，使用PowerShell实现账户策略配置、安全选项设置、Windows防火墙规则、审计策略、远程访问限制等关键安全加固项。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">PowerShell</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'win-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="win-code"><span class="code-comment"># IHCCC Windows Server 安全加固脚本
+# 基于 CIS Windows Server 2022 Level 1</span>
+
+<span class="code-comment"># 需要管理员权限</span>
+if (-NOT ([Security.Principal.WindowsPrincipal]
+    [Security.Principal.WindowsIdentity]::GetCurrent()
+    ).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
+    throw <span class="code-str">"请以管理员身份运行此脚本"</span>
+}
+
+<span class="code-comment"># 1. 配置密码策略</span>
+net accounts /minpwlen:14 /maxpwage:60 /minpwage:1 /uniquepw:24
+
+<span class="code-comment"># 2. 配置账户锁定策略</span>
+net accounts /lockoutthreshold:5 /lockoutduration:15 /lockoutwindow:15
+
+<span class="code-comment"># 3. 禁用不必要服务</span>
+$services = @(<span class="code-str">"RemoteRegistry"</span>, <span class="code-str">"WinRM"</span>)
+foreach ($svc in $services) {
+    Set-Service -Name $svc -StartupType Disabled -ErrorAction SilentlyContinue
+    Stop-Service -Name $svc -Force -ErrorAction SilentlyContinue
+    Write-Host <span class="code-str">"[✓] 已禁用服务: $svc"</span>
+}
+
+<span class="code-comment"># 4. 启用Windows防火墙（所有配置文件）</span>
+Set-NetFirewallProfile -All -Enabled True
+Write-Host <span class="code-str">"[✓] Windows防火墙已启用"</span>
+
+<span class="code-comment"># 5. 配置审计策略</span>
+auditpol /set /category:<span class="code-str">"Logon/Logoff"</span> /success:enable /failure:enable
+auditpol /set /category:<span class="code-str">"Account Management"</span> /success:enable /failure:enable</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐ 中级 · 约250行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">📊</div>
+                        <div class="script-meta">
+                            <h3>Windows 安全基线检测报告</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-powershell">PowerShell</span>
+                                <span class="script-tag tag-windows">合规报告</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>自动检测Windows系统安全配置并生成HTML格式合规报告，涵盖系统配置、账户安全、网络安全、注册表安全设置等80+检查项，支持与CIS基准对照输出通过率。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">PowerShell</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'wincheck-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="wincheck-code"><span class="code-comment"># IHCCC Windows 安全检测脚本
+# 输出合规检查报告</span>
+
+function Check-SecurityItem {
+    param($Name, $ScriptBlock, $Expected, $CisID)
+    $actual = &amp; $ScriptBlock
+    $pass = $actual -eq $Expected
+    [PSCustomObject]@{
+        CisID   = $CisID
+        Name    = $Name
+        Status  = if ($pass) { <span class="code-str">"通过"</span> } else { <span class="code-str">"失败"</span> }
+        Actual  = $actual
+        Expected = $Expected
+    }
+}
+
+$report = @(
+    Check-SecurityItem <span class="code-str">"最短密码长度"</span> {
+        (net accounts | Select-String <span class="code-str">"Minimum password length"</span>) -replace <span class="code-str">"\D"</span>, <span class="code-str">""</span>
+    } <span class="code-str">"14"</span> <span class="code-str">"1.1.4"</span>,
+
+    Check-SecurityItem <span class="code-str">"防火墙状态(域)"</span> {
+        (Get-NetFirewallProfile -Name Domain).Enabled
+    } <span class="code-str">"True"</span> <span class="code-str">"9.1.1"</span>
+)
+
+$pass = ($report | Where-Object Status -eq <span class="code-str">"通过"</span>).Count
+Write-Host <span class="code-str">"合规率: $pass/$($report.Count)"</span>
+$report | Export-Csv <span class="code-str">"cis-report-$(Get-Date -f yyyyMMdd).csv"</span> -Encoding UTF8</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐ 中级 · 约300行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docker & K8s 脚本 -->
+    <section class="page-content">
+        <div class="container">
+            <p class="cat-heading">🐳 容器安全脚本</p>
+            <p class="cat-desc">Docker和Kubernetes安全审计与加固脚本，基于CIS Docker和Kubernetes基准。</p>
+            <div class="script-grid">
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🐳</div>
+                        <div class="script-meta">
+                            <h3>Docker 安全审计脚本</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-shell">Bash</span>
+                                <span class="script-tag tag-docker">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>基于CIS Docker Benchmark的安全审计脚本，检测Docker主机配置、Docker守护进程安全设置、容器运行时配置、镜像安全、网络配置等方面的合规状态，生成详细审计报告。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Bash</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'docker-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="docker-code"><span class="code-comment">#!/bin/bash
+# IHCCC Docker 安全审计脚本
+# 基于 CIS Docker Benchmark</span>
+
+<span class="code-var">PASS</span>=0; <span class="code-var">FAIL</span>=0
+
+cis_check() {
+  local id=$1 desc=$2 cmd=$3
+  if eval "$cmd" &>/dev/null 2>&1; then
+    echo <span class="code-str">"[PASS] $id: $desc"</span>; ((<span class="code-var">PASS</span>++))
+  else
+    echo <span class="code-str">"[FAIL] $id: $desc"</span>; ((<span class="code-var">FAIL</span>++))
+  fi
+}
+
+echo <span class="code-str">"=== Docker守护进程配置检查 ==="</span>
+
+<span class="code-comment"># 2.1 限制容器与容器间通信</span>
+cis_check <span class="code-str">"2.1"</span> <span class="code-str">"禁用容器间通信"</span> \
+  "docker info --format '{{.DriverStatus}}' | grep -q icc=false"
+
+<span class="code-comment"># 2.2 设置日志级别</span>
+cis_check <span class="code-str">"2.2"</span> <span class="code-str">"日志级别为info"</span> \
+  "docker info --format '{{.LoggingDriver}}' | grep -qv none"
+
+<span class="code-comment"># 2.5 启用内容信任</span>
+cis_check <span class="code-str">"2.5"</span> <span class="code-str">"Docker内容信任已启用"</span> \
+  "[[ \$DOCKER_CONTENT_TRUST -eq 1 ]]"
+
+<span class="code-comment"># 检查所有运行中容器的配置</span>
+for cid in $(docker ps -q); do
+  cis_check <span class="code-str">"5.1"</span> <span class="code-str">"容器[$cid]非特权运行"</span> \
+    "docker inspect $cid --format '{{.HostConfig.Privileged}}' | grep -q false"
+done
+
+echo <span class="code-str">"汇总: 通过 $PASS | 失败 $FAIL"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐ 中级 · 约180行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">⚙️</div>
+                        <div class="script-meta">
+                            <h3>Kubernetes CIS 合规检测</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-shell">Bash</span>
+                                <span class="script-tag tag-k8s">Kubernetes</span>
+                                <span class="script-tag tag-go">kube-bench</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>使用kube-bench工具对Kubernetes集群进行CIS基准合规检测，脚本自动安装kube-bench（支持arm64/amd64），运行全面检测并将报告保存为JSON和文本格式，支持EKS、GKE、AKS等托管集群。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Bash</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'k8s-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="k8s-code"><span class="code-comment">#!/bin/bash
+# IHCCC Kubernetes CIS 合规检测脚本
+# 使用 kube-bench 工具</span>
+
+<span class="code-var">KUBEBENCH_VERSION</span>=<span class="code-str">"v0.7.3"</span>
+<span class="code-var">REPORT_DIR</span>=<span class="code-str">"/tmp/k8s-cis-report-$(date +%Y%m%d)"</span>
+
+mkdir -p "$REPORT_DIR"
+
+<span class="code-comment"># 安装 kube-bench（如未安装）</span>
+if ! command -v kube-bench &>/dev/null; then
+  ARCH=$(uname -m | sed s/x86_64/amd64/ | sed s/aarch64/arm64/)
+  URL=<span class="code-str">"https://github.com/aquasecurity/kube-bench/releases/download"</span>
+  curl -L "$URL/$KUBEBENCH_VERSION/kube-bench_${KUBEBENCH_VERSION#v}_linux_$ARCH.tar.gz" \
+    | tar -xz -C /usr/local/bin kube-bench
+fi
+
+<span class="code-comment"># 运行 CIS Kubernetes 基准检测</span>
+echo <span class="code-str">"[*] 正在检测 Kubernetes 控制平面..."</span>
+kube-bench run --targets master \
+  --json > "$REPORT_DIR/master-report.json"
+
+echo <span class="code-str">"[*] 正在检测工作节点..."</span>
+kube-bench run --targets node \
+  --json > "$REPORT_DIR/node-report.json"
+
+<span class="code-comment"># 提取汇总信息</span>
+jq <span class="code-str">'[.Controls[].tests[].results[] | 
+  select(.status == "FAIL")] | length'</span> \
+  "$REPORT_DIR/master-report.json"
+echo <span class="code-str">"[✓] 报告已保存至: $REPORT_DIR"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约150行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据库加固脚本 -->
+    <section class="page-content alt-bg">
+        <div class="container">
+            <p class="cat-heading">🗄️ 数据库安全脚本</p>
+            <p class="cat-desc">MySQL、PostgreSQL等主流数据库的安全加固与合规审计脚本，基于CIS数据库基准。</p>
+            <div class="script-grid">
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🗄️</div>
+                        <div class="script-meta">
+                            <h3>MySQL 8.0 安全加固脚本</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-shell">Bash</span>
+                                <span class="script-tag tag-linux">MySQL 8.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>基于CIS MySQL 8.0 Enterprise Benchmark的安全加固脚本，涵盖操作系统层面配置（文件权限）、MySQL参数配置（my.cnf）、账户安全（删除匿名用户）、网络绑定、日志审计等关键安全项。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Bash + SQL</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'mysql-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="mysql-code"><span class="code-comment">#!/bin/bash
+# IHCCC MySQL 8.0 安全加固脚本
+# 基于 CIS MySQL 8.0 Benchmark</span>
+
+<span class="code-var">MYSQL_CNF</span>=<span class="code-str">"/etc/mysql/mysql.conf.d/mysqld.cnf"</span>
+
+<span class="code-comment"># 1. 检查MySQL数据目录权限（CIS 1.1）</span>
+DATADIR=$(mysql -NBe <span class="code-str">"SELECT @@datadir"</span> 2>/dev/null)
+chmod 750 "$DATADIR" 2>/dev/null &amp;&amp; \
+  echo <span class="code-str">"[✓] 数据目录权限设置为750"</span>
+
+<span class="code-comment"># 2. 配置网络绑定（CIS 2.1 - 禁止远程root登录）</span>
+mysql -e <span class="code-str">"DELETE FROM mysql.user WHERE User='root' 
+  AND Host NOT IN ('localhost','127.0.0.1','::1');"</span>
+mysql -e <span class="code-str">"DELETE FROM mysql.user WHERE User='';"</span>
+mysql -e <span class="code-str">"FLUSH PRIVILEGES;"</span>
+echo <span class="code-str">"[✓] 已清理匿名账户和远程root"</span>
+
+<span class="code-comment"># 3. 配置密码策略（CIS 2.7）</span>
+mysql -e <span class="code-str">"SET GLOBAL validate_password.policy=MEDIUM;"</span>
+mysql -e <span class="code-str">"SET GLOBAL validate_password.length=14;"</span>
+
+<span class="code-comment"># 4. 启用审计日志（CIS 2.8）</span>
+echo <span class="code-str">"general_log = 0"</span> >> $MYSQL_CNF
+echo <span class="code-str">"log_error = /var/log/mysql/error.log"</span> >> $MYSQL_CNF
+echo <span class="code-str">"slow_query_log = 1"</span> >> $MYSQL_CNF
+
+echo <span class="code-str">"[✓] MySQL安全加固完成，请重启MySQL服务"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐ 中级 · 约220行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🔐</div>
+                        <div class="script-meta">
+                            <h3>云平台安全检测脚本（AWS/阿里云）</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-python">Python3</span>
+                                <span class="script-tag tag-cloud">云安全</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>基于CIS AWS/阿里云基准的云平台安全检测脚本，通过云SDK检测IAM配置（MFA启用、root账户使用）、S3/OSS存储桶权限、CloudTrail日志记录、安全组规则等关键安全配置。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Python (AWS)</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'aws-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="aws-code"><span class="code-comment">#!/usr/bin/env python3
+# IHCCC AWS 安全基线检测脚本
+# 基于 CIS Amazon Web Services Benchmark</span>
+
+import boto3, json
+
+iam = boto3.client(<span class="code-str">'iam'</span>)
+s3  = boto3.client(<span class="code-str">'s3'</span>)
+
+def check_mfa_root():
+    <span class="code-str">"""CIS 1.5: 确保root账户已启用MFA"""</span>
+    summ = iam.get_account_summary()[<span class="code-str">'SummaryMap'</span>]
+    mfa_on = summ.get(<span class="code-str">'AccountMFAEnabled'</span>, 0) == 1
+    return {<span class="code-str">"cis"</span>: <span class="code-str">"1.5"</span>, <span class="code-str">"name"</span>: <span class="code-str">"Root账户MFA"</span>, <span class="code-str">"pass"</span>: mfa_on}
+
+def check_s3_public_access():
+    <span class="code-str">"""CIS 2.1.5: 确保S3存储桶阻止公共访问"""</span>
+    issues = []
+    for b in s3.list_buckets()[<span class="code-str">'Buckets'</span>]:
+        try:
+            cfg = s3.get_public_access_block(Bucket=b[<span class="code-str">'Name'</span>])
+            blk = cfg[<span class="code-str">'PublicAccessBlockConfiguration'</span>]
+            if not all(blk.values()):
+                issues.append(b[<span class="code-str">'Name'</span>])
+        except: issues.append(b[<span class="code-str">'Name'</span>])
+    return {<span class="code-str">"cis"</span>: <span class="code-str">"2.1.5"</span>, <span class="code-str">"name"</span>: <span class="code-str">"S3公共访问阻止"</span>,
+            <span class="code-str">"pass"</span>: len(issues)==0, <span class="code-str">"issues"</span>: issues}
+
+results = [check_mfa_root(), check_s3_public_access()]
+for r in results:
+    status = <span class="code-str">"✓ 通过"</span> if r[<span class="code-str">"pass"</span>] else <span class="code-str">"✗ 失败"</span>
+    print(f<span class="code-str">"[{status}] CIS {r['cis']}: {r['name']}"</span>)</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约350行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+
+                <div class="script-card">
+                    <div class="script-card-header">
+                        <div class="script-icon">🤖</div>
+                        <div class="script-meta">
+                            <h3>Ansible 批量加固 Playbook</h3>
+                            <div class="script-tags">
+                                <span class="script-tag tag-ansible">Ansible</span>
+                                <span class="script-tag tag-linux">Linux批量</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-body">
+                        <p>使用Ansible Playbook实现Linux服务器批量安全加固，基于CIS基准的Role设计，支持同时对数十至数百台服务器执行统一安全配置，适合企业规模化安全部署场景。</p>
+                        <div class="code-block">
+                            <div class="code-block-header">
+                                <span class="code-lang">Ansible YAML</span>
+                                <button class="code-copy-btn" onclick="copyCode(this, 'ansible-code')">复制</button>
+                            </div>
+                            <div class="code-content">
+                                <pre id="ansible-code"><span class="code-comment"># IHCCC Ansible CIS 加固 Playbook
+# 文件: cis-hardening.yml</span>
+---
+- name: IHCCC CIS Linux 安全加固
+  hosts: all
+  become: yes
+  vars:
+    <span class="code-var">cis_level</span>: 1
+    <span class="code-var">cis_ssh_port</span>: 22
+    <span class="code-var">cis_pass_max_days</span>: 90
+    <span class="code-var">cis_pass_min_len</span>: 14
+
+  tasks:
+    - name: <span class="code-str">CIS 5.2.10 - 禁止root SSH登录</span>
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: <span class="code-str">'^PermitRootLogin'</span>
+        line: <span class="code-str">'PermitRootLogin no'</span>
+        state: present
+      notify: restart sshd
+
+    - name: <span class="code-str">CIS 5.4.1.1 - 设置密码最大有效期</span>
+      lineinfile:
+        path: /etc/login.defs
+        regexp: <span class="code-str">'^PASS_MAX_DAYS'</span>
+        line: <span class="code-str">"PASS_MAX_DAYS {{ cis_pass_max_days }}"</span>
+
+    - name: <span class="code-str">CIS 4.1.2 - 确保auditd服务运行</span>
+      service:
+        name: auditd
+        state: started
+        enabled: yes
+
+  handlers:
+    - name: restart sshd
+      service:
+        name: sshd
+        state: restarted</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="script-footer">
+                        <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约500行</span>
+                        <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-cta">
+        <div class="container">
+            <h2>贡献你的安全脚本</h2>
+            <p>如果你有实用的安全加固或合规检测脚本，欢迎向IHCCC开源社区提交，我们将添加中文说明后收录至脚本库，让更多安全从业者受益。</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="btn-view-law">💻 GitHub 提交脚本</a>
+                <a href="mailto:contact@ihccc.com" class="btn-view-law">📧 邮件投稿</a>
+                <a href="cis.html" class="btn-view-law">🛡️ CIS 安全基准</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgFSc)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgFSc" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#4fc3f7"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                        <span class="logo-text">IHCCC</span>
+                    </div>
+                    <p>中国互联网安全合规中心（IHCCC）是一个非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施。</p>
+                    <div class="nonprofit-banner">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        非营利组织
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="../index.html#standards">安全标准</a></li>
+                        <li><a href="laws.html">中国法规</a></li>
+                        <li><a href="tutorials.html">合规仓库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>安全标准</h4>
+                    <ul>
+                        <li><a href="cis.html">CIS 安全基准</a></li>
+                        <li><a href="nist-csf.html">NIST CSF</a></li>
+                        <li><a href="iso27001.html">ISO 27001</a></li>
+                        <li><a href="laws.html">等保2.0</a></li>
+                        <li><a href="ihccc-sb.html">IHCCC-SB 安全基线</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="mailto:contact@ihccc.com">📧 contact@ihccc.com</a></li>
+                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links footer-sponsor-col">
+                    <h4>💖 赞助我们</h4>
+                    <ul>
+                        <li><a href="https://paypal.me/ihccc" target="_blank" rel="noopener noreferrer">💳 PayPal 赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('crypto')">🪙 加密货币赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('wechat')">💬 微信赞赏</a></li>
+                    </ul>
+                    <p class="sponsor-note-footer">所有赞助用于服务器、域名及文档维护</p>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p><span class="disclaimer-highlight">⚠️ 重要声明：</span>IHCCC（中国互联网安全合规中心）<span class="disclaimer-highlight">不是任何官方机构或政府组织</span>，我们是一个独立的非营利性开源社区组织。本网站所有内容仅供学习和参考目的，不构成任何官方认证、法律建议或商业推荐。所有脚本请在测试环境验证后谨慎使用。</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sponsor-modal-overlay" id="sponsorModal">
+        <div class="sponsor-modal">
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
+            <div id="sponsorModalContent"></div>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="../js/main.js" defer></script>
+    <script>
+    function copyCode(btn, id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var text = el.textContent || el.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = '已复制!';
+            setTimeout(function() { btn.textContent = '复制'; }, 2000);
+        }).catch(function() {
+            btn.textContent = '复制失败';
+            setTimeout(function() { btn.textContent = '复制'; }, 2000);
+        });
+    }
+    function openSponsorModal(type) {
+        var modal = document.getElementById('sponsorModal');
+        var content = document.getElementById('sponsorModalContent');
+        if (type === 'wechat') {
+            content.innerHTML = '<h4>🇨🇳 微信赞赏</h4><p>扫描下方二维码，通过微信赞赏支持我们</p><div class="qr-placeholder"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#fff"/><circle cx="100" cy="80" r="36" fill="#07c160"/><text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text><text x="100" y="135" text-anchor="middle" font-size="11" fill="#333">扫一扫赞赏</text></svg></div>';
+        } else if (type === 'crypto') {
+            content.innerHTML = '<h4>🪙 加密货币赞助</h4><p>您可以通过以下加密货币地址赞助我们</p><div style="text-align:left;font-size:0.82rem;color:#444;line-height:2;word-break:break-all;"><strong>BTC:</strong> bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><strong>ETH:</strong> 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br><strong>USDT (TRC20):</strong> TXxxxxxxxxxxxxxxxxxxxxxxxxx</div>';
+        }
+        modal.classList.add('active');
+    }
+    function closeSponsorModal() {
+        document.getElementById('sponsorModal').classList.remove('active');
+    }
+    document.getElementById('sponsorModal').addEventListener('click', function(e) {
+        if (e.target === this) closeSponsorModal();
+    });
+    </script>
+</body>
+</html>

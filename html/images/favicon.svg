@@ -1,0 +1,10 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#faviconGrad)" opacity="0.9"/>
+  <text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text>
+  <defs>
+    <linearGradient id="faviconGrad" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d47a1"/>
+      <stop offset="1" stop-color="#00897b"/>
+    </linearGradient>
+  </defs>
+</svg>

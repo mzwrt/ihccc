@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#fef0f0"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="13" fill="#ee0000">Red Hat</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#fff5f5"/>
+  <ellipse cx="30" cy="34" rx="15" ry="4.5" fill="#EE0000"/>
+  <path d="M15 34 Q22 24 30 22 Q38 24 45 34" fill="#CC0000"/>
+  <ellipse cx="30" cy="34" rx="15" ry="4.5" fill="none" stroke="#AA0000" stroke-width="0.5"/>
+  <path d="M15 36 Q22 42 30 43 Q38 42 45 36 L45 34 Q38 38 30 39 Q22 38 15 34 Z" fill="#CC0000"/>
 </svg>

@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#f0f7f0"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="11" fill="#34a853">Google Cloud</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#f8f9ff"/>
+  <g transform="translate(5,16) scale(2.1)">
+    <path d="M23.85 10.15c-.39-3.08-2.99-5.46-6.18-5.46-1.49 0-2.86.53-3.93 1.4A5.36 5.36 0 0 0 9.47 4C6.48 4 4.06 6.42 4.06 9.41c0 .35.04.7.1 1.03A5.53 5.53 0 0 0 0 15.5C0 18.54 2.46 21 5.5 21h16c2.76 0 5-2.24 5-5 0-2.44-1.74-4.48-4.04-4.93l-.61.08z" fill="#4285F4"/>
+    <path d="M9.47 4a5.36 5.36 0 0 1 4.27 2.09" fill="none" stroke="#34A853" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
 </svg>

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#fef0f0"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="11" fill="#e53935">CrowdStrike</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#fff5f5"/>
+  <text x="30" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#E00000">CROWD</text>
+  <text x="30" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#E00000">STRIKE</text>
 </svg>

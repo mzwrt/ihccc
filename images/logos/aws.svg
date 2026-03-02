@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60">
-  <rect width="120" height="60" rx="12" fill="#fff8f0"/>
-  <text x="60" y="36" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="16" fill="#ff9900">AWS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <rect width="60" height="60" rx="12" fill="#fff8f0"/>
+  <text x="30" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#232F3E">aws</text>
+  <path d="M18 38 Q30 45 42 38" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round"/>
+  <path d="M39 35 L42 38 L39 41" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

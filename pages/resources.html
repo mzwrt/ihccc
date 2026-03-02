@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IHCCC资源中心 - 免费的中文安全合规资源，技术文档、法规解读和合规指南。非营利组织，不从事任何商业活动。">
+    <meta name="keywords" content="安全合规资源, ISO 27001, NIST CSF, SOC 2, 等保2.0, 网络安全法, 数据安全法, 个人信息保护法, 安全模板, 合规指南, 技术文档">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <link rel="canonical" href="https://ihccc.com/pages/resources.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="资源中心 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="免费的中文安全合规资源，涵盖ISO 27001、NIST CSF、SOC 2、等保2.0等技术文档、法规解读和合规指南。">
+    <meta property="og:url" content="https://ihccc.com/pages/resources.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="资源中心 - IHCCC">
+    <meta name="twitter:description" content="免费的中文安全合规资源，涵盖ISO 27001、NIST CSF、SOC 2、等保2.0等技术文档与合规指南。">
     <title>资源中心 - IHCCC 中国互联网安全合规中心</title>
     <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
     <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -12,10 +27,19 @@
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        .site-header,
         .site-header.scrolled {
             background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
         }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover,
+        .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
         .page-hero {
             background: linear-gradient(135deg, #1a237e 0%, #303f9f 50%, #283593 100%);
             padding: 140px 0 80px;
@@ -67,12 +91,12 @@
                     <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
                 </button>
                 <nav class="main-nav" id="mainNav">
-                    <a href="../index.html" class="nav-link" style="color:#374151">首页</a>
-                    <a href="../index.html#about" class="nav-link" style="color:#374151">关于我们</a>
-                    <a href="../index.html#standards" class="nav-link" style="color:#374151">安全标准</a>
-                    <a href="../index.html#resources" class="nav-link active" style="color:#0d47a1;background:#e3f0ff">资源中心</a>
-                    <a href="tutorials.html" class="nav-link" style="color:#374151">教程仓库</a>
-                    <a href="../index.html#news" class="nav-link" style="color:#374151">新闻动态</a>
+                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="../index.html#about" class="nav-link">关于我们</a>
+                    <a href="../index.html#standards" class="nav-link">安全标准</a>
+                    <a href="laws.html" class="nav-link">中国法规</a>
+                    <a href="tutorials.html" class="nav-link">教程仓库</a>
+                    <a href="../index.html#news" class="nav-link">新闻动态</a>
                 </nav>
             </div>
         </div>

@@ -232,6 +232,7 @@ img {
 .main-nav {
     display: flex;
     gap: 4px;
+    margin-left: 32px;
 }
 
 .nav-link {

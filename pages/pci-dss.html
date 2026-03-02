@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PCI-DSS支付安全标准中文资源 - IHCCC提供PCI-DSS标准的中文翻译与合规实施指导">
     <meta name="keywords" content="PCI-DSS, PCI DSS v4.0, 支付安全标准, 支付卡行业数据安全, 持卡人数据, 支付合规, 安全合规, 数据安全, 网络安全">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="IHCCC 中国互联网安全合规中心">
     <link rel="canonical" href="https://ihccc.com/pages/pci-dss.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/pci-dss.html">
+    <link rel="alternate" hreflang="en" href="https://ihccc.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://ihccc.com/pages/pci-dss.html">
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="PCI-DSS 支付安全标准 - IHCCC 中国互联网安全合规中心">
@@ -15,6 +18,8 @@
     <meta property="og:url" content="https://ihccc.com/pages/pci-dss.html">
     <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
     <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://ihccc.com/images/favicon.svg">
+    <meta property="og:image:alt" content="IHCCC 中国互联网安全合规中心">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="PCI-DSS 支付安全标准 - IHCCC">
@@ -119,6 +124,7 @@
                     <a href="scripts.html" class="nav-link">安全脚本</a>
                     <a href="tutorials.html" class="nav-link">合规仓库</a>
                     <a href="about.html" class="nav-link">关于我们</a>
+                    <a href="../en/index.html" class="nav-link lang-toggle" title="Switch to English">🌐 EN</a>
                 </nav>
             </div>
         </div>
@@ -212,7 +218,7 @@
         <div class="container">
             <h2>需要PCI-DSS合规指导？</h2>
             <p>我们提供免费的PCI-DSS合规实施指南和咨询服务，帮助您的组织满足支付安全标准要求。</p>
-            <a href="mailto:contact@ihccc.com" class="btn btn-secondary btn-lg">邮件咨询</a>
+            <a href="mailto:support@ihccc.com" class="btn btn-secondary btn-lg">邮件咨询</a>
         </div>
     </section>
 
@@ -257,7 +263,7 @@
                 <div class="footer-links">
                     <h4>联系我们</h4>
                     <ul>
-                        <li><a href="mailto:contact@ihccc.com">📧 contact@ihccc.com</a></li>
+                        <li><a href="mailto:support@ihccc.com">📧 support@ihccc.com</a></li>
                         <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
                         <li><span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">工作时间: 周一至周五 9:00-18:00</span></li>
                     </ul>
@@ -362,6 +368,61 @@
     document.getElementById('sponsorModal').addEventListener('click', function(e) {
         if (e.target === this) closeSponsorModal();
     });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "PCI-DSS支付安全标准中文指南",
+                "description": "支付卡行业数据安全标准（PCI DSS）完整中文资源，包括合规要求、SAQ自我评估问卷、持卡人数据保护指南",
+                "url": "https://ihccc.com/pages/pci-dss.html",
+                "inLanguage": "zh-CN",
+                "author": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ihccc.com/images/favicon.svg"
+                    }
+                },
+                "datePublished": "2024-01-01",
+                "dateModified": "2026-03-01",
+                "mainEntityOfPage": "https://ihccc.com/pages/pci-dss.html",
+                "keywords": "PCI-DSS,支付卡行业数据安全标准,支付安全,持卡人数据,SAQ,支付合规,信用卡安全,数据安全"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://ihccc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "美国标准",
+            "item": "https://ihccc.com/pages/nist-csf.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "PCI-DSS",
+            "item": "https://ihccc.com/pages/pci-dss.html"
+        }
+                ]
+            }
+        ]
+    }
     </script>
 </body>
 </html>

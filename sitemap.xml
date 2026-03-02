@@ -1,130 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://ihccc.com/</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://ihccc.com/en/"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://ihccc.com/en/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://ihccc.com/en/"/>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/"/>
-        <lastmod>2026-03-02</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
         <loc>https://ihccc.com/pages/laws.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/laws.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/ihccc-cs.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/ihccc-cs.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/iso27001.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/iso27001.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/gdpr.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/gdpr.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/nist-csf.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/nist-csf.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/pci-dss.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/pci-dss.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/soc2.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/soc2.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/cis.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/cis.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/nis2.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/nis2.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/dora.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/dora.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/ihccc-sb.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/ihccc-sb.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/tutorials.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/tutorials.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/tools.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/tools.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/scripts.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/scripts.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/resources.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/resources.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://ihccc.com/pages/about.html</loc>
-        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/about.html"/>
         <lastmod>2026-03-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>

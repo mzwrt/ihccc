@@ -47,6 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Mobile dropdown toggle
+    mainNav.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                var dropdown = this.closest('.nav-dropdown');
+                dropdown.classList.toggle('open');
+            }
+        });
+    });
+
     // --- Active nav link on scroll ---
     var sections = document.querySelectorAll('section[id]');
 

@@ -232,6 +232,7 @@ img {
 .main-nav {
     display: flex;
     gap: 4px;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -1258,6 +1259,11 @@ img {
 .partner-logo svg {
     width: 60px;
     height: 60px;
+}
+.partner-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 .partner-name {
     font-size: 0.8rem;

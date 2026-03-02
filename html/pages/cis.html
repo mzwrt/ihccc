@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CIS安全基准中文资源 - IHCCC提供全面的CIS Benchmark中文翻译与实施指导，涵盖操作系统、云平台、容器、数据库等多个技术领域">
     <meta name="keywords" content="CIS Benchmark, CIS安全基准, CIS Controls, 互联网安全中心, 安全配置, 安全加固, Windows安全, Linux安全, 云安全, Docker安全, Kubernetes安全, 数据库安全, CIS Controls v8">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="IHCCC 中国互联网安全合规中心">
     <link rel="canonical" href="https://ihccc.com/pages/cis.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/cis.html">
+    <link rel="alternate" hreflang="x-default" href="https://ihccc.com/pages/cis.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="CIS 安全基准 - IHCCC 中国互联网安全合规中心">
     <meta property="og:description" content="CIS Benchmark安全基准中文资源，涵盖Windows、Linux、云平台、容器、数据库等多个技术领域的安全配置最佳实践。">
     <meta property="og:url" content="https://ihccc.com/pages/cis.html">
     <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
     <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://ihccc.com/images/favicon.svg">
+    <meta property="og:image:alt" content="IHCCC 中国互联网安全合规中心">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="CIS 安全基准 - IHCCC">
     <meta name="twitter:description" content="CIS Benchmark安全基准中文资源，涵盖Windows、Linux、云平台、容器、数据库等技术领域的安全配置最佳实践。">
@@ -431,14 +435,14 @@
                     <span class="status-badge status-planned">📋 计划中</span>
                     <h3>CIS 腾讯云基准（社区版）</h3>
                     <p>基于CIS方法论，适配腾讯云平台的安全配置基准，覆盖CAM访问管理、COS存储安全、TencentDB配置、CVM实例加固等腾讯云核心服务的安全最佳实践。</p>
-                    <a href="mailto:contact@ihccc.com" class="resource-link">参与编写 →</a>
+                    <a href="mailto:support@ihccc.com" class="resource-link">参与编写 →</a>
                 </div>
                 <div class="benchmark-item">
                     <span class="benchmark-tag tag-cloud">云平台</span>
                     <span class="status-badge status-planned">📋 计划中</span>
                     <h3>CIS 华为云基准（社区版）</h3>
                     <p>基于CIS方法论，适配华为云平台的安全配置基准，覆盖IAM身份管理、OBS存储安全、RDS数据库、ECS实例配置等华为云服务的安全最佳实践。</p>
-                    <a href="mailto:contact@ihccc.com" class="resource-link">参与编写 →</a>
+                    <a href="mailto:support@ihccc.com" class="resource-link">参与编写 →</a>
                 </div>
             </div>
 
@@ -509,7 +513,7 @@
                     <span class="status-badge status-planned">📋 计划中</span>
                     <h3>CIS Redis 7 基准（社区版）</h3>
                     <p>基于CIS方法论，针对Redis缓存数据库的安全配置指南，涵盖redis.conf安全配置（requirepass、bind、protected-mode）、ACL访问控制列表、TLS加密、持久化安全配置等关键控制。</p>
-                    <a href="mailto:contact@ihccc.com" class="resource-link">参与编写 →</a>
+                    <a href="mailto:support@ihccc.com" class="resource-link">参与编写 →</a>
                 </div>
             </div>
 
@@ -659,7 +663,7 @@
             <h2>参与翻译与贡献</h2>
             <p>我们诚邀安全从业者加入翻译志愿者团队，共同推动CIS安全基准的中文化工作，或贡献自动化加固脚本。</p>
             <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-                <a href="mailto:contact@ihccc.com" class="btn-view-law">📧 邮件联系</a>
+                <a href="mailto:support@ihccc.com" class="btn-view-law">📧 邮件联系</a>
                 <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="btn-view-law">💻 GitHub 贡献</a>
                 <a href="scripts.html" class="btn-view-law">🔧 安全脚本库</a>
             </div>
@@ -705,7 +709,7 @@
                 <div class="footer-links">
                     <h4>联系我们</h4>
                     <ul>
-                        <li><a href="mailto:contact@ihccc.com">📧 contact@ihccc.com</a></li>
+                        <li><a href="mailto:support@ihccc.com">📧 support@ihccc.com</a></li>
                         <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
                         <li><span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">工作时间: 周一至周五 9:00-18:00</span></li>
                     </ul>
@@ -760,6 +764,61 @@
     document.getElementById('sponsorModal').addEventListener('click', function(e) {
         if (e.target === this) closeSponsorModal();
     });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "CIS安全基准中文指南 - CIS Benchmarks",
+                "description": "CIS互联网安全中心安全基准（CIS Benchmarks）完整中文资源，覆盖操作系统、云平台、网络设备的安全配置最佳实践",
+                "url": "https://ihccc.com/pages/cis.html",
+                "inLanguage": "zh-CN",
+                "author": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ihccc.com/images/favicon.svg"
+                    }
+                },
+                "datePublished": "2024-01-01",
+                "dateModified": "2026-03-01",
+                "mainEntityOfPage": "https://ihccc.com/pages/cis.html",
+                "keywords": "CIS Benchmarks,CIS安全基准,互联网安全中心,安全配置,操作系统安全,云安全,网络设备安全"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://ihccc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "美国标准",
+            "item": "https://ihccc.com/pages/nist-csf.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CIS 安全基准",
+            "item": "https://ihccc.com/pages/cis.html"
+        }
+                ]
+            }
+        ]
+    }
     </script>
 </body>
 </html>

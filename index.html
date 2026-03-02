@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IHCCC - 中国互联网安全合规中心，非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施，为社会、企业和机构提供专业的安全合规解决方案。">
-    <meta name="keywords" content="CIS, PCI-DSS, ISO 27001, NIST, SOC 2, 网络安全, 合规, 安全标准, 中文, 信息安全, 安全基准, 等保2.0, GB/T 22239, 网络安全法, 数据安全法, 个人信息保护法, 密码法, 非营利组织, 合规性审查">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="IHCCC - 中国互联网安全合规中心，非营利性组织，提供CIS、PCI-DSS、ISO 27001、NIST CSF、SOC 2、等保2.0、GDPR等网络安全标准的中文资源，致力于推动互联网安全和信息合规领域的标准化与最佳实践。">
+    <meta name="keywords" content="IHCCC, 中国互联网安全合规中心, CIS安全基准, PCI-DSS支付安全, ISO 27001信息安全, NIST CSF网络安全框架, SOC 2审计, 等保2.0, GB/T 22239, 网络安全法, 数据安全法, 个人信息保护法, 密码法, GDPR, NIS2, DORA, 网络安全, 信息安全合规, 安全标准中文, 非营利组织">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <meta name="language" content="zh-CN">
+    <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="https://ihccc.com/">
+    <link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/">
+    <link rel="alternate" hreflang="en" href="https://ihccc.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://ihccc.com/">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="IHCCC - 中国互联网安全合规中心 | 非营利安全标准中文资源平台">
-    <meta property="og:description" content="中国互联网安全合规中心（IHCCC）是一个非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施。">
+    <meta property="og:description" content="中国互联网安全合规中心（IHCCC）是一个非营利性组织，提供CIS、PCI-DSS、ISO 27001、NIST CSF、SOC 2、等保2.0等网络安全标准的权威中文资源，致力于推动互联网安全和信息合规领域的标准化与最佳实践。">
     <meta property="og:url" content="https://ihccc.com/">
     <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
     <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://ihccc.com/images/favicon.svg">
+    <meta property="og:image:alt" content="IHCCC 中国互联网安全合规中心">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="IHCCC - 中国互联网安全合规中心">
-    <meta name="twitter:description" content="非营利性组织，致力于推动互联网安全和信息合规领域的标准化与最佳实践。">
+    <meta name="twitter:description" content="非营利性组织，提供CIS、ISO 27001、等保2.0等网络安全标准权威中文资源，致力于推动互联网安全和信息合规标准化与最佳实践。">
+    <meta name="twitter:image" content="https://ihccc.com/images/favicon.svg">
     <title>IHCCC - 中国互联网安全合规中心 | 非营利安全标准中文资源平台</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -77,6 +86,7 @@
                     <a href="pages/scripts.html" class="nav-link">安全脚本</a>
                     <a href="pages/tutorials.html" class="nav-link">合规仓库</a>
                     <a href="pages/about.html" class="nav-link">关于我们</a>
+                    <a href="en/index.html" class="nav-link lang-toggle" title="Switch to English">🌐 EN</a>
                 </nav>
             </div>
         </div>
@@ -959,15 +969,64 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "IHCCC 中国互联网安全合规中心",
-        "alternateName": "Information Hub for Certification & Compliance Center",
-        "url": "https://ihccc.com",
-        "description": "中国互联网安全合规中心（IHCCC）是一个非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施。",
-        "email": "support@ihccc.com",
-        "nonprofitStatus": "Nonprofit501c3",
-        "sameAs": [
-            "https://github.com/mzwrt/ihccc"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://ihccc.com/#organization",
+                "name": "IHCCC 中国互联网安全合规中心",
+                "alternateName": ["IHCCC", "China Internet Security & Compliance Center"],
+                "url": "https://ihccc.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ihccc.com/images/favicon.svg"
+                },
+                "description": "中国互联网安全合规中心（IHCCC）是一个非营利性组织，提供CIS、PCI-DSS、ISO 27001、NIST CSF、SOC 2、等保2.0等网络安全标准的权威中文资源，致力于推动互联网安全和信息合规领域的标准化与最佳实践。",
+                "email": "support@ihccc.com",
+                "nonprofitStatus": "Nonprofit501c3",
+                "foundingDate": "2024",
+                "knowsAbout": ["网络安全", "信息安全合规", "CIS安全基准", "PCI-DSS", "ISO 27001", "NIST CSF", "SOC 2", "等保2.0", "GDPR", "NIS2"],
+                "sameAs": [
+                    "https://github.com/mzwrt/ihccc"
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://ihccc.com/#website",
+                "url": "https://ihccc.com",
+                "name": "IHCCC 中国互联网安全合规中心",
+                "description": "非营利性网络安全标准中文资源平台",
+                "publisher": {"@id": "https://ihccc.com/#organization"},
+                "inLanguage": ["zh-CN", "en"],
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://ihccc.com/?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://ihccc.com/#webpage",
+                "url": "https://ihccc.com/",
+                "name": "IHCCC - 中国互联网安全合规中心 | 非营利安全标准中文资源平台",
+                "isPartOf": {"@id": "https://ihccc.com/#website"},
+                "about": {"@id": "https://ihccc.com/#organization"},
+                "description": "IHCCC提供CIS、PCI-DSS、ISO 27001、NIST CSF、SOC 2、等保2.0、GDPR等网络安全标准的权威中文资源。",
+                "inLanguage": "zh-CN",
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "首页",
+                            "item": "https://ihccc.com/"
+                        }
+                    ]
+                }
+            }
         ]
     }
     </script>

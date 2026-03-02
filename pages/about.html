@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="关于IHCCC中国互联网安全合规中心 - 非营利性开源组织，致力于推动网络安全标准化与最佳实践，提供免费中文安全合规资源">
     <meta name="keywords" content="IHCCC, 中国互联网安全合规中心, 非营利组织, 网络安全, 信息安全, 安全标准, 开源社区, 使命愿景, 关于我们">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="IHCCC 中国互联网安全合规中心">
     <link rel="canonical" href="https://ihccc.com/pages/about.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://ihccc.com/pages/about.html">
+    <link rel="alternate" hreflang="en" href="https://ihccc.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://ihccc.com/pages/about.html">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="关于我们 - IHCCC 中国互联网安全合规中心">
@@ -15,6 +18,8 @@
     <meta property="og:url" content="https://ihccc.com/pages/about.html">
     <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
     <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://ihccc.com/images/favicon.svg">
+    <meta property="og:image:alt" content="IHCCC 中国互联网安全合规中心">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="关于我们 - IHCCC 中国互联网安全合规中心">
@@ -231,6 +236,7 @@
                     <a href="scripts.html" class="nav-link">安全脚本</a>
                     <a href="tutorials.html" class="nav-link">合规仓库</a>
                     <a href="about.html" class="nav-link active">关于我们</a>
+                    <a href="../en/index.html" class="nav-link lang-toggle" title="Switch to English">🌐 EN</a>
                 </nav>
             </div>
         </div>
@@ -694,6 +700,55 @@
     document.getElementById('sponsorModal').addEventListener('click', function(e) {
         if (e.target === this) closeSponsorModal();
     });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "AboutPage",
+                "headline": "关于IHCCC - 中国互联网安全合规中心",
+                "description": "IHCCC是非营利性开源组织，致力于推动网络安全标准化与最佳实践，提供免费中文安全合规资源",
+                "url": "https://ihccc.com/pages/about.html",
+                "inLanguage": "zh-CN",
+                "author": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ihccc.com/images/favicon.svg"
+                    }
+                },
+                "datePublished": "2024-01-01",
+                "dateModified": "2026-03-01",
+                "mainEntityOfPage": "https://ihccc.com/pages/about.html",
+                "keywords": "IHCCC,中国互联网安全合规中心,非营利组织,网络安全,安全合规,开源社区"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://ihccc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "关于我们",
+            "item": "https://ihccc.com/pages/about.html"
+        }
+                ]
+            }
+        ]
+    }
     </script>
 </body>
 </html>

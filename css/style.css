@@ -260,6 +260,19 @@ img {
     color: var(--primary);
 }
 
+.nav-link.lang-toggle {
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    margin-left: 8px;
+}
+
+.site-header.scrolled .nav-link.lang-toggle {
+    border-color: var(--gray-300);
+}
+
 .mobile-menu-btn {
     display: none;
     flex-direction: column;

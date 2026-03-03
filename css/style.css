@@ -1416,6 +1416,7 @@ img {
 .nonprofit-banner svg {
     width: 14px;
     height: 14px;
+    flex-shrink: 0;
 }
 
 /* ===== Floating Decoration ===== */

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="关于IHCCC中国互联网安全合规中心 - 非营利性开源组织，致力于推动网络安全标准化与最佳实践，提供免费中文安全合规资源">
+    <meta name="keywords" content="IHCCC, 中国互联网安全合规中心, 非营利组织, 网络安全, 信息安全, 安全标准, 开源社区, 使命愿景, 关于我们">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <meta name="theme-color" content="#0d47a1">
+    <link rel="canonical" href="https://ihccc.com/about.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="关于我们 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="IHCCC是非营利性开源组织，致力于推动网络安全标准化与最佳实践，提供免费中文安全合规资源。">
+    <meta property="og:url" content="https://ihccc.com/about.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://ihccc.com/images/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IHCCC 关于我们 - 非营利网络安全合规中心介绍">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="关于我们 - IHCCC 中国互联网安全合规中心">
+    <meta name="twitter:description" content="IHCCC是非营利性开源组织，致力于推动网络安全标准化与最佳实践，提供免费中文安全合规资源。">
+    <meta name="twitter:image" content="https://ihccc.com/images/og-cover.png">
+    <title>关于我们 - IHCCC 中国互联网安全合规中心</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .site-header,
+        .site-header.scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover,
+        .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
+
+        .page-hero {
+            background: linear-gradient(135deg, #061830 0%, #0d47a1 50%, #1565c0 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: #fff;
+        }
+        .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .hero-badge {
+            display: inline-block; padding: 6px 18px;
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3); border-radius: 50px;
+            color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;
+        }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 48px; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-size: 2.2rem; font-weight: 900; color: #fff; }
+        .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .section-header p { color: #6b7280; font-size: 1rem; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+
+        /* 组织简介 */
+        .intro-section { padding: 80px 0; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        @media (max-width: 768px) { .intro-grid { grid-template-columns: 1fr; } }
+        .intro-text h2 { font-size: 1.8rem; font-weight: 800; color: #111827; margin-bottom: 16px; }
+        .intro-text p { color: #374151; line-height: 1.8; margin-bottom: 16px; }
+        .nonprofit-banner-lg {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: linear-gradient(135deg, #0d47a1, #1565c0);
+            color: #fff; padding: 10px 20px; border-radius: 50px;
+            font-size: 0.9rem; font-weight: 700; margin-bottom: 20px;
+        }
+        .full-name-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eefb 100%);
+            border: 1px solid #c5cae9; border-radius: 16px; padding: 24px; margin-top: 24px;
+        }
+        .full-name-box .cn-name { font-size: 1.2rem; font-weight: 700; color: #1a237e; margin-bottom: 4px; }
+        .full-name-box .en-name { font-size: 0.9rem; color: #4b5563; }
+        .full-name-box .abbr { font-size: 0.85rem; color: #6b7280; margin-top: 8px; }
+
+        /* 使命与愿景 */
+        .mission-section { padding: 80px 0; background: #f9fafb; }
+        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        @media (max-width: 640px) { .mv-grid { grid-template-columns: 1fr; } }
+        .mv-card {
+            background: #fff; border-radius: 20px; padding: 40px; text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: all 0.3s;
+        }
+        .mv-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,0.1); }
+        .mv-icon { font-size: 3rem; margin-bottom: 20px; }
+        .mv-card h3 { font-size: 1.3rem; font-weight: 800; color: #111827; margin-bottom: 16px; }
+        .mv-card p { color: #4b5563; line-height: 1.8; font-size: 0.95rem; }
+
+        /* 核心价值观 */
+        .values-section { padding: 80px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+        .value-card {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eefb 100%);
+            border: 1px solid #c5cae9; border-radius: 16px; padding: 28px; text-align: center;
+            transition: all 0.3s;
+        }
+        .value-card:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(13,71,161,0.12); }
+        .value-icon { font-size: 2.5rem; margin-bottom: 14px; }
+        .value-card h3 { font-size: 1.1rem; font-weight: 700; color: #1a237e; margin-bottom: 10px; }
+        .value-card p { font-size: 0.875rem; color: #374151; line-height: 1.65; }
+
+        /* 我们的工作 */
+        .work-section { padding: 80px 0; background: #f9fafb; }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+        .work-card {
+            background: #fff; border-radius: 16px; padding: 32px;
+            border: 1px solid #e5e7eb; transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .work-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #0d47a1, #00897b);
+        }
+        .work-card:hover { transform: translateY(-4px); box-shadow: 0 16px 28px rgba(0,0,0,0.1); }
+        .work-num { font-size: 0.75rem; font-weight: 700; color: #0d47a1; background: #e8eefb; padding: 2px 10px; border-radius: 50px; display: inline-block; margin-bottom: 12px; }
+        .work-icon { font-size: 2rem; margin-bottom: 12px; }
+        .work-card h3 { font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
+        .work-card p { font-size: 0.875rem; color: #4b5563; line-height: 1.65; }
+
+        /* 发展历程 */
+        .timeline-section { padding: 80px 0; }
+        .timeline { max-width: 720px; margin: 0 auto; position: relative; }
+        .timeline::before {
+            content: ''; position: absolute; left: 24px; top: 0; bottom: 0;
+            width: 2px; background: linear-gradient(180deg, #0d47a1, #e5e7eb);
+        }
+        .timeline-item { display: flex; gap: 24px; padding-bottom: 40px; position: relative; }
+        .timeline-dot {
+            width: 50px; height: 50px; background: linear-gradient(135deg, #0d47a1, #1565c0);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 0.9rem; font-weight: 700; flex-shrink: 0; z-index: 1;
+        }
+        .timeline-content { flex: 1; padding-top: 8px; }
+        .timeline-year { font-size: 0.78rem; font-weight: 700; color: #0d47a1; text-transform: uppercase; margin-bottom: 6px; }
+        .timeline-content h3 { font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .timeline-content p { font-size: 0.875rem; color: #4b5563; line-height: 1.65; }
+
+        /* 加入我们 */
+        .join-section { padding: 80px 0; background: #f9fafb; }
+        .join-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+        .join-card {
+            background: #fff; border-radius: 16px; padding: 28px; text-align: center;
+            border: 2px solid #e5e7eb; transition: all 0.3s;
+        }
+        .join-card:hover { border-color: #0d47a1; transform: translateY(-3px); box-shadow: 0 12px 24px rgba(13,71,161,0.1); }
+        .join-icon { font-size: 2.5rem; margin-bottom: 14px; }
+        .join-card h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
+        .join-card p { font-size: 0.875rem; color: #4b5563; line-height: 1.65; margin-bottom: 16px; }
+        .join-link {
+            display: inline-block; padding: 8px 20px; background: #0d47a1; color: #fff;
+            border-radius: 50px; font-size: 0.82rem; font-weight: 600; text-decoration: none;
+            transition: all 0.2s;
+        }
+        .join-link:hover { background: #1565c0; }
+
+        /* 重要声明 */
+        .disclaimer-section { padding: 60px 0; background: #fff9e6; border-top: 4px solid #f59e0b; }
+        .disclaimer-box { max-width: 860px; margin: 0 auto; }
+        .disclaimer-box h2 { font-size: 1.4rem; font-weight: 800; color: #92400e; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .disclaimer-box p { color: #78350f; line-height: 1.8; margin-bottom: 12px; font-size: 0.95rem; }
+        .disclaimer-box ul { color: #78350f; padding-left: 20px; line-height: 1.8; }
+        .disclaimer-box ul li { margin-bottom: 6px; font-size: 0.92rem; }
+
+        /* CTA */
+        .page-cta { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); padding: 80px 0; text-align: center; color: #fff; }
+        .page-cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #fff; }
+        .page-cta p { color: rgba(255,255,255,0.85); margin-bottom: 32px; font-size: 1.05rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white { background: #fff; color: #0d47a1; padding: 12px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: inline-block; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .btn-outline-white { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); padding: 12px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.2s; display: inline-block; }
+        .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+    </style>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+</head>
+<body>
+    <header class="site-header scrolled" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#logoGradA)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="logoGradA" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                    <span class="logo-text">IHCCC</span>
+                    <span class="logo-subtitle">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="/" class="nav-link">首页</a>
+                    <div class="nav-dropdown">
+                        <a href="gdpr.html" class="nav-link dropdown-toggle">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="gdpr.html" class="dropdown-item">🇪🇺 GDPR 通用数据保护条例</a>
+                            <a href="nis2.html" class="dropdown-item">🔐 NIS2 网络与信息安全指令</a>
+                            <a href="dora.html" class="dropdown-item">⚡ DORA 数字运营韧性法案</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="nist-csf.html" class="nav-link dropdown-toggle">美国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="nist-csf.html" class="dropdown-item">🏛️ NIST CSF 网络安全框架</a>
+                            <a href="cis.html" class="dropdown-item">🛡️ CIS 安全基准</a>
+                            <a href="pci-dss.html" class="dropdown-item">💳 PCI-DSS 支付安全标准</a>
+                            <a href="soc2.html" class="dropdown-item">📋 SOC 2 审计标准</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="iso27001.html" class="nav-link dropdown-toggle">国际标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="iso27001.html" class="dropdown-item">🌐 ISO 27001 信息安全管理体系</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="laws.html" class="nav-link dropdown-toggle">中国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="laws.html#djbh" class="dropdown-item">🔒 等保2.0 网络安全等级保护</a>
+                            <a href="laws.html#csl" class="dropdown-item">⚖️ 《网络安全法》</a>
+                            <a href="laws.html#dsl" class="dropdown-item">📊 《数据安全法》</a>
+                            <a href="laws.html#pipl" class="dropdown-item">👤 《个人信息保护法》</a>
+                            <a href="laws.html#mima" class="dropdown-item">🔑 《密码法》与商用密码管理</a>
+                            <a href="laws.html#guiji" class="dropdown-item">🏗️ 关键信息基础设施保护</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="ihccc-cs.html" class="nav-link dropdown-toggle">IHCCC 框架 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="ihccc-cs.html" class="dropdown-item">🛡️ IHCCC-CS 网络安全标准</a>
+                            <a href="ihccc-bl.html" class="dropdown-item">🛡️ IHCCC-BL 安全基线</a>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="nav-link">实用工具</a>
+                    <a href="scripts.html" class="nav-link">安全脚本</a>
+                    <a href="tutorials.html" class="nav-link">合规仓库</a>
+                    <a href="about.html" class="nav-link active">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-badge">🏛 非营利组织 · 开源社区</div>
+            <h1>关于 IHCCC</h1>
+            <p>中国互联网安全合规中心（IHCCC）是一个独立的非营利性开源社区组织，致力于推动互联网安全和信息合规领域的标准化与最佳实践普及。</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">100%</div>
+                    <div class="hero-stat-label">免费开放内容</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">10+</div>
+                    <div class="hero-stat-label">覆盖安全标准</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">开源</div>
+                    <div class="hero-stat-label">代码与内容</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">非营利</div>
+                    <div class="hero-stat-label">组织性质</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 组织简介 -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <div class="nonprofit-banner-lg">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        非营利性组织
+                    </div>
+                    <h2>组织简介</h2>
+                    <p>中国互联网安全合规中心（IHCCC，Information Hub for Certification & Compliance Center）是一个由安全从业者、合规专家和开源社区成员自发组成的非营利性组织。</p>
+                    <p>我们的核心使命是降低信息安全合规知识的获取门槛。在中国，大量中小企业和安全从业者面临语言障碍、资源匮乏等困难，难以接触到国际主流安全标准和最佳实践。IHCCC通过提供高质量的中文化资源，填补这一空白。</p>
+                    <p>IHCCC不从事任何商业活动，不收取任何费用，所有资源均以开源方式发布，遵循 CC BY-NC-SA 4.0 协议，任何人均可免费使用、学习和分享。</p>
+                    <div class="full-name-box">
+                        <div class="cn-name">中国互联网安全合规中心</div>
+                        <div class="en-name">Information Hub for Certification & Compliance Center</div>
+                        <div class="abbr">简称：IHCCC · 邮箱：support@ihccc.com · GitHub: github.com/mzwrt/ihccc</div>
+                    </div>
+                </div>
+                <div>
+                    <div style="background: linear-gradient(135deg, #0d47a1 0%, #00897b 100%); border-radius: 24px; padding: 48px; text-align: center; color: #fff;">
+                        <div style="font-size: 5rem; margin-bottom: 20px;">
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="display:block;margin:0 auto 16px">
+                                <path d="M40 6L10 20v18c0 19.88 12.8 38.52 30 43.44C57.2 76.52 70 57.88 70 38V20L40 6z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+                                <text x="40" y="50" text-anchor="middle" fill="#fff" font-size="15" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.5">IHCCC</text>
+                            </svg>
+                        </div>
+                        <div style="font-size: 1.2rem; font-weight: 800; margin-bottom: 12px;">安全 · 合规 · 开源</div>
+                        <div style="font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.7;">Security · Compliance · Open Source</div>
+                        <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+                            <div style="background: rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; font-size: 0.85rem;">🌏 致力于缩短中国与全球安全实践的差距</div>
+                            <div style="background: rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; font-size: 0.85rem;">📚 提供高质量中文安全合规学习资源</div>
+                            <div style="background: rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; font-size: 0.85rem;">🤝 构建互助的安全专业人士社区</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使命与愿景 -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>使命与愿景</h2>
+                <p>IHCCC的存在有明确的目标，我们围绕使命和愿景开展所有工作。</p>
+            </div>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon">🎯</div>
+                    <h3>我们的使命</h3>
+                    <p>通过提供免费、高质量的中文信息安全合规资源，降低知识获取门槛，帮助中国及全球华语地区的企业、机构和个人了解、实施国际安全标准与中国法规，共同构建更安全的数字世界。</p>
+                    <p style="font-size:0.85rem;color:#9ca3af;font-style:italic;margin-top:12px;">Make cybersecurity compliance knowledge accessible to everyone.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon">🌟</div>
+                    <h3>我们的愿景</h3>
+                    <p>成为中国最权威的非营利性网络安全合规知识平台，建立一个开放、包容、互助的安全从业者社区，推动中国网络安全行业的整体发展和国际化水平提升，让合规不再是中小企业的难题。</p>
+                    <p style="font-size:0.85rem;color:#9ca3af;font-style:italic;margin-top:12px;">A safer digital China, connected to the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心价值观 -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>核心价值观</h2>
+                <p>以下四个核心价值观指引着IHCCC的每一项工作和决策。</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔓</div>
+                    <h3>开放性</h3>
+                    <p>所有内容开源发布，任何人均可免费访问、使用和贡献。我们相信知识共享是推动行业进步的最强动力。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔍</div>
+                    <h3>透明性</h3>
+                    <p>运营透明，资金使用公开。我们明确声明组织性质和局限性，不夸大影响力，不误导用户。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>非营利性</h3>
+                    <p>不以商业盈利为目的，不接受任何可能影响内容客观性的商业赞助。赞助资金仅用于运营维护。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎓</div>
+                    <h3>专业性</h3>
+                    <p>内容经过专业从业者审核，力求准确、实用。我们尊重知识产权，引用来源，及时更新过时信息。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>包容性</h3>
+                    <p>欢迎不同背景、不同经验水平的参与者。我们致力于建立一个互尊互助的多元社区。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>实用性</h3>
+                    <p>注重内容的实操价值，提供可落地的指南、清单和工具，而非纸上谈兵的理论。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的工作 -->
+    <section class="work-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>我们的工作</h2>
+                <p>IHCCC在六个核心领域开展工作，每项工作都直接服务于我们的使命。</p>
+            </div>
+            <div class="work-grid">
+                <div class="work-card">
+                    <div class="work-num">工作领域 01</div>
+                    <div class="work-icon">📚</div>
+                    <h3>标准文档中文化</h3>
+                    <p>将CIS Benchmarks、ISO 27001、PCI-DSS、NIST CSF等国际安全标准翻译为中文，并提供背景说明和本土化适配建议，降低语言障碍。</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-num">工作领域 02</div>
+                    <div class="work-icon">⚖️</div>
+                    <h3>中国法规解读</h3>
+                    <p>对《网络安全法》《数据安全法》《个人信息保护法》《密码法》等中国网络安全法律法规进行系统解读，提供合规指导和检查清单。</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-num">工作领域 03</div>
+                    <div class="work-icon">🎓</div>
+                    <h3>教程与学习资源</h3>
+                    <p>制作安全技术教程、合规操作指南、视频学习资源，覆盖渗透测试、安全加固、等保测评等实操内容，服务安全从业者成长。</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-num">工作领域 04</div>
+                    <div class="work-icon">🗺️</div>
+                    <h3>标准映射与对比</h3>
+                    <p>研究和梳理不同安全标准之间的对应关系，如ISO 27001与等保2.0的映射、GDPR与个人信息保护法的对比，帮助组织高效满足多重合规要求。</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-num">工作领域 05</div>
+                    <div class="work-icon">🧰</div>
+                    <h3>工具与模板</h3>
+                    <p>开发和分享安全评估模板、风险评估工作表、合规检查清单、安全策略模板等实用工具，帮助组织启动和推进合规工作。</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-num">工作领域 06</div>
+                    <div class="work-icon">📰</div>
+                    <h3>行业动态追踪</h3>
+                    <p>持续追踪国内外安全标准更新、法规变化、重大安全事件，及时发布分析文章，帮助从业者保持知识更新。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展历程 -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>发展历程</h2>
+                <p>IHCCC从一个小型志愿者项目成长为覆盖多个安全标准领域的开源平台。</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">2022</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022年 · 起步阶段</div>
+                        <h3>项目创立</h3>
+                        <p>IHCCC由几位关注中国网络安全合规领域的从业者发起创立，最初专注于CIS Benchmark的中文翻译工作，在GitHub上发布第一批翻译文档。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2023</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023年 · 扩展阶段</div>
+                        <h3>扩展标准覆盖范围</h3>
+                        <p>将内容范围扩展至PCI-DSS、ISO 27001、NIST CSF等多个国际安全标准，同时启动中国网络安全法规解读专栏，开始系统梳理中国合规体系。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024年 · 平台化</div>
+                        <h3>网站平台正式上线</h3>
+                        <p>IHCCC官方网站上线，将分散的文档资源整合为统一的在线平台，添加教程仓库、法规专题等功能模块，用户覆盖面大幅扩展。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2025</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025年 · 深化阶段</div>
+                        <h3>内容深化与社区建设</h3>
+                        <p>深化各标准领域内容，发布ISO 27001:2022迁移指南、等保2.0实施手册等专题资源；积极建设贡献者社区，吸引更多安全从业者参与内容贡献。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">2026</div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2026年 · 持续建设中</div>
+                        <h3>持续完善与国际化</h3>
+                        <p>持续更新内容，追踪最新标准版本和法规变化；探索双语（中英文）内容，服务全球华语安全从业者社区。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加入我们 -->
+    <section class="join-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>加入我们</h2>
+                <p>IHCCC欢迎所有对网络安全和合规感兴趣的人参与贡献，无论您的专业背景或经验水平如何。</p>
+            </div>
+            <div class="join-grid">
+                <div class="join-card">
+                    <div class="join-icon">✍️</div>
+                    <h3>翻译志愿者</h3>
+                    <p>帮助翻译国际安全标准文档、最佳实践指南。需要一定的英文阅读能力和信息安全基础知识。</p>
+                    <a href="mailto:support@ihccc.com?subject=申请成为翻译志愿者" class="join-link">申请参与</a>
+                </div>
+                <div class="join-card">
+                    <div class="join-icon">📝</div>
+                    <h3>内容贡献者</h3>
+                    <p>撰写安全技术教程、法规解读、最佳实践文章。欢迎安全从业者分享实战经验和知识。</p>
+                    <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="join-link">GitHub贡献</a>
+                </div>
+                <div class="join-card">
+                    <div class="join-icon">🔍</div>
+                    <h3>技术审核员</h3>
+                    <p>对已翻译或撰写的内容进行专业审核，确保技术准确性。需要相关领域的专业背景。</p>
+                    <a href="mailto:support@ihccc.com?subject=申请成为技术审核员" class="join-link">联系我们</a>
+                </div>
+                <div class="join-card">
+                    <div class="join-icon">💻</div>
+                    <h3>网站开发者</h3>
+                    <p>参与IHCCC网站的功能开发和维护，帮助改善用户体验，添加新功能。前端开发经验即可。</p>
+                    <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="join-link">提交PR</a>
+                </div>
+                <div class="join-card">
+                    <div class="join-icon">📣</div>
+                    <h3>社区推广者</h3>
+                    <p>在社交媒体、技术社区分享IHCCC的资源，帮助更多需要的人发现这些免费学习资料。</p>
+                    <a href="mailto:support@ihccc.com?subject=社区推广合作" class="join-link">了解详情</a>
+                </div>
+                <div class="join-card">
+                    <div class="join-icon">💖</div>
+                    <h3>赞助支持者</h3>
+                    <p>通过PayPal、微信赞赏或加密货币赞助，支持IHCCC的服务器、域名和运营费用。</p>
+                    <a href="https://paypal.me/ihccc" target="_blank" rel="noopener noreferrer" class="join-link">赞助我们</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 重要声明 -->
+    <section class="disclaimer-section">
+        <div class="container">
+            <div class="disclaimer-box">
+                <h2>⚠️ 重要声明</h2>
+                <p><strong>IHCCC（中国互联网安全合规中心）不是任何官方机构或政府组织。</strong>我们是一个独立的非营利性开源社区，与任何政府部门、监管机构无隶属关系。</p>
+                <p>请注意以下重要事项：</p>
+                <ul>
+                    <li>本网站内容仅供<strong>学习和参考</strong>目的，不构成任何官方认证、法律建议或商业推荐</li>
+                    <li>本网站<strong>无权发放任何安全认证</strong>（如ISO 27001认证、等保证书），这些认证须向授权机构申请</li>
+                    <li>中国法规解读内容基于公开文本整理，<strong>不构成法律意见</strong>，具体合规建议请咨询持牌律师</li>
+                    <li>安全标准翻译仅供参考，认证审核以<strong>官方正式版本</strong>为准</li>
+                    <li>本网站不对使用本网站内容产生的任何损失或责任承担法律责任</li>
+                    <li>如有法规更新，我们力求及时更新内容，但请以<strong>官方发布的最新版本</strong>为准</li>
+                </ul>
+                <p style="margin-top: 16px;">如发现内容错误或过时，欢迎通过 <a href="mailto:support@ihccc.com" style="color:#92400e;font-weight:700;">support@ihccc.com</a> 或 GitHub 提交反馈，我们将及时更正。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="page-cta">
+        <div class="container">
+            <h2>一起构建更安全的数字世界</h2>
+            <p>无论您是安全从业者、合规专家还是正在学习的新人，IHCCC都欢迎您的参与。</p>
+            <div class="cta-buttons">
+                <a href="mailto:support@ihccc.com" class="btn-white">联系我们</a>
+                <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="btn-outline-white">GitHub 仓库</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#logoGradF)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="logoGradF" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#4fc3f7"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                        <span class="logo-text">IHCCC</span>
+                    </div>
+                    <p>中国互联网安全合规中心（IHCCC）是一个非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施。</p>
+                    <div class="nonprofit-banner">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        非营利组织
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="/#standards">安全标准</a></li>
+                        <li><a href="laws.html">中国法规</a></li>
+                        <li><a href="tutorials.html">合规仓库</a></li>
+                        <li><a href="/#news">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>安全标准</h4>
+                    <ul>
+                        <li><a href="cis.html">CIS 安全基准</a></li>
+                        <li><a href="pci-dss.html">PCI-DSS 标准</a></li>
+                        <li><a href="iso27001.html">ISO 27001</a></li>
+                        <li><a href="nist-csf.html">NIST CSF</a></li>
+                        <li><a href="soc2.html">SOC 2</a></li>
+                        <li><a href="laws.html">等保2.0 / GB/T 22239</a></li>
+                        <li><a href="laws.html">网络安全法 / 数据安全法</a></li>
+                        <li><a href="laws.html">密码法 / 密评</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="mailto:support@ihccc.com">📧 support@ihccc.com</a></li>
+                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
+                        <li><span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">工作时间: 周一至周五 9:00-18:00</span></li>
+                    </ul>
+                </div>
+                <div class="footer-links footer-sponsor-col">
+                    <h4>💖 赞助我们</h4>
+                    <ul>
+                        <li><a href="https://paypal.me/ihccc" target="_blank" rel="noopener noreferrer">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:4px;"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z"/></svg>
+                            PayPal 赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('crypto')">🪙 加密货币赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('wechat')">💬 微信赞赏</a></li>
+                    </ul>
+                    <p class="sponsor-note-footer">所有赞助用于服务器、域名及文档维护</p>
+                </div>
+            </div>
+            <div class="footer-certs">
+                <h4>全球安全认证与标准</h4>
+                <div class="footer-certs-icons">
+                    <div class="cert-badge" title="ISO/IEC 27001 信息安全管理体系">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(13,71,161,0.6)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27001</text></svg>
+                        <span>ISO 27001</span>
+                    </div>
+                    <div class="cert-badge" title="PCI-DSS 支付卡行业数据安全标准">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><rect x="12" y="16" width="24" height="16" rx="3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.5)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">PCI-DSS</text></svg>
+                        <span>PCI-DSS</span>
+                    </div>
+                    <div class="cert-badge" title="SOC 2 服务组织控制报告">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="22" r="8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(13,71,161,0.5)"/><path d="M21 22l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><text x="24" y="38" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5.5" font-weight="700">SOC 2</text></svg>
+                        <span>SOC 2</span>
+                    </div>
+                    <div class="cert-badge" title="NIST 网络安全框架">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M16 14h16v20H16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(0,137,123,0.4)"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="6" font-weight="700">NIST</text></svg>
+                        <span>NIST CSF</span>
+                    </div>
+                    <div class="cert-badge" title="CIS 互联网安全中心基准">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(0,137,123,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">CIS</text></svg>
+                        <span>CIS Benchmarks</span>
+                    </div>
+                    <div class="cert-badge" title="等保2.0 网络安全等级保护">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(183,28,28,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="27" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">等保2.0</text></svg>
+                        <span>等保2.0</span>
+                    </div>
+                    <div class="cert-badge" title="ISO/IEC 27701 隐私信息管理">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 10l-10 5v7c0 7.73 4.66 14.95 10 17 5.34-2.05 10-9.27 10-17v-7l-10-5z" fill="rgba(106,27,154,0.4)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-size="7" font-weight="700">27701</text></svg>
+                        <span>ISO 27701</span>
+                    </div>
+                    <div class="cert-badge" title="GDPR 通用数据保护条例">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><circle cx="24" cy="20" r="6" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="rgba(21,101,192,0.5)"/><circle cx="24" cy="20" r="3" fill="rgba(255,255,255,0.3)"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="6" font-weight="700">GDPR</text></svg>
+                        <span>GDPR</span>
+                    </div>
+                    <div class="cert-badge" title="CSA STAR 云安全联盟">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><polygon points="24,10 27,19 37,19 29,25 32,35 24,29 16,35 19,25 11,19 21,19" fill="rgba(245,124,0,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1"/><text x="24" y="44" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="4" font-weight="600">CSA STAR</text></svg>
+                        <span>CSA STAR</span>
+                    </div>
+                    <div class="cert-badge" title="HIPAA 健康保险可携性和责任法案">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="rgba(255,255,255,0.08)"/><path d="M24 14c-3 0-6 2-6 5s3 5 6 8c3-3 6-5 6-8s-3-5-6-5z" fill="rgba(211,47,47,0.5)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/><text x="24" y="37" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="5" font-weight="700">HIPAA</text></svg>
+                        <span>HIPAA</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 免责声明 -->
+            <div class="footer-disclaimer">
+                <p><span class="disclaimer-highlight">⚠️ 重要声明：</span>IHCCC（中国互联网安全合规中心）<span class="disclaimer-highlight">不是任何官方机构或政府组织</span>，我们是一个独立的非营利性开源社区组织。本网站所有内容仅供学习和参考目的，不构成任何官方认证、法律建议或商业推荐。</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心 (Information Hub for Certification &amp; Compliance Center). 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 赞助弹窗 -->
+    <div class="sponsor-modal-overlay" id="sponsorModal">
+        <div class="sponsor-modal">
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
+            <div id="sponsorModalContent"></div>
+        </div>
+    </div>
+
+    <!-- 回到顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="js/main.js" defer></script>
+    <script>
+    function openSponsorModal(type) {
+        var modal = document.getElementById('sponsorModal');
+        var content = document.getElementById('sponsorModalContent');
+        if (type === 'wechat') {
+            content.innerHTML = '<h4>🇨🇳 微信赞赏</h4><p>扫描下方二维码，通过微信赞赏支持我们</p><div class="qr-placeholder"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#fff"/><circle cx="100" cy="80" r="36" fill="#07c160"/><text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text><text x="100" y="135" text-anchor="middle" font-size="11" fill="#333">扫一扫赞赏</text><text x="100" y="155" text-anchor="middle" font-size="9" fill="#999">WeChat QR Code</text></svg></div>';
+        } else if (type === 'crypto') {
+            content.innerHTML = '<h4>🪙 加密货币赞助</h4><p>您可以通过以下加密货币地址赞助我们</p><div style="text-align:left;font-size:0.82rem;color:#444;line-height:2;word-break:break-all;"><strong>BTC:</strong> bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><strong>ETH:</strong> 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br><strong>USDT (TRC20):</strong> TXxxxxxxxxxxxxxxxxxxxxxxxxx</div>';
+        }
+        modal.classList.add('active');
+    }
+    function closeSponsorModal() {
+        document.getElementById('sponsorModal').classList.remove('active');
+    }
+    document.getElementById('sponsorModal').addEventListener('click', function(e) {
+        if (e.target === this) closeSponsorModal();
+    });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "AboutPage",
+                "headline": "关于IHCCC - 中国互联网安全合规中心",
+                "description": "IHCCC是非营利性开源组织，致力于推动网络安全标准化与最佳实践，提供免费中文安全合规资源",
+                "url": "https://ihccc.com/about.html",
+                "inLanguage": "zh-CN",
+                "author": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ihccc.com/images/favicon.svg"
+                    }
+                },
+                "datePublished": "2024-01-01",
+                "dateModified": "2026-03-03",
+                "mainEntityOfPage": "https://ihccc.com/about.html",
+                "keywords": "IHCCC,中国互联网安全合规中心,非营利组织,网络安全,安全合规,开源社区"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://ihccc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "关于我们",
+            "item": "https://ihccc.com/about.html"
+        }
+                ]
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

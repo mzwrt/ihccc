@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
   <rect width="60" height="60" rx="12" fill="#fff5f5"/>
-  <text x="30" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#E00000">CROWD</text>
-  <text x="30" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#E00000">STRIKE</text>
+  <g transform="translate(10, 8) scale(1.67)">
+    <!-- CrowdStrike falcon silhouette -->
+    <path d="M20 2C18 2 15.5 3 13 6L6 13.5l3.5 1.5 3.5-4v3l3-2.5 1 5.5 3.5-3-1 5.5h3.5l2.5-9-2-3 1.5-3.5C24 4 22 2 20 2z" fill="#E00000"/>
+    <path d="M9 17l-3.5 1 1.5 4.5 5-3z" fill="#E00000"/>
+  </g>
 </svg>

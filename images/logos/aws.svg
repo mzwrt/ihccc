@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
   <rect width="60" height="60" rx="12" fill="#fff8f0"/>
-  <text x="30" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#232F3E">aws</text>
-  <path d="M18 38 Q30 45 42 38" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round"/>
-  <path d="M39 35 L42 38 L39 41" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="30" y="32" text-anchor="middle"
+        font-family="'Amazon Ember', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="700" font-size="18"
+        fill="#232F3E" letter-spacing="0.5">aws</text>
+  <!-- Orange smile arrow - the characteristic AWS arrow -->
+  <path d="M17 40 Q30 50 43 40" fill="none" stroke="#FF9900" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M40 37 L43 40 L40 43" fill="none" stroke="#FF9900" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

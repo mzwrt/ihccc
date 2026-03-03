@@ -2,4 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /html/
 
+Crawl-delay: 10
+
 Sitemap: https://ihccc.com/sitemap.xml

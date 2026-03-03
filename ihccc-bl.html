@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IHCCC-BL 安全基线 - IHCCC Security Baseline，面向中国互联网企业的最小安全基线要求，帮助企业快速评估和建立基础安全能力的实用工具">
+    <meta name="keywords" content="IHCCC安全基线, IHCCC-BL, 安全基线, 最小安全基线, 中国安全框架, 互联网安全基线, 安全自评, CIS等保, 安全优先级">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <meta name="theme-color" content="#0d47a1">
+    <link rel="canonical" href="https://ihccc.com/ihccc-bl.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="IHCCC-BL 安全基线 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="IHCCC-BL是面向中国互联网企业的最小安全基线要求集合，通过三层优先级体系帮助企业快速识别和落实最关键的安全控制措施。">
+    <meta property="og:url" content="https://ihccc.com/ihccc-bl.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://ihccc.com/images/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IHCCC-BL安全基线标准 - 中文网络安全基线规范">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IHCCC-BL 安全基线 - IHCCC">
+    <meta name="twitter:description" content="面向中国互联网企业的最小安全基线，三层优先级体系帮助企业快速识别并落实最关键的安全控制措施。">
+    <meta name="twitter:image" content="https://ihccc.com/images/og-cover.png">
+    <title>IHCCC-BL 安全基线 | IHCCC Security Baseline</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Header overrides for light bg pages */
+        .site-header,
+        .site-header.scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover,
+        .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
+        .dropdown-menu { border: 1px solid #e5e7eb; }
+        .dropdown-item { color: #374151 !important; }
+        .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
+
+        /* ── Hero ── */
+        .bl-hero {
+            background: linear-gradient(135deg, #004d40 0%, #00695c 25%, #0097a7 60%, #006064 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .bl-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 30%, rgba(0,188,212,0.2) 0%, transparent 60%);
+        }
+        .bl-hero .container { position: relative; z-index: 1; }
+        .bl-hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .bl-version { display: inline-block; background: rgba(0,188,212,0.25); border: 1px solid rgba(0,188,212,0.5); color: #b2ebf2; padding: 4px 14px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; margin-bottom: 16px; margin-left: 8px; }
+        .bl-hero h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 16px; color: #fff; line-height: 1.2; }
+        .bl-hero h1 span { display: block; font-size: 1.8rem; font-weight: 700; color: #b2ebf2; margin-top: 8px; }
+        .bl-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto 40px; line-height: 1.7; }
+        .bl-hero-metrics { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+        .bl-metric { text-align: center; }
+        .bl-metric-num { font-size: 2rem; font-weight: 900; color: #fff; }
+        .bl-metric-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+        /* ── What is BL section ── */
+        .bl-intro { padding: 80px 0; background: #fff; }
+        .bl-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        @media (max-width: 768px) { .bl-intro-grid { grid-template-columns: 1fr; gap: 40px; } }
+        .bl-intro-text h2 { font-size: 1.9rem; font-weight: 800; color: #111827; margin-bottom: 16px; }
+        .bl-intro-text p { color: #4b5563; line-height: 1.8; margin-bottom: 14px; font-size: 0.95rem; }
+        .bl-diff-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+        .bl-diff-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+        .bl-diff-content h4 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 4px; }
+        .bl-diff-content p { font-size: 0.87rem; color: #6b7280; margin: 0; line-height: 1.6; }
+        .bl-scope-card { background: linear-gradient(135deg, #e0f7fa, #e8f5e9); border-radius: 20px; padding: 32px; }
+        .bl-scope-card h3 { font-size: 1.1rem; font-weight: 800; color: #004d40; margin-bottom: 20px; }
+        .bl-scope-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(0,105,92,0.12); font-size: 0.88rem; color: #1b5e20; }
+        .bl-scope-item:last-child { border-bottom: none; }
+        .bl-scope-item::before { content: '✓'; color: #00897b; font-weight: 900; flex-shrink: 0; }
+
+        /* ── Three Tiers ── */
+        .bl-tiers { padding: 80px 0; background: #f8fafb; }
+        .bl-tiers-header { text-align: center; margin-bottom: 48px; }
+        .bl-tiers-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .bl-tiers-header p { color: #6b7280; max-width: 660px; margin: 0 auto; line-height: 1.7; }
+        .bl-tier { border-radius: 16px; overflow: hidden; margin-bottom: 24px; border: 1px solid #e5e7eb; background: #fff; }
+        .bl-tier-header { display: flex; align-items: center; gap: 16px; padding: 20px 28px; cursor: pointer; user-select: none; }
+        .bl-tier-header:hover { filter: brightness(0.97); }
+        .tier-1 .bl-tier-header { background: linear-gradient(135deg, #b71c1c 0%, #c62828 100%); }
+        .tier-2 .bl-tier-header { background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%); }
+        .tier-3 .bl-tier-header { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); }
+        .bl-tier-badge { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; }
+        .bl-tier-title { flex: 1; }
+        .bl-tier-title h3 { font-size: 1.1rem; font-weight: 800; color: #fff; margin: 0; }
+        .bl-tier-title p { font-size: 0.82rem; color: rgba(255,255,255,0.8); margin: 2px 0 0; }
+        .bl-tier-count { color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+        .bl-tier-arrow { color: rgba(255,255,255,0.8); font-size: 1.2rem; transition: transform 0.3s; }
+        .bl-tier.open .bl-tier-arrow { transform: rotate(180deg); }
+        .bl-tier-body { display: none; padding: 28px; }
+        .bl-tier.open .bl-tier-body { display: block; }
+        .bl-controls-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+        .bl-control { background: #f9fafb; border-radius: 10px; padding: 16px; border-left: 3px solid; }
+        .tier-1 .bl-control { border-color: #ef5350; }
+        .tier-2 .bl-control { border-color: #1976d2; }
+        .tier-3 .bl-control { border-color: #388e3c; }
+        .bl-control-id { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 50px; color: #fff; display: inline-block; margin-bottom: 8px; }
+        .tier-1 .bl-control-id { background: #c62828; }
+        .tier-2 .bl-control-id { background: #1565c0; }
+        .tier-3 .bl-control-id { background: #2e7d32; }
+        .bl-control h4 { font-size: 0.93rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+        .bl-control p { font-size: 0.82rem; color: #4b5563; line-height: 1.6; margin: 0; }
+
+        /* ── Checklist ── */
+        .bl-checklist { padding: 80px 0; }
+        .bl-checklist-header { text-align: center; margin-bottom: 48px; }
+        .bl-checklist-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .bl-checklist-header p { color: #6b7280; max-width: 660px; margin: 0 auto; line-height: 1.7; }
+        .bl-check-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        .bl-check-table th { background: #004d40; color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; }
+        .bl-check-table th:last-child { text-align: center; width: 100px; }
+        .bl-check-table td { padding: 11px 16px; border-bottom: 1px solid #e5e7eb; vertical-align: middle; color: #374151; }
+        .bl-check-table tr:last-child td { border-bottom: none; }
+        .bl-check-table tr:nth-child(even) td { background: #f0fdf4; }
+        .bl-tier-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-right: 6px; }
+        .tag-t1 { background: #fce4ec; color: #b71c1c; }
+        .tag-t2 { background: #e3f2fd; color: #0d47a1; }
+        .tag-t3 { background: #e8f5e9; color: #1b5e20; }
+        .bl-check-status { text-align: center; }
+        .status-yes { color: #15803d; font-size: 1.1rem; }
+        .status-no { color: #dc2626; font-size: 1.1rem; }
+        .status-partial { color: #d97706; font-size: 0.75rem; font-weight: 700; }
+
+        /* ── Comparison table ── */
+        .bl-compare { padding: 80px 0; background: #f8fafb; }
+        .bl-compare-header { text-align: center; margin-bottom: 48px; }
+        .bl-compare-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .bl-compare-header p { color: #6b7280; max-width: 660px; margin: 0 auto; line-height: 1.7; }
+        .bl-cmp-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .bl-cmp-table thead th { padding: 16px 20px; font-weight: 800; font-size: 0.95rem; }
+        .bl-cmp-table thead th:first-child { background: #374151; color: #fff; }
+        .bl-cmp-table thead th:nth-child(2) { background: #004d40; color: #fff; text-align: center; }
+        .bl-cmp-table thead th:nth-child(3) { background: #4a148c; color: #fff; text-align: center; }
+        .bl-cmp-table td { padding: 12px 20px; border-bottom: 1px solid #e5e7eb; color: #374151; }
+        .bl-cmp-table td:nth-child(2),
+        .bl-cmp-table td:nth-child(3) { text-align: center; }
+        .bl-cmp-table tr:last-child td { border-bottom: none; }
+        .bl-cmp-table tr:nth-child(even) td { background: #f9fafb; }
+        .cmp-yes { color: #15803d; font-weight: 700; }
+        .cmp-no { color: #9ca3af; }
+        .cmp-partial { color: #d97706; font-weight: 600; }
+
+        /* ── CTA ── */
+        .bl-cta { background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #006064 100%); padding: 72px 0; text-align: center; color: #fff; }
+        .bl-cta h2 { font-size: 1.9rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+        .bl-cta p { color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+        .bl-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+        .bl-cta-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+        .bl-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 0; }
+    </style>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+</head>
+<body>
+    <header class="site-header scrolled" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgBL)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgBL" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
+                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="/" class="nav-link">首页</a>
+                    <div class="nav-dropdown">
+                        <a href="gdpr.html" class="nav-link dropdown-toggle">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="gdpr.html" class="dropdown-item">🇪🇺 GDPR 通用数据保护条例</a>
+                            <a href="nis2.html" class="dropdown-item">🔐 NIS2 网络与信息安全指令</a>
+                            <a href="dora.html" class="dropdown-item">⚡ DORA 数字运营韧性法案</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="nist-csf.html" class="nav-link dropdown-toggle">美国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="nist-csf.html" class="dropdown-item">🏛️ NIST CSF 网络安全框架</a>
+                            <a href="cis.html" class="dropdown-item">🛡️ CIS 安全基准</a>
+                            <a href="pci-dss.html" class="dropdown-item">💳 PCI-DSS 支付安全标准</a>
+                            <a href="soc2.html" class="dropdown-item">📋 SOC 2 审计标准</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="iso27001.html" class="nav-link dropdown-toggle">国际标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="iso27001.html" class="dropdown-item">🌐 ISO 27001 信息安全管理体系</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="laws.html" class="nav-link dropdown-toggle">中国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="laws.html#djbh" class="dropdown-item">🔒 等保2.0 网络安全等级保护</a>
+                            <a href="laws.html#csl" class="dropdown-item">⚖️ 《网络安全法》</a>
+                            <a href="laws.html#dsl" class="dropdown-item">📊 《数据安全法》</a>
+                            <a href="laws.html#pipl" class="dropdown-item">👤 《个人信息保护法》</a>
+                            <a href="laws.html#mima" class="dropdown-item">🔑 《密码法》与商用密码管理</a>
+                            <a href="laws.html#guiji" class="dropdown-item">🏗️ 关键信息基础设施保护</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="ihccc-cs.html" class="nav-link dropdown-toggle active">IHCCC 框架 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="ihccc-cs.html" class="dropdown-item">🛡️ IHCCC-CS 网络安全标准</a>
+                            <a href="ihccc-bl.html" class="dropdown-item">🛡️ IHCCC-BL 安全基线</a>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="nav-link">实用工具</a>
+                    <a href="scripts.html" class="nav-link">安全脚本</a>
+                    <a href="tutorials.html" class="nav-link">合规仓库</a>
+                    <a href="about.html" class="nav-link">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bl-hero">
+        <div class="container">
+            <div class="bl-hero-badge">🛡️ IHCCC 定制基线 · 中国互联网企业适用</div>
+            <span class="bl-version">v1.0 · 2026年发布</span>
+            <h1>IHCCC-BL
+                <span>安全基线 · Security Baseline</span>
+            </h1>
+            <p>面向中国互联网企业的最小安全基线要求集合，通过三层优先级体系帮助企业快速识别并落实最关键的安全控制措施，以最低成本建立有效的安全防护底线。</p>
+            <div class="bl-hero-metrics">
+                <div class="bl-metric"><div class="bl-metric-num">3</div><div class="bl-metric-label">优先级层级</div></div>
+                <div class="bl-metric"><div class="bl-metric-num">36</div><div class="bl-metric-label">基线控制项</div></div>
+                <div class="bl-metric"><div class="bl-metric-num">100%</div><div class="bl-metric-label">等保2.0对齐</div></div>
+                <div class="bl-metric"><div class="bl-metric-num">开放</div><div class="bl-metric-label">社区驱动标准</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is IHCCC-BL -->
+    <section class="bl-intro">
+        <div class="container">
+            <div class="bl-intro-grid">
+                <div class="bl-intro-text">
+                    <h2>什么是 IHCCC-BL？</h2>
+                    <p>IHCCC-BL（安全基线）是IHCCC为中国互联网企业设计的<strong>最小可行安全控制集合</strong>，聚焦"先做什么"而非"全面合规"，帮助资源有限的企业用最短时间建立最有效的安全防线。</p>
+                    <p>与IHCCC-CS（完整网络安全标准）不同，IHCCC-BL采用<strong>三层优先级体系</strong>，将36项控制措施按紧迫性和重要性分层，让安全负责人清楚知道应该先做什么、再做什么。</p>
+                    <div class="bl-diff-item">
+                        <div class="bl-diff-icon" style="background:#fce4ec;">🚨</div>
+                        <div class="bl-diff-content">
+                            <h4>第一层：基础必做（12项）</h4>
+                            <p>不做就是高风险的最基本控制，主要解决"有没有"的问题，适用所有规模企业。</p>
+                        </div>
+                    </div>
+                    <div class="bl-diff-item">
+                        <div class="bl-diff-icon" style="background:#e3f2fd;">📋</div>
+                        <div class="bl-diff-content">
+                            <h4>第二层：标准执行（14项）</h4>
+                            <p>达到行业基本安全水位的控制项，主要解决"做得好不好"的问题，适用50人以上企业。</p>
+                        </div>
+                    </div>
+                    <div class="bl-diff-item">
+                        <div class="bl-diff-icon" style="background:#e8f5e9;">🌱</div>
+                        <div class="bl-diff-content">
+                            <h4>第三层：进阶强化（10项）</h4>
+                            <p>提升安全纵深防御能力的进阶控制，主要解决"做得全不全"的问题，适用成长期企业。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bl-scope-card">
+                    <h3>✅ IHCCC-BL 适用范围</h3>
+                    <div class="bl-scope-item">互联网初创公司（10人以上）</div>
+                    <div class="bl-scope-item">正在准备等保2.0二级测评的企业</div>
+                    <div class="bl-scope-item">安全体系处于建设初期的传统企业</div>
+                    <div class="bl-scope-item">希望快速了解安全优先级的技术团队</div>
+                    <div class="bl-scope-item">云原生应用和SaaS服务提供商</div>
+                    <div class="bl-scope-item">中小型电商、金融科技、医疗健康企业</div>
+                    <div class="bl-scope-item" style="margin-top:20px;background:rgba(0,150,136,0.08);border-radius:8px;padding:12px 10px;border:none;">
+                        📌 <strong>开放标准：</strong>由IHCCC社区维护，遵循CC BY-NC-SA 4.0协议，欢迎贡献和反馈。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Tier System -->
+    <section class="bl-tiers">
+        <div class="container">
+            <div class="bl-tiers-header">
+                <h2>IHCCC-BL 三层安全基线体系</h2>
+                <p>按优先级分层，从最紧迫的基础控制到进阶强化，帮助企业制定清晰的安全建设路线图。</p>
+            </div>
+
+            <!-- Tier 1 -->
+            <div class="bl-tier tier-1 open" id="tier1">
+                <div class="bl-tier-header" onclick="toggleTier('tier1')">
+                    <span class="bl-tier-badge">第一层</span>
+                    <div class="bl-tier-title">
+                        <h3>🚨 基础必做</h3>
+                        <p>最高优先级 · 必须立即落实 · 不做就是高风险</p>
+                    </div>
+                    <span class="bl-tier-count">12 项控制</span>
+                    <span class="bl-tier-arrow">▼</span>
+                </div>
+                <div class="bl-tier-body">
+                    <div class="bl-controls-grid">
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-01</span>
+                            <h4>全面资产清单</h4>
+                            <p>建立并维护所有互联网暴露资产的清单，包括域名、IP、服务器、数据库、第三方API。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-02</span>
+                            <h4>管理员账户MFA</h4>
+                            <p>所有特权账户（管理员、root、云控制台）强制启用多因素认证，无例外。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-03</span>
+                            <h4>默认密码更改</h4>
+                            <p>所有系统、设备、服务的默认账号密码必须修改，禁止弱密码（≥12位复杂密码）。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-04</span>
+                            <h4>关键系统补丁</h4>
+                            <p>高危漏洞（CVSS≥9.0）在24小时内修复，中危漏洞在7天内修复，建立补丁管理流程。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-05</span>
+                            <h4>数据定期备份</h4>
+                            <p>核心业务数据每日备份，备份数据离线存储，每月验证恢复测试（3-2-1原则）。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-06</span>
+                            <h4>HTTPS全面部署</h4>
+                            <p>所有对外服务强制HTTPS（TLS 1.2+），HTTP自动跳转，有效证书管理及续期监控。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-07</span>
+                            <h4>防火墙最小化原则</h4>
+                            <p>服务器只开放必要端口，默认拒绝策略，管理端口（SSH/RDP）禁止公网直接访问。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-08</span>
+                            <h4>最小权限原则</h4>
+                            <p>员工只拥有工作所需的最小权限，离职立即撤销账户，权限变更有审批流程。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-09</span>
+                            <h4>基础日志留存</h4>
+                            <p>保留服务器登录日志、关键操作日志，留存期≥6个月（等保要求），统一集中存储。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-10</span>
+                            <h4>恶意软件防护</h4>
+                            <p>所有终端和服务器部署防病毒/EDR工具，病毒库保持最新，定期全盘扫描。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-11</span>
+                            <h4>敏感数据加密</h4>
+                            <p>数据库中的密码、身份证、银行卡等敏感数据加密存储，禁止明文存储个人信息。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-12</span>
+                            <h4>安全应急联系人</h4>
+                            <p>指定安全负责人，建立安全事件上报流程，确保24小时内能触达关键决策者。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="bl-tier tier-2" id="tier2">
+                <div class="bl-tier-header" onclick="toggleTier('tier2')">
+                    <span class="bl-tier-badge">第二层</span>
+                    <div class="bl-tier-title">
+                        <h3>📋 标准执行</h3>
+                        <p>达到行业安全水位 · 完成后可应对大多数常见攻击</p>
+                    </div>
+                    <span class="bl-tier-count">14 项控制</span>
+                    <span class="bl-tier-arrow">▼</span>
+                </div>
+                <div class="bl-tier-body">
+                    <div class="bl-controls-grid">
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-13</span>
+                            <h4>漏洞扫描机制</h4>
+                            <p>定期对互联网暴露面进行漏洞扫描（至少每月一次），建立扫描结果跟踪和处置流程。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-14</span>
+                            <h4>Web应用防火墙</h4>
+                            <p>核心业务系统前部署WAF，防御OWASP Top 10攻击（SQL注入、XSS等），规则定期更新。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-15</span>
+                            <h4>账户异常告警</h4>
+                            <p>配置登录失败超限告警、异地登录告警、非工作时间登录告警，及时发现账户被攻击。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-16</span>
+                            <h4>网络分区隔离</h4>
+                            <p>生产网、办公网、测试网物理或逻辑隔离，数据库不直接暴露到公网，内外网访问控制分离。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-17</span>
+                            <h4>代码安全扫描</h4>
+                            <p>CI/CD流程集成SAST工具（如SonarQube），发布前自动扫描高危安全问题，阻断不安全代码上线。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-18</span>
+                            <h4>第三方依赖管理</h4>
+                            <p>建立开源组件清单（SBOM），使用SCA工具扫描已知漏洞组件，禁用过时的危险依赖版本。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-19</span>
+                            <h4>DDoS基础防护</h4>
+                            <p>接入基础DDoS防护服务，设置访问频率限制（API限流），防范简单流量攻击导致服务中断。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-20</span>
+                            <h4>VPN远程访问</h4>
+                            <p>远程办公和运维通过VPN访问内网，禁止直接暴露内部系统，VPN访问要求MFA。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-21</span>
+                            <h4>信息安全策略</h4>
+                            <p>制定并发布信息安全基本方针，包含数据分类、可接受使用策略，全员知晓并签署。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-22</span>
+                            <h4>员工安全意识</h4>
+                            <p>每年至少一次全员安全意识培训，包含钓鱼识别、密码安全、数据保护等基础内容。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-23</span>
+                            <h4>个人信息合规</h4>
+                            <p>App/网站收集最小必要个人信息，隐私政策合规（PIPL），用户授权机制和数据删除功能。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-24</span>
+                            <h4>供应商安全评估</h4>
+                            <p>对接触核心数据的第三方供应商进行安全评估，合同约定数据保护责任，定期审核。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-25</span>
+                            <h4>安全事件响应预案</h4>
+                            <p>制定数据泄露、勒索病毒、DDoS等常见安全事件的处置预案，明确责任人和处置流程。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-26</span>
+                            <h4>操作系统安全加固</h4>
+                            <p>按CIS基准对服务器操作系统进行基础加固，关闭不必要服务，配置安全的SSH/系统参数。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="bl-tier tier-3" id="tier3">
+                <div class="bl-tier-header" onclick="toggleTier('tier3')">
+                    <span class="bl-tier-badge">第三层</span>
+                    <div class="bl-tier-title">
+                        <h3>🌱 进阶强化</h3>
+                        <p>提升纵深防御 · 满足高标准合规要求 · 适合成长期企业</p>
+                    </div>
+                    <span class="bl-tier-count">10 项控制</span>
+                    <span class="bl-tier-arrow">▼</span>
+                </div>
+                <div class="bl-tier-body">
+                    <div class="bl-controls-grid">
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-27</span>
+                            <h4>SIEM集中监控</h4>
+                            <p>部署集中日志分析平台（SIEM/ELK），配置安全告警规则，建立安全运营中心（SOC）能力。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-28</span>
+                            <h4>特权账户管理PAM</h4>
+                            <p>使用PAM工具管理特权账户，会话录制，访问密码轮换，防止内部人员越权操作。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-29</span>
+                            <h4>零信任网络访问</h4>
+                            <p>逐步推进零信任架构，基于身份而非网络位置进行访问决策，减少内部横向移动风险。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-30</span>
+                            <h4>渗透测试</h4>
+                            <p>每年至少一次外部渗透测试，重大系统上线前进行安全测试，测试发现问题及时修复。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-31</span>
+                            <h4>数据泄露防护DLP</h4>
+                            <p>部署DLP工具监控敏感数据的传输和访问，防止内部人员无意或恶意泄露核心数据。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-32</span>
+                            <h4>容器与云安全</h4>
+                            <p>容器镜像安全扫描，Kubernetes最小权限配置，云资源安全配置基准扫描（CSPM）。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-33</span>
+                            <h4>业务连续性计划</h4>
+                            <p>制定BCP/DR方案，定义RTO/RPO目标，定期演练业务恢复流程，确保关键业务快速恢复。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-34</span>
+                            <h4>威胁情报订阅</h4>
+                            <p>订阅安全威胁情报服务，及时获取针对行业的最新威胁信息，提前预防已知攻击手法。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-35</span>
+                            <h4>安全度量与KPI</h4>
+                            <p>建立安全指标体系（漏洞修复率、事件响应时间等），定期向管理层汇报安全现状。</p>
+                        </div>
+                        <div class="bl-control">
+                            <span class="bl-control-id">BL-36</span>
+                            <h4>等保测评认证</h4>
+                            <p>按等保2.0要求完成定级、备案、测评，取得安全等级保护测评证书，满足监管要求。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Self-Assessment Checklist -->
+    <section class="bl-checklist">
+        <div class="container">
+            <div class="bl-checklist-header">
+                <h2>快速自评检查清单</h2>
+                <p>以下为第一层和第二层关键控制项的精简版自评清单，帮助您快速了解当前安全差距。</p>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="bl-check-table">
+                    <thead>
+                        <tr>
+                            <th>控制编号</th>
+                            <th>检查项</th>
+                            <th>检查要点</th>
+                            <th>参考标准</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-01</td>
+                            <td><strong>是否有完整的互联网暴露资产清单？</strong></td>
+                            <td>所有对外服务是否都已记录在案？</td>
+                            <td>CIS IG1, 等保三级</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-02</td>
+                            <td><strong>所有管理员账户是否启用MFA？</strong></td>
+                            <td>云控制台、服务器SSH、数据库管理员</td>
+                            <td>NIST CSF PR.AC</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-04</td>
+                            <td><strong>高危漏洞是否在24小时内修复？</strong></td>
+                            <td>是否有补丁管理流程和SLA？</td>
+                            <td>CIS 7, 等保三级</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-05</td>
+                            <td><strong>是否每日备份核心数据并定期验证？</strong></td>
+                            <td>备份是否离线？最近一次恢复测试时间？</td>
+                            <td>CIS 11, 等保三级</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-07</td>
+                            <td><strong>服务器是否只开放必要端口？</strong></td>
+                            <td>SSH/RDP是否禁止公网访问？</td>
+                            <td>CIS 4, 等保二级</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-09</td>
+                            <td><strong>是否保留≥6个月的登录和操作日志？</strong></td>
+                            <td>日志是否集中存储且无法被篡改？</td>
+                            <td>等保三级强制要求</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t1">T1</span>BL-11</td>
+                            <td><strong>数据库中是否有明文存储的敏感数据？</strong></td>
+                            <td>密码、身份证、银行卡等是否加密？</td>
+                            <td>PIPL, 数据安全法</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t2">T2</span>BL-13</td>
+                            <td><strong>是否定期对暴露面进行漏洞扫描？</strong></td>
+                            <td>最近一次扫描时间？结果是否处置？</td>
+                            <td>CIS 7, NIST CSF ID.RA</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t2">T2</span>BL-17</td>
+                            <td><strong>代码上线前是否进行安全扫描？</strong></td>
+                            <td>CI/CD是否集成SAST工具？</td>
+                            <td>OWASP SAMM</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t2">T2</span>BL-21</td>
+                            <td><strong>是否有正式的信息安全策略文件？</strong></td>
+                            <td>全员是否已签署和知晓？</td>
+                            <td>ISO 27001 A.5.1, 等保</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t2">T2</span>BL-23</td>
+                            <td><strong>App/网站的个人信息收集是否合规？</strong></td>
+                            <td>隐私政策、用户授权、最小必要原则</td>
+                            <td>PIPL 强制要求</td>
+                        </tr>
+                        <tr>
+                            <td><span class="bl-tier-tag tag-t2">T2</span>BL-25</td>
+                            <td><strong>是否有安全事件应急响应预案？</strong></td>
+                            <td>是否演练过？责任人是否明确？</td>
+                            <td>等保三级, NIST CSF RS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="color:#6b7280;font-size:0.82rem;margin-top:16px;text-align:center;">提示：如果以上12项中有超过3项回答"否"，建议优先按第一层控制项启动安全建设。</p>
+        </div>
+    </section>
+
+    <!-- Comparison: BL vs CS -->
+    <section class="bl-compare">
+        <div class="container">
+            <div class="bl-compare-header">
+                <h2>IHCCC-BL 与 IHCCC-CS 对比</h2>
+                <p>了解安全基线（BL）与完整网络安全标准（CS）的定位差异，选择适合当前阶段的安全框架。</p>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="bl-cmp-table">
+                    <thead>
+                        <tr>
+                            <th>对比维度</th>
+                            <th>🛡️ IHCCC-BL 安全基线</th>
+                            <th>🛡️ IHCCC-CS 网络安全标准</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>定位</strong></td>
+                            <td>最小可行安全控制集合</td>
+                            <td>完整的网络安全治理标准</td>
+                        </tr>
+                        <tr>
+                            <td><strong>控制项数量</strong></td>
+                            <td class="cmp-yes">36 项（精简）</td>
+                            <td>80+ 项（全面）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>适用企业规模</strong></td>
+                            <td>10人以上所有规模</td>
+                            <td>50人以上，有专职安全团队</td>
+                        </tr>
+                        <tr>
+                            <td><strong>实施周期</strong></td>
+                            <td class="cmp-yes">第一层可在1个月内完成</td>
+                            <td>完整实施需6-18个月</td>
+                        </tr>
+                        <tr>
+                            <td><strong>优先级排序</strong></td>
+                            <td class="cmp-yes">✓ 三层优先级体系</td>
+                            <td class="cmp-no">按控制域分类，无优先级</td>
+                        </tr>
+                        <tr>
+                            <td><strong>自评工具</strong></td>
+                            <td class="cmp-yes">✓ 内置快速自评清单</td>
+                            <td class="cmp-partial">需配合成熟度模型评估</td>
+                        </tr>
+                        <tr>
+                            <td><strong>等保2.0对齐</strong></td>
+                            <td class="cmp-yes">✓ 覆盖二/三级核心要求</td>
+                            <td class="cmp-yes">✓ 全面覆盖三级要求</td>
+                        </tr>
+                        <tr>
+                            <td><strong>合规认证准备</strong></td>
+                            <td class="cmp-partial">等保二级基础准备</td>
+                            <td class="cmp-yes">✓ 等保三级完整准备</td>
+                        </tr>
+                        <tr>
+                            <td><strong>推荐使用场景</strong></td>
+                            <td>初建安全体系 / 快速提升底线</td>
+                            <td>建立完善安全治理 / 高合规要求</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="color:#6b7280;font-size:0.87rem;margin-top:24px;text-align:center;">建议路径：先完成 IHCCC-BL 第一层和第二层，再以 IHCCC-CS 为目标进行全面安全体系建设。</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bl-cta">
+        <div class="container">
+            <h2>开始使用 IHCCC-BL</h2>
+            <p>IHCCC-BL是一个开放社区驱动的标准，欢迎安全从业者、企业CTO/CSO提供意见和贡献，共同完善这个面向中国互联网企业的实用安全基线。</p>
+            <div class="bl-cta-btns">
+                <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="bl-cta-btn">💻 GitHub 参与贡献</a>
+                <a href="mailto:support@ihccc.com" class="bl-cta-btn">📧 提交反馈</a>
+                <a href="scripts.html" class="bl-cta-btn">🔧 查看加固脚本</a>
+                <a href="ihccc-cs.html" class="bl-cta-btn">🛡️ 了解 IHCCC-CS</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgFBL)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgFBL" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#4fc3f7"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                        <span class="logo-text">IHCCC</span>
+                    </div>
+                    <p>中国互联网安全合规中心（IHCCC）是一个非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施。</p>
+                    <div class="nonprofit-banner">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        非营利组织
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="/#standards">安全标准</a></li>
+                        <li><a href="laws.html">中国法规</a></li>
+                        <li><a href="tutorials.html">合规仓库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>安全标准</h4>
+                    <ul>
+                        <li><a href="cis.html">CIS 安全基准</a></li>
+                        <li><a href="nist-csf.html">NIST CSF</a></li>
+                        <li><a href="iso27001.html">ISO 27001</a></li>
+                        <li><a href="laws.html">等保2.0</a></li>
+                        <li><a href="ihccc-bl.html">IHCCC-BL 安全基线</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="mailto:support@ihccc.com">📧 support@ihccc.com</a></li>
+                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links footer-sponsor-col">
+                    <h4>💖 赞助我们</h4>
+                    <ul>
+                        <li><a href="https://paypal.me/ihccc" target="_blank" rel="noopener noreferrer">💳 PayPal 赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('crypto')">🪙 加密货币赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('wechat')">💬 微信赞赏</a></li>
+                    </ul>
+                    <p class="sponsor-note-footer">所有赞助用于服务器、域名及文档维护</p>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p><span class="disclaimer-highlight">⚠️ 重要声明：</span>IHCCC（中国互联网安全合规中心）<span class="disclaimer-highlight">不是任何官方机构或政府组织</span>，我们是一个独立的非营利性开源社区组织。IHCCC-BL是社区自制标准，不等同于任何官方或政府认证标准。本网站所有内容仅供学习和参考目的，不构成任何官方认证、法律建议或商业推荐。</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sponsor-modal-overlay" id="sponsorModal">
+        <div class="sponsor-modal">
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
+            <div id="sponsorModalContent"></div>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="js/main.js" defer></script>
+    <script>
+    function toggleTier(id) {
+        var el = document.getElementById(id);
+        el.classList.toggle('open');
+    }
+    function openSponsorModal(type) {
+        var modal = document.getElementById('sponsorModal');
+        var content = document.getElementById('sponsorModalContent');
+        if (type === 'wechat') {
+            content.innerHTML = '<h4>🇨🇳 微信赞赏</h4><p>扫描下方二维码，通过微信赞赏支持我们</p><div class="qr-placeholder"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#fff"/><circle cx="100" cy="80" r="36" fill="#07c160"/><text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text><text x="100" y="135" text-anchor="middle" font-size="11" fill="#333">扫一扫赞赏</text></svg></div>';
+        } else if (type === 'crypto') {
+            content.innerHTML = '<h4>🪙 加密货币赞助</h4><p>您可以通过以下加密货币地址赞助我们</p><div style="text-align:left;font-size:0.82rem;color:#444;line-height:2;word-break:break-all;"><strong>BTC:</strong> bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><strong>ETH:</strong> 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br><strong>USDT (TRC20):</strong> TXxxxxxxxxxxxxxxxxxxxxxxxxx</div>';
+        }
+        modal.classList.add('active');
+    }
+    function closeSponsorModal() {
+        document.getElementById('sponsorModal').classList.remove('active');
+    }
+    document.getElementById('sponsorModal').addEventListener('click', function(e) {
+        if (e.target === this) closeSponsorModal();
+    });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "IHCCC-BL 安全基线",
+                "description": "面向中国互联网企业的最小安全基线要求集合，通过三层优先级体系帮助企业快速建立安全防护底线",
+                "url": "https://ihccc.com/ihccc-bl.html",
+                "inLanguage": "zh-CN",
+                "author": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ihccc.com/images/favicon.svg"
+                    }
+                },
+                "datePublished": "2026-03-01",
+                "dateModified": "2026-03-03",
+                "mainEntityOfPage": "https://ihccc.com/ihccc-bl.html",
+                "keywords": "IHCCC-BL,安全基线,Security Baseline,中国互联网安全,等保2.0,安全优先级"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "首页",
+                        "item": "https://ihccc.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "IHCCC-BL",
+                        "item": "https://ihccc.com/ihccc-bl.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

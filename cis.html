@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIS安全基准中文资源 - IHCCC提供全面的CIS Benchmark中文翻译与实施指导，涵盖操作系统、云平台、容器、数据库等多个技术领域">
+    <meta name="keywords" content="CIS Benchmark, CIS安全基准, CIS Controls, 互联网安全中心, 安全配置, 安全加固, Windows安全, Linux安全, 云安全, Docker安全, Kubernetes安全, 数据库安全, CIS Controls v8">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="author" content="IHCCC 中国互联网安全合规中心">
+    <meta name="theme-color" content="#0d47a1">
+    <link rel="canonical" href="https://ihccc.com/cis.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CIS 安全基准 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="CIS Benchmark安全基准中文资源，涵盖Windows、Linux、云平台、容器、数据库等多个技术领域的安全配置最佳实践。">
+    <meta property="og:url" content="https://ihccc.com/cis.html">
+    <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:image" content="https://ihccc.com/images/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CIS安全基准中文资源 - IHCCC网络安全合规中心">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CIS 安全基准 - IHCCC">
+    <meta name="twitter:description" content="CIS Benchmark安全基准中文资源，涵盖Windows、Linux、云平台、容器、数据库等技术领域的安全配置最佳实践。">
+    <meta name="twitter:image" content="https://ihccc.com/images/og-cover.png">
+    <title>CIS 安全基准 - IHCCC 中国互联网安全合规中心</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .site-header,
+        .site-header.scrolled {
+            background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .site-header .logo-text { color: #0d47a1 !important; }
+        .site-header .logo-subtitle { color: #374151 !important; }
+        .site-header .nav-link { color: #374151 !important; }
+        .site-header .nav-link:hover,
+        .site-header .nav-link.active { color: #0d47a1 !important; background: #e3f0ff !important; }
+        .site-header .mobile-menu-btn span { background: #1f2937 !important; }
+        .dropdown-menu { border: 1px solid #e5e7eb; }
+        .dropdown-item { color: #374151 !important; }
+        .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
+        .page-hero {
+            background: linear-gradient(135deg, #061830 0%, #0d47a1 50%, #0277bd 100%);
+            padding: 140px 0 80px;
+            text-align: center;
+            color: #fff;
+        }
+        .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 40px; flex-wrap: wrap; }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-size: 2rem; font-weight: 900; color: #fff; }
+        .hero-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+        .page-content { padding: 80px 0; }
+        .page-content.alt-bg { background: #f9fafb; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
+        .section-header p { color: #6b7280; max-width: 680px; margin: 0 auto; line-height: 1.7; }
+        .benchmark-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+        .benchmark-item {
+            background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px;
+            transition: all 0.3s ease;
+        }
+        .benchmark-item:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .benchmark-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #111827; }
+        .benchmark-item p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; margin-bottom: 16px; }
+        .benchmark-tag {
+            display: inline-block; padding: 3px 12px; background: #e8eefb; color: #1a56db;
+            border-radius: 50px; font-size: 0.78rem; font-weight: 600; margin-bottom: 10px;
+        }
+        .benchmark-tag.tag-cloud { background: #e0f2f1; color: #00695c; }
+        .benchmark-tag.tag-container { background: #e8f5e9; color: #2e7d32; }
+        .benchmark-tag.tag-db { background: #fff3e0; color: #e65100; }
+        .benchmark-tag.tag-network { background: #f3e5f5; color: #7b1fa2; }
+        .benchmark-tag.tag-browser { background: #fce4ec; color: #c62828; }
+        .benchmark-tag.tag-mobile { background: #e3f2fd; color: #1565c0; }
+        .status-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: 50px; float: right; }
+        .status-available { background: #dcfce7; color: #15803d; }
+        .status-progress { background: #fef9c3; color: #a16207; }
+        .status-planned { background: #f1f5f9; color: #64748b; }
+        /* CIS Controls Section */
+        .controls-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .control-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; transition: all 0.2s; }
+        .control-card:hover { border-color: #0d47a1; box-shadow: 0 4px 12px rgba(13,71,161,0.1); }
+        .control-num { font-size: 0.75rem; font-weight: 700; color: #0d47a1; background: #e8eefb; display: inline-block; padding: 2px 10px; border-radius: 50px; margin-bottom: 8px; }
+        .control-card h4 { font-size: 0.95rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
+        .control-card p { font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+        .ig-badge { display: inline-block; font-size: 0.7rem; padding: 1px 8px; border-radius: 50px; margin-left: 6px; font-weight: 600; }
+        .ig1 { background: #dcfce7; color: #15803d; }
+        .ig2 { background: #fef9c3; color: #92400e; }
+        .ig3 { background: #fee2e2; color: #b91c1c; }
+        /* Why section */
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+        .why-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid #e5e7eb; }
+        .why-icon { font-size: 2.2rem; margin-bottom: 14px; }
+        .why-card h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .why-card p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; }
+        /* Profile section */
+        .profile-table { width: 100%; border-collapse: collapse; }
+        .profile-table th { background: #0d47a1; color: #fff; padding: 12px 16px; text-align: left; font-size: 0.9rem; }
+        .profile-table td { padding: 12px 16px; border-bottom: 1px solid #e5e7eb; font-size: 0.88rem; color: #374151; }
+        .profile-table tr:last-child td { border-bottom: none; }
+        .profile-table tr:nth-child(even) td { background: #f9fafb; }
+        .level-badge { display: inline-block; padding: 2px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
+        .level-1 { background: #dcfce7; color: #15803d; }
+        .level-2 { background: #fee2e2; color: #b91c1c; }
+        .page-cta { background: #061830; padding: 60px 0; text-align: center; color: #fff; }
+        .page-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
+        .page-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+        .btn-view-law { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+        .btn-view-law:hover { background: rgba(255,255,255,0.25); }
+        .info-box { border-left: 4px solid #0d47a1; background: #eff6ff; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 24px 0; }
+        .info-box p { font-size: 0.9rem; color: #1e40af; line-height: 1.7; margin: 0; }
+    </style>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+</head>
+<body>
+    <header class="site-header scrolled" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#logoGradC)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="logoGradC" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                    <span class="logo-text" style="color:#0d47a1">IHCCC</span>
+                    <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
+                </button>
+                <nav class="main-nav" id="mainNav">
+                    <a href="/" class="nav-link">首页</a>
+                    <div class="nav-dropdown">
+                        <a href="gdpr.html" class="nav-link dropdown-toggle">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="gdpr.html" class="dropdown-item">🇪🇺 GDPR 通用数据保护条例</a>
+                            <a href="nis2.html" class="dropdown-item">🔐 NIS2 网络与信息安全指令</a>
+                            <a href="dora.html" class="dropdown-item">⚡ DORA 数字运营韧性法案</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="nist-csf.html" class="nav-link dropdown-toggle active">美国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="nist-csf.html" class="dropdown-item">🏛️ NIST CSF 网络安全框架</a>
+                            <a href="cis.html" class="dropdown-item">🛡️ CIS 安全基准</a>
+                            <a href="pci-dss.html" class="dropdown-item">💳 PCI-DSS 支付安全标准</a>
+                            <a href="soc2.html" class="dropdown-item">📋 SOC 2 审计标准</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="iso27001.html" class="nav-link dropdown-toggle">国际标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="iso27001.html" class="dropdown-item">🌐 ISO 27001 信息安全管理体系</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="laws.html" class="nav-link dropdown-toggle">中国标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="laws.html#djbh" class="dropdown-item">🔒 等保2.0 网络安全等级保护</a>
+                            <a href="laws.html#csl" class="dropdown-item">⚖️ 《网络安全法》</a>
+                            <a href="laws.html#dsl" class="dropdown-item">📊 《数据安全法》</a>
+                            <a href="laws.html#pipl" class="dropdown-item">👤 《个人信息保护法》</a>
+                            <a href="laws.html#mima" class="dropdown-item">🔑 《密码法》与商用密码管理</a>
+                            <a href="laws.html#guiji" class="dropdown-item">🏗️ 关键信息基础设施保护</a>
+                        </div>
+                    </div>
+                    <div class="nav-dropdown">
+                        <a href="ihccc-cs.html" class="nav-link dropdown-toggle">IHCCC 框架 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                        <div class="dropdown-menu">
+                            <a href="ihccc-cs.html" class="dropdown-item">🛡️ IHCCC-CS 网络安全标准</a>
+                            <a href="ihccc-bl.html" class="dropdown-item">🛡️ IHCCC-BL 安全基线</a>
+                        </div>
+                    </div>
+                    <a href="tools.html" class="nav-link">实用工具</a>
+                    <a href="scripts.html" class="nav-link">安全脚本</a>
+                    <a href="tutorials.html" class="nav-link">合规仓库</a>
+                    <a href="about.html" class="nav-link">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-badge">🛡️ CIS · 全球安全基准</div>
+            <h1>CIS 安全基准</h1>
+            <p>互联网安全中心（CIS）制定的全球公认安全配置最佳实践标准，涵盖操作系统、云平台、数据库、容器等多个技术领域。全部基准文档与配套工具均可免费获取。</p>
+            <div class="hero-actions" style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="https://www.cisecurity.org/cis-benchmarks" target="_blank" rel="noopener noreferrer" class="btn-view-law">
+                    📄 CIS 基准官方文档
+                </a>
+                <a href="https://www.cisecurity.org/controls" target="_blank" rel="noopener noreferrer" class="btn-view-law">
+                    🎯 CIS Controls v8
+                </a>
+                <a href="scripts.html" class="btn-view-law">
+                    🔧 加固脚本库
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-num">100+</div><div class="hero-stat-label">基准文档</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">18</div><div class="hero-stat-label">CIS Controls</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-label">实施组（IG）</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">免费</div><div class="hero-stat-label">全部开放</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIS 概述 -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>什么是 CIS 安全基准？</h2>
+                <p>CIS Benchmarks（互联网安全中心安全基准）是由全球安全专家社区共同制定的免费安全配置指南，适用于操作系统、中间件、应用程序和云基础设施。</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🌍</div>
+                    <h3>全球公认</h3>
+                    <p>CIS基准被全球数千家企业、政府机构和安全团队采用，是信息安全领域最权威的配置加固标准之一，被NIST、PCI-DSS、HIPAA等主流框架引用。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🆓</div>
+                    <h3>完全免费</h3>
+                    <p>所有CIS基准文档可免费下载（PDF格式），覆盖Windows、Linux、macOS、云平台、容器、数据库等主流技术栈，无需付费订阅即可获取全部内容。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🔄</div>
+                    <h3>持续更新</h3>
+                    <p>CIS基准随技术版本更新而迭代，由全球安全专家通过开放共识流程审核维护，确保配置建议与最新安全威胁和技术发展保持同步。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📊</div>
+                    <h3>分级实施</h3>
+                    <p>每个基准分为 Level 1（基础安全，最小影响）和 Level 2（高安全，适合高敏感环境）两个配置级别，企业可根据风险需求灵活选择实施深度。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⚙️</div>
+                    <h3>可自动化</h3>
+                    <p>CIS基准支持通过CIS-CAT工具、Ansible Playbook、Chef、Puppet、Terraform等自动化工具进行合规检查与批量部署，大幅降低实施成本。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🇨🇳</div>
+                    <h3>适配中国合规</h3>
+                    <p>CIS基准与中国等保2.0标准高度兼容，实施CIS基准可同时满足等保2.0的大部分技术要求，是国内企业进行安全加固的高效路径。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIS Controls v8 -->
+    <section class="page-content alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>CIS Controls v8 — 18项核心安全控制</h2>
+                <p>CIS Controls是针对网络防御的优先级安全行动，分为三个实施组（IG1基础、IG2中级、IG3高级），帮助各类规模的组织构建有效的安全防御体系。</p>
+            </div>
+            <div class="info-box">
+                <p>💡 <strong>实施组说明：</strong>IG1（基础保护，适合小型企业）→ IG2（中级防护，适合中型组织）→ IG3（高级防护，适合高风险/关基单位）。每个控制包含若干具体的安全活动（Safeguards）。</p>
+            </div>
+            <div class="controls-grid">
+                <div class="control-card">
+                    <span class="control-num">CIS Control 1</span><span class="ig-badge ig1">IG1</span>
+                    <h4>企业资产清单与控制</h4>
+                    <p>主动管理（清点、跟踪、纠正）所有企业资产，以确保只有授权设备才能访问企业网络资源。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 2</span><span class="ig-badge ig1">IG1</span>
+                    <h4>软件资产清单与控制</h4>
+                    <p>主动管理（清点、跟踪、纠正）企业中所有软件，确保只有授权软件被安装和运行。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 3</span><span class="ig-badge ig1">IG1</span>
+                    <h4>数据保护</h4>
+                    <p>制定流程和技术控制来识别、分类、安全处理、保留和处置数据，防止数据未经授权的访问、修改或泄露。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 4</span><span class="ig-badge ig1">IG1</span>
+                    <h4>企业资产与软件的安全配置</h4>
+                    <p>建立和维护企业资产（终端、服务器、网络设备）和软件的安全配置，防止攻击者利用易受攻击的服务和设置。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 5</span><span class="ig-badge ig1">IG1</span>
+                    <h4>账户管理</h4>
+                    <p>使用流程和工具来分配和管理企业资产和软件上的账户授权，包括管理员账户。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 6</span><span class="ig-badge ig1">IG1</span>
+                    <h4>访问控制管理</h4>
+                    <p>使用流程和工具来创建、分配、管理和撤销企业资产和软件的访问凭证和权限，实施最小权限原则。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 7</span><span class="ig-badge ig1">IG1</span>
+                    <h4>持续漏洞管理</h4>
+                    <p>制定计划，持续评估和跟踪企业资产中已知漏洞的修复情况，并通过风险评估优先处理漏洞修复。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 8</span><span class="ig-badge ig1">IG1</span>
+                    <h4>审计日志管理</h4>
+                    <p>收集、分析和保留企业资产的审计日志，以检测、理解和响应攻击事件，确保日志完整性和可用性。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 9</span><span class="ig-badge ig1">IG1</span>
+                    <h4>电子邮件和Web浏览器保护</h4>
+                    <p>通过提升用户意识并使用技术手段，改善攻击者利用Web浏览器和电子邮件客户端来攻击用户的防护能力。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 10</span><span class="ig-badge ig1">IG1</span>
+                    <h4>恶意软件防御</h4>
+                    <p>防止在企业资产上安装、传播和运行恶意代码，同时优化自动化工具的使用以快速更新防御、收集数据和纠正行动。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 11</span><span class="ig-badge ig2">IG2</span>
+                    <h4>数据恢复</h4>
+                    <p>建立和维护对企业资产进行完整数据恢复的实践，确保在安全事件后能够及时恢复业务运营。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 12</span><span class="ig-badge ig2">IG2</span>
+                    <h4>网络基础设施管理</h4>
+                    <p>建立、实施和主动管理（跟踪、报告、纠正）网络设备，以防止攻击者利用易受攻击的网络服务和访问控制点。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 13</span><span class="ig-badge ig2">IG2</span>
+                    <h4>网络监控与防御</h4>
+                    <p>操作流程和工具以建立全面的网络监控与防御能力，抵御以网络为核心的攻击活动。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 14</span><span class="ig-badge ig2">IG2</span>
+                    <h4>安全意识和技能培训</h4>
+                    <p>建立并维护安全意识教育计划，以影响员工在日常工作中的安全行为，降低人为因素引发的安全风险。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 15</span><span class="ig-badge ig2">IG2</span>
+                    <h4>服务提供商管理</h4>
+                    <p>制定流程来评估服务提供商，管理其与企业的关系，确保服务提供商能够满足企业适当的安全要求。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 16</span><span class="ig-badge ig2">IG2</span>
+                    <h4>应用软件安全</h4>
+                    <p>管理企业开发、采购或外包的应用程序的安全生命周期，以检测和纠正安全弱点，防止攻击者利用它们。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 17</span><span class="ig-badge ig3">IG3</span>
+                    <h4>事件响应管理</h4>
+                    <p>建立一个程序来准备、检测、遏制、分析、清除、恢复和协调对网络事件的响应，并通知相关方。</p>
+                </div>
+                <div class="control-card">
+                    <span class="control-num">CIS Control 18</span><span class="ig-badge ig3">IG3</span>
+                    <h4>渗透测试</h4>
+                    <p>通过模拟攻击者的目标和行动来测试企业防御的强度，评估现有安全控制的有效性，发现薄弱环节。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIS Benchmarks 目录 -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>CIS 安全基准目录</h2>
+                <p>以下是主要技术领域的CIS安全基准，点击可跳转至官方下载页面，所有基准均可免费下载PDF版本。</p>
+            </div>
+
+            <h3 style="font-size:1.2rem;font-weight:700;color:#111827;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;">🖥️ 操作系统</h3>
+            <div class="benchmark-list" style="margin-bottom:40px;">
+                <div class="benchmark-item">
+                    <span class="benchmark-tag">操作系统</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Windows Server 2022 基准</h3>
+                    <p>Windows Server 2022的全面安全配置建议，覆盖账户策略（密码策略、账户锁定）、本地策略（审计策略、用户权限分配）、Windows防火墙、安全选项、Windows更新设置等200+条配置项。</p>
+                    <a href="https://www.cisecurity.org/benchmark/microsoft_windows_server" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag">操作系统</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Windows Server 2019 基准</h3>
+                    <p>适用于Windows Server 2019的安全加固指南，包含两个配置文件：Level 1（独立服务器）和Level 2（域成员服务器），涵盖账户管理、审计策略、安全配置等核心要求。</p>
+                    <a href="https://www.cisecurity.org/benchmark/microsoft_windows_server" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag">操作系统</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Ubuntu Linux 22.04 LTS 基准</h3>
+                    <p>Ubuntu 22.04 LTS的安全加固指南，涵盖文件系统配置（挂载选项、分区）、系统初始化、网络配置（防火墙规则、IPv6）、日志审计（auditd）、PAM认证等关键领域。</p>
+                    <a href="https://www.cisecurity.org/benchmark/ubuntu_linux" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag">操作系统</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Red Hat Enterprise Linux 9 基准</h3>
+                    <p>RHEL 9的安全配置标准，涵盖文件系统权限、用户账户管理、SELinux配置、网络配置、SSH配置、系统维护等，适用于生产环境Linux服务器安全加固。</p>
+                    <a href="https://www.cisecurity.org/benchmark/red_hat_linux" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag">操作系统</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS CentOS Linux 8 基准</h3>
+                    <p>CentOS Linux 8的安全加固指南，与RHEL 8基准高度兼容，适合国内大量使用CentOS的企业环境，提供完整的系统加固配置建议。</p>
+                    <a href="https://www.cisecurity.org/benchmark/centos_linux" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag">操作系统</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS macOS 14 Sonoma 基准</h3>
+                    <p>Apple macOS 14 Sonoma的安全配置指南，涵盖系统偏好设置、防火墙、隐私与位置服务、用户账户安全、文件共享权限等macOS特有配置项。</p>
+                    <a href="https://www.cisecurity.org/benchmark/apple_os" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.2rem;font-weight:700;color:#111827;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;">☁️ 云平台</h3>
+            <div class="benchmark-list" style="margin-bottom:40px;">
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-cloud">云平台</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Amazon Web Services 基准</h3>
+                    <p>AWS云平台安全配置基准，涵盖身份和访问管理（IAM）、存储安全（S3策略）、日志记录（CloudTrail/CloudWatch）、网络配置（VPC/安全组）、监控告警等核心安全控制。</p>
+                    <a href="https://www.cisecurity.org/benchmark/amazon_web_services" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-cloud">云平台</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Microsoft Azure 基准</h3>
+                    <p>Azure云服务安全配置最佳实践，涵盖Azure Active Directory、存储账户安全、SQL数据库安全、虚拟机配置、网络安全组、Azure Monitor日志审计等关键领域。</p>
+                    <a href="https://www.cisecurity.org/benchmark/azure" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-cloud">云平台</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Google Cloud Platform 基准</h3>
+                    <p>GCP安全配置基准，覆盖Cloud IAM权限管理、Cloud Storage访问控制、Cloud SQL安全配置、Compute Engine实例加固、VPC网络安全、日志与监控等方面。</p>
+                    <a href="https://www.cisecurity.org/benchmark/google_cloud_computing_platform" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-cloud">云平台</span>
+                    <span class="status-badge status-progress">⏳ 整理中</span>
+                    <h3>CIS 阿里云基准（中文版）</h3>
+                    <p>针对阿里云（Alibaba Cloud）平台的安全配置基准，参考CIS标准方法论，覆盖RAM权限管理、OSS存储安全、RDS数据库配置、ECS实例加固、VPC网络安全等阿里云核心服务。</p>
+                    <a href="https://www.cisecurity.org/benchmark/alibaba_cloud" target="_blank" rel="noopener noreferrer" class="resource-link">查看官方文档 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-cloud">云平台</span>
+                    <span class="status-badge status-planned">📋 计划中</span>
+                    <h3>CIS 腾讯云基准（社区版）</h3>
+                    <p>基于CIS方法论，适配腾讯云平台的安全配置基准，覆盖CAM访问管理、COS存储安全、TencentDB配置、CVM实例加固等腾讯云核心服务的安全最佳实践。</p>
+                    <a href="mailto:support@ihccc.com" class="resource-link">参与编写 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-cloud">云平台</span>
+                    <span class="status-badge status-planned">📋 计划中</span>
+                    <h3>CIS 华为云基准（社区版）</h3>
+                    <p>基于CIS方法论，适配华为云平台的安全配置基准，覆盖IAM身份管理、OBS存储安全、RDS数据库、ECS实例配置等华为云服务的安全最佳实践。</p>
+                    <a href="mailto:support@ihccc.com" class="resource-link">参与编写 →</a>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.2rem;font-weight:700;color:#111827;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;">🐳 容器与编排</h3>
+            <div class="benchmark-list" style="margin-bottom:40px;">
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-container">容器</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Docker 基准</h3>
+                    <p>Docker容器安全配置指南，涵盖主机操作系统配置、Docker守护进程配置（daemon.json）、镜像安全（Dockerfile最佳实践）、容器运行时配置、Docker Swarm安全等方面。</p>
+                    <a href="https://www.cisecurity.org/benchmark/docker" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-container">容器</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Kubernetes 基准</h3>
+                    <p>Kubernetes集群安全加固指南，覆盖控制平面组件（API Server、etcd、Controller Manager）、工作节点配置（kubelet、kube-proxy）、RBAC权限策略、网络策略、Pod安全策略等关键配置。</p>
+                    <a href="https://www.cisecurity.org/benchmark/kubernetes" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-container">容器</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Red Hat OpenShift 基准</h3>
+                    <p>Red Hat OpenShift容器平台的安全配置基准，除Kubernetes通用配置外，还涵盖OpenShift特有的安全上下文约束（SCC）、OAuth配置、镜像流策略等企业级容器平台安全控制。</p>
+                    <a href="https://www.cisecurity.org/benchmark/red_hat_openshift_container_platform" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.2rem;font-weight:700;color:#111827;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;">🗄️ 数据库</h3>
+            <div class="benchmark-list" style="margin-bottom:40px;">
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-db">数据库</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS MySQL 8.0 Enterprise 基准</h3>
+                    <p>MySQL 8.0数据库的安全配置标准，涵盖安装与计划（文件权限）、认证授权（账户管理、密码策略）、网络配置（bind-address）、日志审计（通用日志、二进制日志）、加密（TLS传输加密）等方面。</p>
+                    <a href="https://www.cisecurity.org/benchmark/mysql" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-db">数据库</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Microsoft SQL Server 2022 基准</h3>
+                    <p>SQL Server 2022的安全加固指南，覆盖操作系统级别配置、SQL Server安装配置、身份认证模式、数据库权限管理、审计与日志、网络协议配置等企业数据库安全要求。</p>
+                    <a href="https://www.cisecurity.org/benchmark/microsoft_sql_server" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-db">数据库</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS PostgreSQL 15 基准</h3>
+                    <p>PostgreSQL 15数据库安全配置指南，涵盖安装文件权限、认证方式（pg_hba.conf）、连接和日志配置（postgresql.conf）、用户权限管理、SSL加密配置等核心安全控制。</p>
+                    <a href="https://www.cisecurity.org/benchmark/postgresql" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-db">数据库</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Oracle Database 19c 基准</h3>
+                    <p>Oracle数据库19c安全配置标准，涵盖监听器安全、数据库初始化参数（安全相关参数）、用户账户管理、权限审计、网络加密（Oracle Advanced Security）等企业级数据库安全要求。</p>
+                    <a href="https://www.cisecurity.org/benchmark/oracle_database" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-db">数据库</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS MongoDB 7 基准</h3>
+                    <p>MongoDB数据库安全配置指南，涵盖操作系统层面配置、MongoDB守护进程配置（mongod.conf）、认证与授权（启用Auth）、加密配置（传输加密/静态加密）、审计日志等关键安全控制。</p>
+                    <a href="https://www.cisecurity.org/benchmark/mongodb" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-db">数据库</span>
+                    <span class="status-badge status-planned">📋 计划中</span>
+                    <h3>CIS Redis 7 基准（社区版）</h3>
+                    <p>基于CIS方法论，针对Redis缓存数据库的安全配置指南，涵盖redis.conf安全配置（requirepass、bind、protected-mode）、ACL访问控制列表、TLS加密、持久化安全配置等关键控制。</p>
+                    <a href="mailto:support@ihccc.com" class="resource-link">参与编写 →</a>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.2rem;font-weight:700;color:#111827;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;">🌐 网络设备与Web服务器</h3>
+            <div class="benchmark-list" style="margin-bottom:40px;">
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-network">网络设备</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Cisco IOS 17 基准</h3>
+                    <p>Cisco IOS路由器和交换机的安全配置基准，涵盖管理面板访问控制（SSH替代Telnet）、认证配置（AAA）、路由协议安全、控制平面保护（CPP）、日志记录等网络安全加固要求。</p>
+                    <a href="https://www.cisecurity.org/benchmark/cisco" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-network">Web服务器</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Apache HTTP Server 2.4 基准</h3>
+                    <p>Apache Web服务器的安全配置指南，覆盖安装规划（最小安装）、主配置文件安全（禁用目录浏览、服务器信息泄露）、SSL/TLS配置、访问控制、请求限制和日志配置等方面。</p>
+                    <a href="https://www.cisecurity.org/benchmark/apache_http_server" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-network">Web服务器</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS NGINX 基准</h3>
+                    <p>NGINX Web服务器和反向代理的安全配置基准，涵盖操作系统层面加固、NGINX核心配置（worker进程权限）、SSL/TLS安全配置（协议版本、加密套件）、请求过滤、日志配置等关键安全控制。</p>
+                    <a href="https://www.cisecurity.org/benchmark/nginx" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.2rem;font-weight:700;color:#111827;margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;">📱 移动设备与浏览器</h3>
+            <div class="benchmark-list">
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-mobile">移动设备</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Apple iOS 17 基准</h3>
+                    <p>Apple iOS 17的安全配置基准，适用于企业移动设备管理（MDM）场景，涵盖设备密码策略、Face ID/Touch ID配置、应用权限控制、iCloud数据同步安全、Safari浏览器安全等移动设备安全要求。</p>
+                    <a href="https://www.cisecurity.org/benchmark/apple_ios" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-mobile">移动设备</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Android 14 基准</h3>
+                    <p>Android 14移动操作系统的安全配置基准，涵盖屏幕锁定设置、Google账户安全、应用权限管理、开发者选项控制、位置服务配置、加密存储等Android企业设备安全管理要求。</p>
+                    <a href="https://www.cisecurity.org/benchmark/google_android" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+                <div class="benchmark-item">
+                    <span class="benchmark-tag tag-browser">浏览器</span>
+                    <span class="status-badge status-available">✓ 可用</span>
+                    <h3>CIS Google Chrome 基准</h3>
+                    <p>Google Chrome浏览器企业级安全配置基准，可通过组策略（Windows）或MDM配置文件（macOS）部署，涵盖密码管理器安全、扩展程序白名单、安全浏览配置、隐私设置等浏览器安全控制。</p>
+                    <a href="https://www.cisecurity.org/benchmark/google_chrome" target="_blank" rel="noopener noreferrer" class="resource-link">下载基准 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CIS 配置级别说明 -->
+    <section class="page-content alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>基准配置级别说明</h2>
+                <p>每个CIS基准通常包含两个配置级别，以及可选的 Workstation 和 Server 两种配置文件。</p>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="profile-table">
+                    <thead>
+                        <tr>
+                            <th>配置级别</th>
+                            <th>适用场景</th>
+                            <th>安全性</th>
+                            <th>业务影响</th>
+                            <th>推荐对象</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="level-badge level-1">Level 1</span></td>
+                            <td>所有环境（通用基础）</td>
+                            <td>基础安全</td>
+                            <td>最小影响（对业务基本无干扰）</td>
+                            <td>所有企业，可作为最低安全基线</td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge level-2">Level 2</span></td>
+                            <td>高安全需求环境</td>
+                            <td>高强度安全</td>
+                            <td>部分功能受限（需测试后部署）</td>
+                            <td>金融、医疗、政府、关基等高敏感行业</td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge" style="background:#e0f2f1;color:#004d40;">STIG</span></td>
+                            <td>美国政府/军事环境</td>
+                            <td>最高安全</td>
+                            <td>较大影响（需专业实施）</td>
+                            <td>国防、情报、联邦政府机构（DoD要求）</td>
+                        </tr>
+                        <tr>
+                            <td><span class="level-badge" style="background:#fce4ec;color:#880e4f;">NextGen</span></td>
+                            <td>新兴技术环境</td>
+                            <td>前沿安全</td>
+                            <td>因场景而异</td>
+                            <td>云原生、DevSecOps、零信任架构</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实施工具 -->
+    <section class="page-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>CIS 配套实施工具</h2>
+                <p>CIS提供多种工具帮助组织评估和实施安全基准，同时社区也维护了丰富的开源自动化脚本。</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🔍</div>
+                    <h3>CIS-CAT Pro（合规扫描）</h3>
+                    <p>CIS官方提供的配置评估工具，可自动扫描系统并生成合规报告，显示每项配置要求的通过/未通过状态，支持Windows、Linux、macOS等多平台。免费版本可用。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📦</div>
+                    <h3>CIS硬化镜像（Hardened Images）</h3>
+                    <p>CIS提供预配置的硬化虚拟机镜像，覆盖AWS、Azure、GCP云市场，以及VMware和Hyper-V本地环境，开箱即符合CIS基准Level 1配置要求。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🤖</div>
+                    <h3>Ansible/Terraform 自动化</h3>
+                    <p>社区维护的CIS基准自动化实施脚本，支持Ansible Playbook、Terraform模块、Chef Cookbook、Puppet模块等主流IaC工具，可快速批量部署合规配置。</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🔗</div>
+                    <h3>与等保2.0映射</h3>
+                    <p>IHCCC整理了CIS Controls v8与等保2.0技术要求的映射关系，帮助国内企业通过实施CIS Controls同时满足等保2.0合规要求，提升合规效率。</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:36px;">
+                <a href="scripts.html" class="btn btn-primary" style="margin-right:12px;">🔧 查看安全加固脚本</a>
+                <a href="https://www.cisecurity.org/cybersecurity-tools" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">🌐 CIS官方工具</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-cta">
+        <div class="container">
+            <h2>参与翻译与贡献</h2>
+            <p>我们诚邀安全从业者加入翻译志愿者团队，共同推动CIS安全基准的中文化工作，或贡献自动化加固脚本。</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="mailto:support@ihccc.com" class="btn-view-law">📧 邮件联系</a>
+                <a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer" class="btn-view-law">💻 GitHub 贡献</a>
+                <a href="scripts.html" class="btn-view-law">🔧 安全脚本库</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#logoGradF)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="logoGradF" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#4fc3f7"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                        <span class="logo-text">IHCCC</span>
+                    </div>
+                    <p>中国互联网安全合规中心（IHCCC）是一个非营利性组织，致力于推动互联网安全和信息合规领域的标准化、法规化以及最佳实践的实施。</p>
+                    <div class="nonprofit-banner">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        非营利组织
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="/#standards">安全标准</a></li>
+                        <li><a href="laws.html">中国法规</a></li>
+                        <li><a href="tutorials.html">合规仓库</a></li>
+                        <li><a href="/#news">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>安全标准</h4>
+                    <ul>
+                        <li><a href="cis.html">CIS 安全基准</a></li>
+                        <li><a href="pci-dss.html">PCI-DSS 标准</a></li>
+                        <li><a href="iso27001.html">ISO 27001</a></li>
+                        <li><a href="nist-csf.html">NIST CSF</a></li>
+                        <li><a href="soc2.html">SOC 2</a></li>
+                        <li><a href="laws.html">等保2.0 / GB/T 22239</a></li>
+                        <li><a href="ihccc-cs.html">IHCCC-CS 安全标准</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="mailto:support@ihccc.com">📧 support@ihccc.com</a></li>
+                        <li><a href="https://github.com/mzwrt/ihccc" target="_blank" rel="noopener noreferrer">💻 GitHub 开源仓库</a></li>
+                        <li><span style="color:rgba(255,255,255,0.5);font-size:0.85rem;">工作时间: 周一至周五 9:00-18:00</span></li>
+                    </ul>
+                </div>
+                <div class="footer-links footer-sponsor-col">
+                    <h4>💖 赞助我们</h4>
+                    <ul>
+                        <li><a href="https://paypal.me/ihccc" target="_blank" rel="noopener noreferrer">💳 PayPal 赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('crypto')">🪙 加密货币赞助</a></li>
+                        <li><a href="#" onclick="event.preventDefault();openSponsorModal('wechat')">💬 微信赞赏</a></li>
+                    </ul>
+                    <p class="sponsor-note-footer">所有赞助用于服务器、域名及文档维护</p>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p><span class="disclaimer-highlight">⚠️ 重要声明：</span>IHCCC（中国互联网安全合规中心）<span class="disclaimer-highlight">不是任何官方机构或政府组织</span>，我们是一个独立的非营利性开源社区组织。本网站所有内容仅供学习和参考目的，不构成任何官方认证、法律建议或商业推荐。</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IHCCC 中国互联网安全合规中心. 非营利组织 · 不从事任何商业活动 · 所有内容遵循 CC BY-NC-SA 4.0 协议</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sponsor-modal-overlay" id="sponsorModal">
+        <div class="sponsor-modal">
+            <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
+            <div id="sponsorModalContent"></div>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="js/main.js" defer></script>
+    <script>
+    function openSponsorModal(type) {
+        var modal = document.getElementById('sponsorModal');
+        var content = document.getElementById('sponsorModalContent');
+        if (type === 'wechat') {
+            content.innerHTML = '<h4>🇨🇳 微信赞赏</h4><p>扫描下方二维码，通过微信赞赏支持我们</p><div class="qr-placeholder"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" fill="#fff"/><circle cx="100" cy="80" r="36" fill="#07c160"/><text x="100" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">微信</text><text x="100" y="135" text-anchor="middle" font-size="11" fill="#333">扫一扫赞赏</text></svg></div>';
+        } else if (type === 'crypto') {
+            content.innerHTML = '<h4>🪙 加密货币赞助</h4><p>您可以通过以下加密货币地址赞助我们</p><div style="text-align:left;font-size:0.82rem;color:#444;line-height:2;word-break:break-all;"><strong>BTC:</strong> bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br><strong>ETH:</strong> 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br><strong>USDT (TRC20):</strong> TXxxxxxxxxxxxxxxxxxxxxxxxxx</div>';
+        }
+        modal.classList.add('active');
+    }
+    function closeSponsorModal() {
+        document.getElementById('sponsorModal').classList.remove('active');
+    }
+    document.getElementById('sponsorModal').addEventListener('click', function(e) {
+        if (e.target === this) closeSponsorModal();
+    });
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "CIS安全基准中文指南 - CIS Benchmarks",
+                "description": "CIS互联网安全中心安全基准（CIS Benchmarks）完整中文资源，覆盖操作系统、云平台、网络设备的安全配置最佳实践",
+                "url": "https://ihccc.com/cis.html",
+                "inLanguage": "zh-CN",
+                "author": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "IHCCC 中国互联网安全合规中心",
+                    "url": "https://ihccc.com",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://ihccc.com/images/favicon.svg"
+                    }
+                },
+                "datePublished": "2024-01-01",
+                "dateModified": "2026-03-03",
+                "mainEntityOfPage": "https://ihccc.com/cis.html",
+                "keywords": "CIS Benchmarks,CIS安全基准,互联网安全中心,安全配置,操作系统安全,云安全,网络设备安全"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://ihccc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "美国标准",
+            "item": "https://ihccc.com/nist-csf.html"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "CIS 安全基准",
+            "item": "https://ihccc.com/cis.html"
+        }
+                ]
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

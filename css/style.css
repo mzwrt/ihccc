@@ -1406,10 +1406,10 @@ img {
     align-items: center;
     gap: 6px;
     padding: 4px 14px;
-    background: rgba(0, 137, 123, 0.18);
-    border: 1px solid rgba(0, 197, 176, 0.45);
+    background: rgba(0, 137, 123, 0.1);
+    border: 1px solid rgba(0, 137, 123, 0.2);
     border-radius: 50px;
-    color: #80cbc4;
+    color: var(--secondary);
     font-size: 0.78rem;
     font-weight: 600;
     margin-top: 8px;

@@ -143,10 +143,6 @@ img {
 }
 
 /* ===== Header ===== */
-.site-header .container {
-    max-width: none;
-}
-
 .site-header {
     position: fixed;
     top: 0;

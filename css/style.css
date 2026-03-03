@@ -162,6 +162,10 @@ img {
     padding: 8px 0;
 }
 
+.site-header .container {
+    max-width: none;
+}
+
 .header-inner {
     display: flex;
     align-items: center;
@@ -212,7 +216,7 @@ img {
     color: var(--dark-500);
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1280px) {
     .logo-subtitle {
         display: inline;
     }

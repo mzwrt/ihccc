@@ -162,10 +162,6 @@ img {
     padding: 8px 0;
 }
 
-.site-header .container {
-    max-width: none;
-}
-
 .header-inner {
     display: flex;
     align-items: center;

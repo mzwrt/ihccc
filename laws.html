@@ -19,7 +19,7 @@
     <meta property="og:image" content="https://ihccc.com/images/og-cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="IHCCC 中国互联网安全合规中心">
+    <meta property="og:image:alt" content="中国网络安全法规专题 - IHCCC网络安全合规中心">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="中国网络安全法规专题 - IHCCC">
@@ -28,6 +28,7 @@
     <title>中国网络安全法规专题 - IHCCC 中国互联网安全合规中心</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="css/style.css" as="style">
@@ -1011,25 +1012,50 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "中国网络安全法规专题",
-    "description": "全面解读中国网络安全法、数据安全法、个人信息保护法、等保2.0等核心法规，提供合规检查清单和实施指导",
-    "author": {
-        "@type": "Organization",
-        "name": "IHCCC 中国互联网安全合规中心"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "IHCCC 中国互联网安全合规中心",
-        "url": "https://ihccc.com"
-    },
-    "url": "https://ihccc.com/laws.html",
-    "mainEntityOfPage": "https://ihccc.com/laws.html",
-    "datePublished": "2024-01-01",
-    "dateModified": "2026-03-01",
-    "inLanguage": "zh-CN",
-    "keywords": "网络安全法,数据安全法,个人信息保护法,等保2.0,密码法,中国合规"
-}
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "headline": "中国网络安全法规专题",
+            "description": "全面解读中国网络安全法、数据安全法、个人信息保护法、等保2.0等核心法规，提供合规检查清单和实施指导",
+            "author": {
+                "@type": "Organization",
+                "name": "IHCCC 中国互联网安全合规中心"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "IHCCC 中国互联网安全合规中心",
+                "url": "https://ihccc.com",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ihccc.com/images/favicon.svg"
+                }
+            },
+            "url": "https://ihccc.com/laws.html",
+            "mainEntityOfPage": "https://ihccc.com/laws.html",
+            "datePublished": "2024-01-01",
+            "dateModified": "2026-03-03",
+            "inLanguage": "zh-CN",
+            "keywords": "网络安全法,数据安全法,个人信息保护法,等保2.0,密码法,中国合规"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "首页",
+                    "item": "https://ihccc.com/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "中国法规",
+                    "item": "https://ihccc.com/laws.html"
+                }
+            ]
+        }
+    ]
 </script>
 </body>
 </html>

@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GDPR通用数据保护条例中文指南 - IHCCC提供欧盟GDPR合规要求、七大原则、数据主体权利、实施指导和最佳实践">
-    <meta name="keywords" content="GDPR, 通用数据保护条例, 欧盟数据保护, 数据主体权利, 数据处理, 隐私保护, DPO, 数据保护官, 数据泄露通知, 个人数据">
+    <meta name="description" content="DORA数字运营韧性法案中文指南 - IHCCC解读欧盟金融科技合规要求，覆盖ICT风险管理、事件报告、韧性测试和第三方风险管理">
+    <meta name="keywords" content="DORA, 数字运营韧性法案, 欧盟金融, ICT风险管理, TLPT测试, 第三方风险, 金融合规, 欧盟监管">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="IHCCC 中国互联网安全合规中心">
     <meta name="theme-color" content="#0d47a1">
-    <link rel="canonical" href="https://ihccc.com/pages/gdpr.html">
+    <link rel="canonical" href="https://ihccc.com/dora.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="GDPR 通用数据保护条例 - IHCCC 中国互联网安全合规中心">
-    <meta property="og:description" content="GDPR通用数据保护条例中文指南，全面解读七大原则、八项数据主体权利、合规义务和最佳实践。">
-    <meta property="og:url" content="https://ihccc.com/pages/gdpr.html">
+    <meta property="og:title" content="DORA 数字运营韧性法案 - IHCCC 中国互联网安全合规中心">
+    <meta property="og:description" content="DORA数字运营韧性法案中文指南，解读五大支柱：ICT风险管理、事件报告、韧性测试、第三方风险和信息共享。">
+    <meta property="og:url" content="https://ihccc.com/dora.html">
     <meta property="og:site_name" content="IHCCC 中国互联网安全合规中心">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:image" content="https://ihccc.com/images/og-cover.png">
@@ -20,17 +20,17 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="IHCCC 中国互联网安全合规中心">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GDPR 通用数据保护条例 - IHCCC">
-    <meta name="twitter:description" content="GDPR通用数据保护条例中文指南，全面解读七大原则、八项数据主体权利、合规义务。">
+    <meta name="twitter:title" content="DORA 数字运营韧性法案 - IHCCC">
+    <meta name="twitter:description" content="欧盟DORA数字运营韧性法案中文解读，适用于欧盟各类金融实体。">
     <meta name="twitter:image" content="https://ihccc.com/images/og-cover.png">
-    <title>GDPR 通用数据保护条例 | 欧盟数据保护法规中文指南 - IHCCC</title>
-    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../css/style.css" as="style">
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>DORA 数字运营韧性法案 | 欧盟金融科技合规中文指南 - IHCCC</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .site-header, .site-header.scrolled { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05); }
         .site-header .logo-text { color: #0d47a1 !important; }
@@ -41,7 +41,7 @@
         .dropdown-menu { border: 1px solid #e5e7eb; }
         .dropdown-item { color: #374151 !important; }
         .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
-        .page-hero { background: linear-gradient(135deg, #003399 0%, #1565c0 50%, #0d47a1 100%); padding: 140px 0 80px; text-align: center; color: #fff; }
+        .page-hero { background: linear-gradient(135deg, #004d40 0%, #00695c 50%, #00897b 100%); padding: 140px 0 80px; text-align: center; color: #fff; }
         .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
         .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto; line-height: 1.7; }
         .hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
@@ -60,25 +60,20 @@
         .info-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: #111827; }
         .info-card p { font-size: 0.9rem; color: #4b5563; line-height: 1.7; }
         .card-icon { font-size: 2rem; margin-bottom: 12px; }
-        .card-num { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #003399, #1565c0); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 12px; }
-        .checklist { list-style: none; padding: 0; }
-        .checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.92rem; color: #374151; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist li::before { content: "✓"; color: #0d47a1; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-        .info-box { background: #eff6ff; border-left: 4px solid #1565c0; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
-        .info-box p { font-size: 0.9rem; color: #1e40af; line-height: 1.7; margin: 0; }
         .law-content h3 { font-size: 1.2rem; font-weight: 700; color: #111827; margin: 28px 0 12px; padding-bottom: 8px; border-bottom: 2px solid #e5e7eb; }
         .law-content p { font-size: 0.95rem; color: #374151; line-height: 1.8; margin-bottom: 16px; }
         .law-content ul { padding-left: 20px; margin-bottom: 16px; }
         .law-content ul li { font-size: 0.92rem; color: #374151; line-height: 1.8; margin-bottom: 6px; }
-        .fine-box { background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 1px solid #fca5a5; border-radius: 12px; padding: 24px; text-align: center; margin-top: 16px; }
-        .fine-box .fine-num { font-size: 2rem; font-weight: 900; color: #dc2626; }
-        .fine-box .fine-label { font-size: 0.9rem; color: #7f1d1d; margin-top: 4px; }
-        .fine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
-        @media (max-width: 640px) { .fine-grid { grid-template-columns: 1fr; } }
+        .info-box { border-left: 4px solid; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
+        .info-box p { font-size: 0.9rem; line-height: 1.7; margin: 0; }
         .page-cta { background: #f9fafb; padding: 60px 0; text-align: center; }
         .page-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
         .page-cta p { color: #4b5563; margin-bottom: 24px; }
+        .pillar-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 28px; transition: all 0.3s; }
+        .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .pillar-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #004d40, #00897b); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; margin-bottom: 16px; }
+        .pillar-card h3 { font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .pillar-card p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; }
     </style>
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
@@ -86,8 +81,8 @@
     <header class="site-header scrolled" id="header">
         <div class="container">
             <div class="header-inner">
-                <a href="../index.html" class="logo">
-                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgG)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgG" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
+                <a href="/" class="logo">
+                    <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgX)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgX" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
                     <span class="logo-text" style="color:#0d47a1">IHCCC</span>
                     <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
                 </a>
@@ -95,7 +90,7 @@
                     <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
                 </button>
                 <nav class="main-nav" id="mainNav">
-                    <a href="../index.html" class="nav-link">首页</a>
+                    <a href="/" class="nav-link">首页</a>
                     <div class="nav-dropdown">
                         <a href="gdpr.html" class="nav-link dropdown-toggle active">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
                         <div class="dropdown-menu">
@@ -139,8 +134,8 @@
                     </div>
                     <a href="tools.html" class="nav-link">实用工具</a>
                     <a href="scripts.html" class="nav-link">安全脚本</a>
-                    <a href="tutorials.html" class="nav-link">合规仓库</a>
-                    <a href="about.html" class="nav-link">关于我们</a>
+                    <a href="tutorials.html" class="nav-link ">合规仓库</a>
+                    <a href="about.html" class="nav-link ">关于我们</a>
                 </nav>
             </div>
         </div>
@@ -148,21 +143,18 @@
 
     <section class="page-hero">
         <div class="container">
-            <div class="hero-badge">欧盟 · 2018年生效</div>
-            <h1>GDPR 通用数据保护条例</h1>
-            <p>欧盟《通用数据保护条例》（General Data Protection Regulation）是全球最严格的数据保护法规，对处理欧盟居民个人数据的组织具有域外管辖效力。</p>
+            <div class="hero-badge">欧盟 · 2025年1月17日适用</div>
+            <h1>DORA 数字运营韧性法案</h1>
+            <p>数字运营韧性法案（Digital Operational Resilience Act）是欧盟专门针对金融行业数字韧性的法规，旨在确保金融实体能够抵御、响应和恢复重大ICT相关事件。</p>
             <div class="hero-stats">
-                <div class="hero-stat"><div class="hero-stat-num">7</div><div class="hero-stat-label">核心原则</div></div>
-                <div class="hero-stat"><div class="hero-stat-num">8</div><div class="hero-stat-label">数据主体权利</div></div>
-                <div class="hero-stat"><div class="hero-stat-num">4%</div><div class="hero-stat-label">最高罚款（全球营业额）</div></div>
-                <div class="hero-stat"><div class="hero-stat-num">72h</div><div class="hero-stat-label">数据泄露通知期限</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">合规支柱</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">受监管金融实体类型</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">4h</div><div class="hero-stat-label">重大事件初始报告</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">2025</div><div class="hero-stat-label">正式适用年份</div></div>
             </div>
             <div class="hero-actions" style="margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-                <a href="https://eur-lex.europa.eu/legal-content/ZH/TXT/?uri=CELEX%3A32016R0679" target="_blank" rel="noopener noreferrer" class="btn-view-law">
-                    📄 查看 GDPR 官方原文
-                </a>
-                <a href="https://gdpr.eu/tag/gdpr/" target="_blank" rel="noopener noreferrer" class="btn-view-law btn-secondary">
-                    🌐 GDPR 实施指南
+                <a href="https://eur-lex.europa.eu/legal-content/ZH/TXT/?uri=CELEX%3A32022R2554" target="_blank" rel="noopener noreferrer" class="btn-view-law">
+                    📄 查看 DORA 法规原文
                 </a>
             </div>
         </div>
@@ -171,70 +163,23 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>GDPR 七大核心原则</h2>
-                <p>GDPR第5条规定了个人数据处理必须遵守的七项基本原则，违反任何一项均可能面临高额罚款。</p>
-            </div>
-            <div class="card-grid">
-                <div class="info-card"><div class="card-num">1</div><h3>合法性、公正性和透明性</h3><p>个人数据必须以合法、公正、对数据主体透明的方式处理。需向数据主体明确告知处理目的和方式。</p></div>
-                <div class="info-card"><div class="card-num">2</div><h3>目的限制</h3><p>数据仅可为特定、明确且合法的目的收集，不得以与原始目的不相符的方式进行进一步处理。</p></div>
-                <div class="info-card"><div class="card-num">3</div><h3>数据最小化</h3><p>收集的个人数据必须适当、相关，且仅限于处理目的所必需的范围。禁止过度收集数据。</p></div>
-                <div class="info-card"><div class="card-num">4</div><h3>准确性</h3><p>个人数据必须准确，并在必要时保持最新状态。不准确的数据须及时删除或更正。</p></div>
-                <div class="info-card"><div class="card-num">5</div><h3>存储限制</h3><p>个人数据不得以可识别数据主体的形式保存超过处理目的所需要的时间。</p></div>
-                <div class="info-card"><div class="card-num">6</div><h3>完整性与保密性</h3><p>必须采用适当的技术或组织安全措施处理个人数据，防止未经授权的访问、意外丢失或破坏。</p></div>
-                <div class="info-card"><div class="card-num">7</div><h3>问责制</h3><p>数据控制者须对遵守上述原则承担责任，并能够证明合规性。这是GDPR引入的新原则。</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section alt-bg">
-        <div class="container">
-            <div class="section-header">
-                <h2>八项数据主体权利</h2>
-                <p>GDPR赋予欧盟居民对其个人数据的广泛控制权，组织必须建立机制以响应这些权利请求。</p>
-            </div>
-            <div class="card-grid">
-                <div class="info-card"><div class="card-icon">📋</div><h3>知情权</h3><p>数据主体有权获知其个人数据被收集和处理的方式，包括处理目的、保留期限、共享对象等信息。</p></div>
-                <div class="info-card"><div class="card-icon">🔍</div><h3>访问权</h3><p>有权获取其个人数据的副本，并了解数据的处理方式。控制者须在一个月内免费响应请求。</p></div>
-                <div class="info-card"><div class="card-icon">✏️</div><h3>更正权</h3><p>有权要求更正不准确的个人数据，以及补充不完整的数据。</p></div>
-                <div class="info-card"><div class="card-icon">🗑️</div><h3>删除权（被遗忘权）</h3><p>在特定情况下有权要求删除其个人数据，例如数据不再必要或撤回同意时。</p></div>
-                <div class="info-card"><div class="card-icon">⏸️</div><h3>限制处理权</h3><p>在特定情况下有权要求限制对其数据的处理，例如对数据准确性提出异议期间。</p></div>
-                <div class="info-card"><div class="card-icon">📦</div><h3>数据可携带权</h3><p>有权以结构化、常用的机器可读格式接收其个人数据，并将其传输给另一控制者。</p></div>
-                <div class="info-card"><div class="card-icon">🚫</div><h3>反对权</h3><p>有权反对基于合法利益或公共利益的数据处理，以及用于直接营销目的的数据处理。</p></div>
-                <div class="info-card"><div class="card-icon">🤖</div><h3>拒绝自动化决策权</h3><p>有权不受仅基于自动化处理（包括画像）的决定的约束，该决定对其产生法律效果或类似的重大影响。</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>合规义务与关键要求</h2>
-                <p>组织必须满足一系列合规要求，以确保个人数据的安全和合规处理。</p>
+                <h2>DORA 适用范围</h2>
+                <p>DORA适用于欧盟境内广泛的金融实体，以及向其提供关键ICT服务的第三方提供商。</p>
             </div>
             <div style="max-width:860px;margin:0 auto">
                 <div class="law-content">
-                    <h3>合法处理的六项法律依据</h3>
-                    <ul>
-                        <li><strong>同意：</strong>数据主体明确、自由、具体且知情地表示同意</li>
-                        <li><strong>合同履行：</strong>处理是履行与数据主体签订的合同所必需的</li>
-                        <li><strong>法律义务：</strong>处理是履行控制者的法律义务所必需的</li>
-                        <li><strong>重大利益：</strong>处理是保护数据主体或他人的重大利益所必需的</li>
-                        <li><strong>公共利益：</strong>处理是出于公共利益执行任务所必需的</li>
-                        <li><strong>合法利益：</strong>处理是控制者或第三方追求的合法利益所必需的</li>
-                    </ul>
-                    <h3>数据保护官（DPO）要求</h3>
-                    <p>以下情况下必须任命数据保护官：①公共机构；②大规模系统性监控个人；③大规模处理特殊类别数据或犯罪记录数据。DPO须向最高管理层报告，并受到保护不因履职而受处罚。</p>
-                    <h3>数据泄露通知</h3>
-                    <p>发生影响个人权利和自由的数据泄露时，控制者须：<br>
-                    • 在知悉泄露后 <strong>72小时内</strong>向监管机构（如CNIL、BfDI等）通知<br>
-                    • 如泄露可能对个人产生高风险，须 <strong>无不当延迟</strong> 地直接通知受影响的数据主体</p>
-                    <h3>数据保护影响评估（DPIA）</h3>
-                    <p>对可能对个人权利和自由产生高风险的处理活动，必须在处理前进行DPIA（Data Protection Impact Assessment）。高风险场景包括：大规模处理特殊类别数据、系统性评估个人（含画像）、对公共场所进行系统性监控等。</p>
-                    <h3>国际数据传输</h3>
-                    <p>向欧洲经济区（EEA）以外传输个人数据，须满足以下条件之一：①欧盟委员会充分性决定；②标准合同条款（SCC）；③绑定企业规则（BCR）；④认证机制；⑤行为准则+约束性承诺。</p>
-                    <div class="info-box">
-                        <p><strong>💡 对中国企业的影响：</strong>中国企业如向欧盟居民提供商品或服务，或监控欧盟居民行为（如使用Cookie追踪），即须遵守GDPR，即使企业在中国境内。2023年欧盟已发布新版标准合同条款（SCC），建议中国企业与欧盟合作伙伴更新数据传输协议。</p>
+                    <h3>受监管金融实体（部分示例）</h3>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:16px">
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🏦 信贷机构（银行）</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">💳 支付机构</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">📈 投资公司</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🛡️ 保险公司</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🔄 中央对手方（CCP）</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🪙 加密资产服务商</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">🏪 交易场所</div>
+                        <div style="background:#f0fdfa;border:1px solid #99f6e4;border-radius:10px;padding:12px;font-size:0.85rem;color:#065f46;font-weight:600;text-align:center">☁️ 关键ICT第三方提供商</div>
                     </div>
+                    <div class="info-box" style="background:#f0fdfa;border-left-color:#00897b"><p style="color:#065f46"><strong>💡 对中国企业的影响：</strong>向欧盟金融实体提供云计算、数据分析、支付处理等ICT服务的中国企业，可能被认定为DORA下的"关键ICT第三方服务提供商"，须接受欧盟监管机构的监督，包括审计和检查。</p></div>
                 </div>
             </div>
         </div>
@@ -243,15 +188,15 @@
     <section class="content-section alt-bg">
         <div class="container">
             <div class="section-header">
-                <h2>罚款与执法</h2>
-                <p>GDPR建立了两级罚款体系，是全球数据保护法中最高的罚款之一。</p>
+                <h2>DORA 五大合规支柱</h2>
+                <p>DORA构建了五个相互关联的合规支柱，全面覆盖金融实体的数字运营韧性要求。</p>
             </div>
-            <div class="fine-grid" style="max-width:700px;margin:0 auto">
-                <div class="fine-box"><div class="fine-num">2%</div><div style="font-size:1.1rem;font-weight:700;color:#dc2626;margin:4px 0">或 1000万欧元</div><div class="fine-label">较轻违规（以较高者为准）<br>如未履行记录义务、未通知数据泄露</div></div>
-                <div class="fine-box"><div class="fine-num">4%</div><div style="font-size:1.1rem;font-weight:700;color:#dc2626;margin:4px 0">或 2000万欧元</div><div class="fine-label">严重违规（以较高者为准）<br>如违反基本原则、数据主体权利、国际传输规则</div></div>
-            </div>
-            <div style="max-width:700px;margin:24px auto 0">
-                <div class="info-box"><p><strong>⚠️ 执法案例：</strong>迄今最高罚款：Meta被爱尔兰DPC罚款12亿欧元（2023年）；谷歌被法国CNIL罚款1.5亿欧元；亚马逊被卢森堡罚款7.46亿欧元。GDPR执法正在加速，各EU监管机构合作日益紧密。</p></div>
+            <div class="card-grid">
+                <div class="pillar-card"><div class="pillar-num">1</div><h3>ICT风险管理框架</h3><p>建立完整的ICT风险管理框架，包括ICT资产识别、风险评估、安全措施实施和定期审查。管理层对框架负有直接责任。</p></div>
+                <div class="pillar-card"><div class="pillar-num">2</div><h3>ICT相关事件管理</h3><p>建立事件分类标准（包括主要ICT事件判定标准）、响应流程，并按规定时间线向主管机构报告重大事件。</p></div>
+                <div class="pillar-card"><div class="pillar-num">3</div><h3>数字运营韧性测试</h3><p>定期开展韧性测试，包括基础测试（漏洞扫描、渗透测试）和重要金融实体须实施的高级威胁导向渗透测试（TLPT）。</p></div>
+                <div class="pillar-card"><div class="pillar-num">4</div><h3>ICT第三方风险管理</h3><p>建立管理ICT第三方风险的政策框架，评估关键和重要功能的供应商，签订包含DORA要求条款的合同。</p></div>
+                <div class="pillar-card"><div class="pillar-num">5</div><h3>信息情报共享</h3><p>鼓励金融实体之间共享网络威胁信息和情报，提升整个金融行业的集体防御能力。</p></div>
             </div>
         </div>
     </section>
@@ -259,32 +204,21 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>GDPR 合规实施清单</h2>
-                <p>IHCCC整理的GDPR合规基础清单，帮助组织快速了解合规差距。</p>
+                <h2>重大ICT事件报告时间线</h2>
+                <p>DORA对重大ICT事件建立了严格的分阶段报告机制。</p>
             </div>
-            <div style="max-width:700px;margin:0 auto">
-                <ul class="checklist">
-                    <li>建立并维护数据处理活动记录（ROPA），记录所有个人数据处理活动</li>
-                    <li>为所有处理活动确定合法处理依据，并在隐私政策中披露</li>
-                    <li>更新隐私政策，确保符合GDPR透明度要求（清晰、简洁、易懂）</li>
-                    <li>建立响应数据主体权利请求的流程和机制（目标：1个月内响应）</li>
-                    <li>评估是否需要任命数据保护官（DPO）</li>
-                    <li>实施技术和组织安全措施（访问控制、加密、伪名化等）</li>
-                    <li>建立数据泄露响应计划，确保能在72小时内通知监管机构</li>
-                    <li>审查与第三方供应商的合同，添加数据处理协议（DPA）条款</li>
-                    <li>对高风险处理活动开展数据保护影响评估（DPIA）</li>
-                    <li>建立Cookie同意管理机制（CMP），确保符合ePrivacy要求</li>
-                    <li>审查国际数据传输机制，确保符合新版SCC要求</li>
-                    <li>开展员工GDPR意识培训，特别是处理个人数据的岗位</li>
-                </ul>
+            <div style="max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px">
+                <div class="info-card" style="border-top:4px solid #dc2626"><div class="card-icon">⚡</div><h3>4小时内：初始通知</h3><p>如事件满足重大事件标准，须在知悉后4小时内向主管机构提交初始通知。</p></div>
+                <div class="info-card" style="border-top:4px solid #f59e0b"><div class="card-icon">📊</div><h3>72小时内：中期报告</h3><p>提交中期报告，更新初始通知内容，包括影响评估、已采取缓解措施。</p></div>
+                <div class="info-card" style="border-top:4px solid #10b981"><div class="card-icon">📋</div><h3>1个月内：最终报告</h3><p>提交最终报告，包括根本原因分析、已实施的纠正措施和经验教训。</p></div>
             </div>
         </div>
     </section>
 
     <section class="page-cta">
         <div class="container">
-            <h2>需要GDPR合规支持？</h2>
-            <p>IHCCC提供GDPR合规资源和指导，帮助企业了解欧盟数据保护要求。</p>
+            <h2>DORA 合规支持</h2>
+            <p>IHCCC提供DORA合规资源，帮助金融机构和ICT服务商了解欧盟数字韧性要求。</p>
             <a href="mailto:support@ihccc.com" class="btn btn-primary btn-lg">邮件联系</a>
         </div>
     </section>
@@ -308,10 +242,10 @@
                     <h4>快速链接</h4>
                     <ul>
                         <li><a href="about.html">关于我们</a></li>
-                        <li><a href="../index.html#standards">安全标准</a></li>
+                        <li><a href="/#standards">安全标准</a></li>
                         <li><a href="laws.html">中国法规</a></li>
                         <li><a href="tutorials.html">合规仓库</a></li>
-                        <li><a href="../index.html#news">新闻动态</a></li>
+                        <li><a href="/#news">新闻动态</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -417,7 +351,7 @@
         </svg>
     </button>
 
-    <script src="../js/main.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script>
     function openSponsorModal(type) {
         var modal = document.getElementById('sponsorModal');
@@ -442,9 +376,9 @@
         "@graph": [
             {
                 "@type": "Article",
-                "headline": "GDPR通用数据保护条例中文指南",
-                "description": "欧盟GDPR（General Data Protection Regulation）通用数据保护条例完整中文资源，包括合规要求、实施指导和检查清单",
-                "url": "https://ihccc.com/pages/gdpr.html",
+                "headline": "DORA数字运营韧性法案中文指南",
+                "description": "欧盟DORA（Digital Operational Resilience Act）数字运营韧性法案完整中文解读，适用于金融机构的ICT风险管理合规要求",
+                "url": "https://ihccc.com/dora.html",
                 "inLanguage": "zh-CN",
                 "author": {
                     "@type": "Organization",
@@ -462,8 +396,8 @@
                 },
                 "datePublished": "2024-01-01",
                 "dateModified": "2026-03-01",
-                "mainEntityOfPage": "https://ihccc.com/pages/gdpr.html",
-                "keywords": "GDPR,通用数据保护条例,数据保护,隐私合规,欧盟法规,数据主体权利,个人数据,跨境数据传输"
+                "mainEntityOfPage": "https://ihccc.com/dora.html",
+                "keywords": "DORA,数字运营韧性法案,Digital Operational Resilience Act,金融机构,ICT风险管理,欧盟法规,金融合规"
             },
             {
                 "@type": "BreadcrumbList",
@@ -478,13 +412,13 @@
             "@type": "ListItem",
             "position": 2,
             "name": "欧盟标准",
-            "item": "https://ihccc.com/pages/gdpr.html"
+            "item": "https://ihccc.com/gdpr.html"
         },
         {
             "@type": "ListItem",
             "position": 3,
-            "name": "GDPR",
-            "item": "https://ihccc.com/pages/gdpr.html"
+            "name": "DORA",
+            "item": "https://ihccc.com/dora.html"
         }
                 ]
             }

@@ -1,4 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
   <rect width="60" height="60" rx="12" fill="#f0f3ff"/>
-  <text x="30" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="22" letter-spacing="3" fill="#052FAD">IBM</text>
+  <defs>
+    <!-- Horizontal stripe mask: 3 visible stripes out of 5 -->
+    <clipPath id="stripes">
+      <rect x="0" y="0" width="60" height="9"/>
+      <rect x="0" y="13" width="60" height="9"/>
+      <rect x="0" y="26" width="60" height="9"/>
+      <rect x="0" y="39" width="60" height="9"/>
+    </clipPath>
+  </defs>
+  <!-- IBM text, clipped with horizontal stripes -->
+  <text x="30" y="40" text-anchor="middle"
+        font-family="'Helvetica Neue', Arial Black, sans-serif"
+        font-weight="900" font-size="28"
+        letter-spacing="3" fill="#052FAD"
+        clip-path="url(#stripes)">IBM</text>
 </svg>

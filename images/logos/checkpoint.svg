@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-  <rect width="60" height="60" rx="12" fill="#f0f7ff"/>
-  <circle cx="30" cy="30" r="16" fill="none" stroke="#DA291C" stroke-width="3"/>
-  <path d="M22 30 L27 35 L38 24" fill="none" stroke="#00A3E0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="60" height="60" rx="12" fill="#f0f5ff"/>
+  <g transform="translate(10, 10) scale(1.67)">
+    <!-- Check Point shield with star/check combination -->
+    <path d="M12 1.5L2 6v6.5C2 19.5 6.6 24.1 12 25.5c5.4-1.4 10-6 10-13V6L12 1.5z" fill="none" stroke="#DA291C" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M7.5 13l3.5 3.5 6.5-7" fill="none" stroke="#DA291C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

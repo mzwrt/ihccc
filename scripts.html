@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IHCCC 安全加固脚本库 - 提供Linux、Windows、Docker、Kubernetes等主流平台的安全加固与合规检测自动化脚本，基于CIS基准和等保2.0标准">
-    <meta name="keywords" content="安全加固脚本, Linux加固, Windows加固, Docker安全, Kubernetes安全, 等保2.0脚本, CIS基准脚本, Shell脚本, PowerShell, Bash加固, 安全自动化, 合规检测">
+    <meta name="description" content="IHCCC安全加固脚本库：Linux、Windows、Docker、Kubernetes、MySQL、AWS及Ansible批量加固脚本，基于CIS基准与等保2.0标准，开源免费。">
+    <meta name="keywords" content="安全加固脚本, Linux加固, Windows加固, Docker安全, Kubernetes安全, 等保2.0脚本, CIS基准脚本, Shell脚本, PowerShell, Bash加固, 安全自动化, 合规检测, Ansible安全">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="IHCCC 中国互联网安全合规中心">
     <meta name="theme-color" content="#0d47a1">
     <link rel="canonical" href="https://ihccc.com/scripts.html">
-    <meta property="og:type" content="article">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:title" content="安全加固脚本库 - IHCCC 中国互联网安全合规中心">
     <meta property="og:description" content="IHCCC安全加固脚本库，提供Linux、Windows、Docker、Kubernetes等平台的安全加固与合规检测自动化脚本，免费开放使用。">
     <meta property="og:url" content="https://ihccc.com/scripts.html">
@@ -18,21 +20,35 @@
     <meta property="og:image" content="https://ihccc.com/images/og-cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="IHCCC安全加固脚本库 - 安全自动化脚本工具">
+    <meta property="og:image:alt" content="IHCCC 安全加固脚本库 - Linux、Windows、Docker、Kubernetes、数据库、云平台及Ansible批量加固脚本">
+
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="安全加固脚本库 - IHCCC">
     <meta name="twitter:description" content="Linux、Windows、Docker、Kubernetes等平台安全加固与合规检测脚本，基于CIS基准与等保2.0，免费开放。">
     <meta name="twitter:image" content="https://ihccc.com/images/og-cover.png">
+
     <title>安全加固脚本库 | 安全实施与检测自动化脚本 - IHCCC</title>
+
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//github.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+    <!-- Preload critical resources -->
     <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/noto-sans-sc-chinese-simplified-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="css/style.css" as="style">
+
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Critical inline CSS for above-the-fold content -->
     <style>
+        /* ── Header ── */
         .site-header,
         .site-header.scrolled {
             background: rgba(255,255,255,0.98) !important;
@@ -49,6 +65,8 @@
         .dropdown-menu { border: 1px solid #e5e7eb; }
         .dropdown-item { color: #374151 !important; }
         .dropdown-item:hover { color: #0d47a1 !important; background: #f0f7ff !important; }
+
+        /* ── Hero ── */
         .page-hero {
             background: linear-gradient(135deg, #0a2342 0%, #1b4f72 50%, #1a6b3e 100%);
             padding: 140px 0 80px;
@@ -57,93 +75,193 @@
         }
         .page-hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 16px; color: #fff; }
         .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); max-width: 700px; margin: 0 auto; line-height: 1.7; }
-        .hero-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; }
+        .hero-badge {
+            display: inline-block; padding: 6px 18px;
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px; color: #fff; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px;
+        }
         .hero-stats { display: flex; justify-content: center; gap: 48px; margin-top: 40px; flex-wrap: wrap; }
         .hero-stat { text-align: center; }
         .hero-stat-num { font-size: 2rem; font-weight: 900; color: #fff; }
         .hero-stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
-        .page-content { padding: 80px 0; }
+
+        /* ── Sticky filter bar ── */
+        .filter-bar-wrap {
+            position: sticky;
+            top: 64px;
+            z-index: 100;
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            padding: 14px 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            flex-wrap: nowrap;
+        }
+        .filter-bar::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            flex-shrink: 0;
+            padding: 8px 18px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 50px;
+            background: #f9fafb;
+            color: #374151;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .filter-btn:hover { border-color: #0d47a1; color: #0d47a1; background: #eff6ff; }
+        .filter-btn.active {
+            background: #0d47a1; border-color: #0d47a1;
+            color: #fff; box-shadow: 0 2px 8px rgba(13,71,161,0.3);
+        }
+
+        /* ── Page content ── */
+        .page-content { padding: 64px 0; }
         .page-content.alt-bg { background: #f9fafb; }
         .section-header { text-align: center; margin-bottom: 48px; }
         .section-header h2 { font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 12px; }
         .section-header p { color: #6b7280; max-width: 700px; margin: 0 auto; line-height: 1.7; }
-        /* Script cards */
-        .script-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
+
+        /* ── Category heading (semantic h2) ── */
+        h2.cat-heading {
+            font-size: 1.25rem; font-weight: 800; color: #111827;
+            margin: 0 0 8px; display: flex; align-items: center; gap: 10px;
+        }
+        h2.cat-heading::after { content: ''; flex: 1; height: 2px; background: #e5e7eb; }
+        .cat-desc { font-size: 0.9rem; color: #6b7280; margin-bottom: 28px; }
+
+        /* ── Script grid & cards ── */
+        .script-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 28px; }
         .script-card {
             background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; display: flex; flex-direction: column;
         }
         .script-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -8px rgba(0,0,0,0.12); }
-        .script-card-header { padding: 20px 24px 16px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 12px; }
+
+        .script-card-header {
+            padding: 20px 24px 16px; border-bottom: 1px solid #f3f4f6;
+            display: flex; align-items: flex-start; gap: 12px;
+        }
         .script-icon { font-size: 2rem; flex-shrink: 0; }
-        .script-meta { flex: 1; }
-        .script-meta h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 4px; }
+        .script-meta { flex: 1; min-width: 0; }
+        .script-meta h3 { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
         .script-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-        .script-tag { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 50px; }
-        .tag-shell { background: #d1fae5; color: #065f46; }
-        .tag-python { background: #dbeafe; color: #1e40af; }
-        .tag-powershell { background: #ede9fe; color: #5b21b6; }
-        .tag-ansible { background: #fef3c7; color: #92400e; }
-        .tag-go { background: #e0f2fe; color: #075985; }
-        .tag-linux { background: #f0fdf4; color: #166534; }
-        .tag-windows { background: #eff6ff; color: #1d4ed8; }
-        .tag-docker { background: #e0f2fe; color: #0369a1; }
-        .tag-k8s { background: #fdf4ff; color: #7e22ce; }
-        .tag-cloud { background: #fff7ed; color: #c2410c; }
-        .script-body { padding: 16px 24px; }
-        .script-body p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; margin-bottom: 14px; }
-        /* Code block */
+        .script-tag { font-size: 0.72rem; font-weight: 600; padding: 2px 9px; border-radius: 50px; }
+        .tag-shell     { background: #d1fae5; color: #065f46; }
+        .tag-python    { background: #dbeafe; color: #1e40af; }
+        .tag-powershell{ background: #ede9fe; color: #5b21b6; }
+        .tag-ansible   { background: #fef3c7; color: #92400e; }
+        .tag-go        { background: #e0f2fe; color: #075985; }
+        .tag-linux     { background: #f0fdf4; color: #166534; }
+        .tag-windows   { background: #eff6ff; color: #1d4ed8; }
+        .tag-docker    { background: #e0f2fe; color: #0369a1; }
+        .tag-k8s       { background: #fdf4ff; color: #7e22ce; }
+        .tag-cloud     { background: #fff7ed; color: #c2410c; }
+        .tag-db        { background: #fef9c3; color: #854d0e; }
+
+        .script-body { padding: 18px 24px; flex: 1; }
+        .script-body > p { font-size: 0.88rem; color: #4b5563; line-height: 1.7; margin-bottom: 14px; }
+
+        /* ── Code blocks ── */
         .code-block {
             background: #1e293b; border-radius: 10px; overflow: hidden; margin: 14px 0;
             font-family: 'Courier New', Consolas, monospace;
+            max-width: 100%;
         }
-        .code-block-header { background: #334155; padding: 8px 14px; display: flex; justify-content: space-between; align-items: center; }
+        .code-block-header {
+            background: #334155; padding: 8px 14px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
         .code-lang { font-size: 0.72rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; }
-        .code-copy-btn { font-size: 0.72rem; color: #94a3b8; background: none; border: 1px solid #475569; border-radius: 4px; padding: 2px 8px; cursor: pointer; transition: all 0.2s; }
+        .code-copy-btn {
+            font-size: 0.72rem; color: #94a3b8; background: none;
+            border: 1px solid #475569; border-radius: 4px; padding: 2px 8px;
+            cursor: pointer; transition: all 0.2s;
+        }
         .code-copy-btn:hover { color: #e2e8f0; border-color: #64748b; }
-        .code-content { padding: 14px; overflow-x: auto; }
-        .code-content pre { margin: 0; font-size: 0.8rem; color: #e2e8f0; line-height: 1.7; white-space: pre; }
+        .code-content {
+            padding: 14px;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+        .code-content pre {
+            margin: 0; font-size: 0.8rem; color: #e2e8f0;
+            line-height: 1.7; white-space: pre; min-width: 0;
+        }
         .code-comment { color: #64748b; }
-        .code-cmd { color: #86efac; }
-        .code-var { color: #fbbf24; }
-        .code-str { color: #f9a8d4; }
+        .code-cmd  { color: #86efac; }
+        .code-var  { color: #fbbf24; }
+        .code-str  { color: #f9a8d4; }
         .code-flag { color: #93c5fd; }
-        .script-footer { padding: 14px 24px 20px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f3f4f6; }
+
+        .script-footer {
+            padding: 14px 24px 20px; display: flex;
+            justify-content: space-between; align-items: center;
+            border-top: 1px solid #f3f4f6; flex-wrap: wrap; gap: 8px;
+        }
         .script-complexity { font-size: 0.78rem; color: #6b7280; }
-        .script-action { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: #0d47a1; color: #fff; border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+        .script-action {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 7px 16px; background: #0d47a1; color: #fff;
+            border-radius: 8px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s;
+        }
         .script-action:hover { background: #1565c0; }
-        /* Warning box */
-        .warning-box { border-left: 4px solid #f59e0b; background: #fffbeb; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 32px; }
+
+        /* ── Info/warning boxes ── */
+        .warning-box {
+            border-left: 4px solid #f59e0b; background: #fffbeb;
+            border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 28px;
+        }
         .warning-box p { font-size: 0.88rem; color: #92400e; line-height: 1.7; margin: 0; }
-        /* Info box */
-        .info-box { border-left: 4px solid #0d47a1; background: #eff6ff; border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 32px; }
+        .info-box {
+            border-left: 4px solid #0d47a1; background: #eff6ff;
+            border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 28px;
+        }
         .info-box p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
-        /* Category heading */
-        .cat-heading { font-size: 1.2rem; font-weight: 800; color: #111827; margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
-        .cat-heading::after { content: ''; flex: 1; height: 2px; background: #e5e7eb; }
-        .cat-desc { font-size: 0.9rem; color: #6b7280; margin-bottom: 24px; }
-        /* Quick start table */
+
+        /* ── Quick start table ── */
         .qs-table { width: 100%; border-collapse: collapse; }
         .qs-table th { background: #0d47a1; color: #fff; padding: 12px 16px; text-align: left; font-size: 0.88rem; }
         .qs-table td { padding: 10px 16px; border-bottom: 1px solid #e5e7eb; font-size: 0.85rem; color: #374151; }
         .qs-table tr:last-child td { border-bottom: none; }
         .qs-table tr:nth-child(even) td { background: #f9fafb; }
+
+        /* ── CTA ── */
         .page-cta { background: #0a2342; padding: 60px 0; text-align: center; color: #fff; }
         .page-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; color: #fff; }
         .page-cta p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
-        .btn-view-law { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; }
+        .btn-view-law {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 28px; background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4); color: #fff;
+            border-radius: 10px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s;
+        }
         .btn-view-law:hover { background: rgba(255,255,255,0.25); }
-        @media (max-width: 768px) {
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
             .script-grid { grid-template-columns: 1fr; }
         }
+        @media (max-width: 600px) {
+            .page-hero h1 { font-size: 1.8rem; }
+            .filter-bar-wrap { top: 56px; }
+        }
     </style>
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
 <body>
+    <!-- 顶部导航 -->
     <header class="site-header scrolled" id="header">
         <div class="container">
             <div class="header-inner">
-                <a href="/" class="logo">
+                <a href="index.html" class="logo">
                     <span class="logo-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 3L5 10v9c0 9.94 6.4 19.26 15 21.72 8.6-2.46 15-11.78 15-21.72v-9L20 3z" fill="url(#lgS)" opacity="0.9"/><text x="20" y="25" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="900" font-family="Arial, sans-serif" letter-spacing="0.3">IHCCC</text><defs><linearGradient id="lgS" x1="5" y1="3" x2="35" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#0d47a1"/><stop offset="1" stop-color="#00897b"/></linearGradient></defs></svg></span>
                     <span class="logo-text" style="color:#0d47a1">IHCCC</span>
                     <span class="logo-subtitle" style="color:#374151">中国互联网安全合规中心</span>
@@ -152,7 +270,7 @@
                     <span style="background:#1f2937"></span><span style="background:#1f2937"></span><span style="background:#1f2937"></span>
                 </button>
                 <nav class="main-nav" id="mainNav">
-                    <a href="/" class="nav-link">首页</a>
+                    <a href="index.html" class="nav-link">首页</a>
                     <div class="nav-dropdown">
                         <a href="gdpr.html" class="nav-link dropdown-toggle">欧盟标准 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
                         <div class="dropdown-menu">
@@ -203,6 +321,7 @@
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="page-hero">
         <div class="container">
             <div class="hero-badge">🔧 开源 · 免费 · 实战可用</div>
@@ -210,13 +329,27 @@
             <p>IHCCC整理并发布的安全实施与合规检测自动化脚本，覆盖Linux、Windows、Docker、Kubernetes、数据库等主流平台，基于CIS安全基准与等保2.0标准，可直接用于生产环境安全加固与合规评估。</p>
             <div class="hero-stats">
                 <div class="hero-stat"><div class="hero-stat-num">30+</div><div class="hero-stat-label">可用脚本</div></div>
-                <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">技术平台</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">7</div><div class="hero-stat-label">技术平台</div></div>
                 <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">开源免费</div></div>
                 <div class="hero-stat"><div class="hero-stat-num">中文</div><div class="hero-stat-label">注释说明</div></div>
             </div>
         </div>
     </section>
 
+    <!-- Sticky platform filter bar -->
+    <div class="filter-bar-wrap" role="navigation" aria-label="脚本平台筛选">
+        <div class="container">
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all"      aria-pressed="true">全部</button>
+                <button class="filter-btn"         data-filter="linux"   aria-pressed="false">🐧 Linux</button>
+                <button class="filter-btn"         data-filter="windows" aria-pressed="false">🪟 Windows</button>
+                <button class="filter-btn"         data-filter="docker"  aria-pressed="false">🐳 容器</button>
+                <button class="filter-btn"         data-filter="database"aria-pressed="false">🗄️ 数据库</button>
+                <button class="filter-btn"         data-filter="cloud"   aria-pressed="false">☁️ 云平台</button>
+                <button class="filter-btn"         data-filter="ansible" aria-pressed="false">🤖 自动化</button>
+            </div>
+        </div>
+    </div>
     <!-- 快速开始 -->
     <section class="page-content alt-bg">
         <div class="container">
@@ -309,14 +442,14 @@
             </div>
         </div>
     </section>
-
-    <!-- Linux 加固脚本 -->
-    <section class="page-content">
+    <!-- Linux 安全加固脚本 -->
+    <section class="page-content" data-section="linux">
         <div class="container">
-            <p class="cat-heading">🐧 Linux 安全加固脚本</p>
+            <h2 class="cat-heading">🐧 Linux 安全加固脚本</h2>
             <p class="cat-desc">基于CIS Ubuntu/RHEL基准与等保2.0技术要求，提供全面的Linux服务器安全加固与合规检测脚本。</p>
-            <div class="script-grid">
-                <div class="script-card">
+            <div class="script-grid" id="grid-linux">
+
+                <article class="script-card" data-category="linux">
                     <div class="script-card-header">
                         <div class="script-icon">🛡️</div>
                         <div class="script-meta">
@@ -343,15 +476,15 @@
 [[ $EUID -ne 0 ]] &amp;&amp; { echo "需要root权限"; exit 1; }
 
 <span class="code-comment"># 1. 禁用不必要的文件系统类型</span>
-<span class="code-cmd">echo</span> <span class="code-str">"install cramfs /bin/true"</span> >> /etc/modprobe.d/cis.conf
-<span class="code-cmd">echo</span> <span class="code-str">"install freevxfs /bin/true"</span> >> /etc/modprobe.d/cis.conf
-<span class="code-cmd">echo</span> <span class="code-str">"install jffs2 /bin/true"</span> >> /etc/modprobe.d/cis.conf
+<span class="code-cmd">echo</span> <span class="code-str">"install cramfs /bin/true"</span> &gt;&gt; /etc/modprobe.d/cis.conf
+<span class="code-cmd">echo</span> <span class="code-str">"install freevxfs /bin/true"</span> &gt;&gt; /etc/modprobe.d/cis.conf
+<span class="code-cmd">echo</span> <span class="code-str">"install jffs2 /bin/true"</span> &gt;&gt; /etc/modprobe.d/cis.conf
 
 <span class="code-comment"># 2. 设置 /tmp 挂载选项</span>
 <span class="code-cmd">systemctl</span> enable tmp.mount
 
 <span class="code-comment"># 3. 禁用IPv6（如不需要）</span>
-<span class="code-cmd">echo</span> <span class="code-str">"net.ipv6.conf.all.disable_ipv6 = 1"</span> >> /etc/sysctl.d/60-cis.conf
+<span class="code-cmd">echo</span> <span class="code-str">"net.ipv6.conf.all.disable_ipv6 = 1"</span> &gt;&gt; /etc/sysctl.d/60-cis.conf
 
 <span class="code-comment"># 4. 配置SSH安全参数</span>
 <span class="code-cmd">sed</span> -i <span class="code-str">'s/^#\?PermitRootLogin.*/PermitRootLogin no/'</span> /etc/ssh/sshd_config
@@ -371,9 +504,9 @@
                         <span class="script-complexity">难度：⭐⭐ 中级 · 约200行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="script-card">
+                <article class="script-card" data-category="linux">
                     <div class="script-card-header">
                         <div class="script-icon">🔍</div>
                         <div class="script-meta">
@@ -432,9 +565,9 @@ print(f<span class="code-str">"合规检查完成: {passed}/{len(results)} 项�
                         <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约400行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="script-card">
+                <article class="script-card" data-category="linux">
                     <div class="script-card-header">
                         <div class="script-icon">📋</div>
                         <div class="script-meta">
@@ -461,7 +594,7 @@ print(f<span class="code-str">"合规检查完成: {passed}/{len(results)} 项�
 
 check() {
   local desc=$1 cmd=$2
-  if eval "$cmd" &>/dev/null; then
+  if eval "$cmd" &gt;/dev/null; then
     echo <span class="code-str">"[✓] $desc"</span>; ((<span class="code-var">PASS</span>++))
   else
     echo <span class="code-str">"[✗] $desc"</span>; ((<span class="code-var">FAIL</span>++))
@@ -475,16 +608,15 @@ check <span class="code-str">"启用SSH登录超时"</span> \
   "grep -q 'ClientAliveInterval' /etc/ssh/sshd_config"
 check <span class="code-str">"密码最大有效期≤90天"</span> \
   "awk '/^PASS_MAX_DAYS/{print \$2}' /etc/login.defs | \
-   awk '\$1<=90{exit 0}{exit 1}'"
+   awk '\$1&lt;=90{exit 0}{exit 1}'"
 
 echo <span class="code-str">"=== 安全审计检查 ==="</span>
 check <span class="code-str">"auditd服务运行中"</span> \
   "systemctl is-active --quiet auditd"
 check <span class="code-str">"记录sudo操作日志"</span> \
-  "grep -q 'sudo' /etc/audit/rules.d/*.rules 2>/dev/null"
+  "grep -q 'sudo' /etc/audit/rules.d/*.rules 2&gt;/dev/null"
 
-echo <span class="code-str">"</span>
-<span class="code-str">汇总：通过 $PASS | 失败 $FAIL | 警告 $WARN"</span></pre>
+echo <span class="code-str">"汇总：通过 $PASS | 失败 $FAIL | 警告 $WARN"</span></pre>
                             </div>
                         </div>
                     </div>
@@ -492,18 +624,19 @@ echo <span class="code-str">"</span>
                         <span class="script-complexity">难度：⭐⭐ 中级 · 约350行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
-
-    <!-- Windows 加固脚本 -->
-    <section class="page-content alt-bg">
+    <!-- Windows 安全加固脚本 -->
+    <section class="page-content alt-bg" data-section="windows">
         <div class="container">
-            <p class="cat-heading">🪟 Windows 安全加固脚本</p>
+            <h2 class="cat-heading">🪟 Windows 安全加固脚本</h2>
             <p class="cat-desc">基于CIS Windows Server基准的PowerShell加固与检测脚本，支持Windows Server 2019/2022。</p>
-            <div class="script-grid">
-                <div class="script-card">
+            <div class="script-grid" id="grid-windows">
+
+                <article class="script-card" data-category="windows">
                     <div class="script-card-header">
                         <div class="script-icon">🔒</div>
                         <div class="script-meta">
@@ -560,9 +693,9 @@ auditpol /set /category:<span class="code-str">"Account Management"</span> /succ
                         <span class="script-complexity">难度：⭐⭐ 中级 · 约250行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="script-card">
+                <article class="script-card" data-category="windows">
                     <div class="script-card-header">
                         <div class="script-icon">📊</div>
                         <div class="script-meta">
@@ -617,18 +750,19 @@ $report | Export-Csv <span class="code-str">"cis-report-$(Get-Date -f yyyyMMdd).
                         <span class="script-complexity">难度：⭐⭐ 中级 · 约300行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
-
     <!-- Docker & K8s 脚本 -->
-    <section class="page-content">
+    <section class="page-content" data-section="docker">
         <div class="container">
-            <p class="cat-heading">🐳 容器安全脚本</p>
+            <h2 class="cat-heading">🐳 容器安全脚本</h2>
             <p class="cat-desc">Docker和Kubernetes安全审计与加固脚本，基于CIS Docker和Kubernetes基准。</p>
-            <div class="script-grid">
-                <div class="script-card">
+            <div class="script-grid" id="grid-docker">
+
+                <article class="script-card" data-category="docker">
                     <div class="script-card-header">
                         <div class="script-icon">🐳</div>
                         <div class="script-meta">
@@ -655,7 +789,7 @@ $report | Export-Csv <span class="code-str">"cis-report-$(Get-Date -f yyyyMMdd).
 
 cis_check() {
   local id=$1 desc=$2 cmd=$3
-  if eval "$cmd" &>/dev/null 2>&1; then
+  if eval "$cmd" &gt;/dev/null 2&gt;&amp;1; then
     echo <span class="code-str">"[PASS] $id: $desc"</span>; ((<span class="code-var">PASS</span>++))
   else
     echo <span class="code-str">"[FAIL] $id: $desc"</span>; ((<span class="code-var">FAIL</span>++))
@@ -690,9 +824,9 @@ echo <span class="code-str">"汇总: 通过 $PASS | 失败 $FAIL"</span></pre>
                         <span class="script-complexity">难度：⭐⭐ 中级 · 约180行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="script-card">
+                <article class="script-card" data-category="docker">
                     <div class="script-card-header">
                         <div class="script-icon">⚙️</div>
                         <div class="script-meta">
@@ -722,7 +856,7 @@ echo <span class="code-str">"汇总: 通过 $PASS | 失败 $FAIL"</span></pre>
 mkdir -p "$REPORT_DIR"
 
 <span class="code-comment"># 安装 kube-bench（如未安装）</span>
-if ! command -v kube-bench &>/dev/null; then
+if ! command -v kube-bench &gt;/dev/null; then
   ARCH=$(uname -m | sed s/x86_64/amd64/ | sed s/aarch64/arm64/)
   URL=<span class="code-str">"https://github.com/aquasecurity/kube-bench/releases/download"</span>
   curl -L "$URL/$KUBEBENCH_VERSION/kube-bench_${KUBEBENCH_VERSION#v}_linux_$ARCH.tar.gz" \
@@ -732,14 +866,14 @@ fi
 <span class="code-comment"># 运行 CIS Kubernetes 基准检测</span>
 echo <span class="code-str">"[*] 正在检测 Kubernetes 控制平面..."</span>
 kube-bench run --targets master \
-  --json > "$REPORT_DIR/master-report.json"
+  --json &gt; "$REPORT_DIR/master-report.json"
 
 echo <span class="code-str">"[*] 正在检测工作节点..."</span>
 kube-bench run --targets node \
-  --json > "$REPORT_DIR/node-report.json"
+  --json &gt; "$REPORT_DIR/node-report.json"
 
 <span class="code-comment"># 提取汇总信息</span>
-jq <span class="code-str">'[.Controls[].tests[].results[] | 
+jq <span class="code-str">'[.Controls[].tests[].results[] |
   select(.status == "FAIL")] | length'</span> \
   "$REPORT_DIR/master-report.json"
 echo <span class="code-str">"[✓] 报告已保存至: $REPORT_DIR"</span></pre>
@@ -750,25 +884,26 @@ echo <span class="code-str">"[✓] 报告已保存至: $REPORT_DIR"</span></pre>
                         <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约150行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
-
     <!-- 数据库加固脚本 -->
-    <section class="page-content alt-bg">
+    <section class="page-content alt-bg" data-section="database">
         <div class="container">
-            <p class="cat-heading">🗄️ 数据库安全脚本</p>
+            <h2 class="cat-heading">🗄️ 数据库安全脚本</h2>
             <p class="cat-desc">MySQL、PostgreSQL等主流数据库的安全加固与合规审计脚本，基于CIS数据库基准。</p>
-            <div class="script-grid">
-                <div class="script-card">
+            <div class="script-grid" id="grid-database">
+
+                <article class="script-card" data-category="database">
                     <div class="script-card-header">
                         <div class="script-icon">🗄️</div>
                         <div class="script-meta">
                             <h3>MySQL 8.0 安全加固脚本</h3>
                             <div class="script-tags">
                                 <span class="script-tag tag-shell">Bash</span>
-                                <span class="script-tag tag-linux">MySQL 8.0</span>
+                                <span class="script-tag tag-db">MySQL 8.0</span>
                             </div>
                         </div>
                     </div>
@@ -787,12 +922,12 @@ echo <span class="code-str">"[✓] 报告已保存至: $REPORT_DIR"</span></pre>
 <span class="code-var">MYSQL_CNF</span>=<span class="code-str">"/etc/mysql/mysql.conf.d/mysqld.cnf"</span>
 
 <span class="code-comment"># 1. 检查MySQL数据目录权限（CIS 1.1）</span>
-DATADIR=$(mysql -NBe <span class="code-str">"SELECT @@datadir"</span> 2>/dev/null)
-chmod 750 "$DATADIR" 2>/dev/null &amp;&amp; \
+DATADIR=$(mysql -NBe <span class="code-str">"SELECT @@datadir"</span> 2&gt;/dev/null)
+chmod 750 "$DATADIR" 2&gt;/dev/null &amp;&amp; \
   echo <span class="code-str">"[✓] 数据目录权限设置为750"</span>
 
 <span class="code-comment"># 2. 配置网络绑定（CIS 2.1 - 禁止远程root登录）</span>
-mysql -e <span class="code-str">"DELETE FROM mysql.user WHERE User='root' 
+mysql -e <span class="code-str">"DELETE FROM mysql.user WHERE User='root'
   AND Host NOT IN ('localhost','127.0.0.1','::1');"</span>
 mysql -e <span class="code-str">"DELETE FROM mysql.user WHERE User='';"</span>
 mysql -e <span class="code-str">"FLUSH PRIVILEGES;"</span>
@@ -803,9 +938,9 @@ mysql -e <span class="code-str">"SET GLOBAL validate_password.policy=MEDIUM;"</s
 mysql -e <span class="code-str">"SET GLOBAL validate_password.length=14;"</span>
 
 <span class="code-comment"># 4. 启用审计日志（CIS 2.8）</span>
-echo <span class="code-str">"general_log = 0"</span> >> $MYSQL_CNF
-echo <span class="code-str">"log_error = /var/log/mysql/error.log"</span> >> $MYSQL_CNF
-echo <span class="code-str">"slow_query_log = 1"</span> >> $MYSQL_CNF
+echo <span class="code-str">"general_log = 0"</span> &gt;&gt; $MYSQL_CNF
+echo <span class="code-str">"log_error = /var/log/mysql/error.log"</span> &gt;&gt; $MYSQL_CNF
+echo <span class="code-str">"slow_query_log = 1"</span> &gt;&gt; $MYSQL_CNF
 
 echo <span class="code-str">"[✓] MySQL安全加固完成，请重启MySQL服务"</span></pre>
                             </div>
@@ -815,9 +950,19 @@ echo <span class="code-str">"[✓] MySQL安全加固完成，请重启MySQL服�
                         <span class="script-complexity">难度：⭐⭐ 中级 · 约220行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="script-card">
+            </div>
+        </div>
+    </section>
+    <!-- 云平台安全脚本 -->
+    <section class="page-content" data-section="cloud">
+        <div class="container">
+            <h2 class="cat-heading">☁️ 云平台安全脚本</h2>
+            <p class="cat-desc">基于CIS云平台基准，检测AWS、阿里云等公有云环境的IAM、存储、网络等关键安全配置。</p>
+            <div class="script-grid" id="grid-cloud">
+
+                <article class="script-card" data-category="cloud">
                     <div class="script-card-header">
                         <div class="script-icon">🔐</div>
                         <div class="script-meta">
@@ -875,9 +1020,19 @@ for r in results:
                         <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约350行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="script-card">
+            </div>
+        </div>
+    </section>
+    <!-- Ansible 自动化脚本 -->
+    <section class="page-content alt-bg" data-section="ansible">
+        <div class="container">
+            <h2 class="cat-heading">🤖 自动化批量加固</h2>
+            <p class="cat-desc">使用Ansible Playbook实现企业级批量安全加固，适合同时管理数十至数百台服务器的规模化安全部署场景。</p>
+            <div class="script-grid" id="grid-ansible">
+
+                <article class="script-card" data-category="ansible">
                     <div class="script-card-header">
                         <div class="script-icon">🤖</div>
                         <div class="script-meta">
@@ -941,11 +1096,12 @@ for r in results:
                         <span class="script-complexity">难度：⭐⭐⭐ 高级 · 约500行</span>
                         <a href="https://github.com/mzwrt/ihccc/tree/main/scripts" target="_blank" rel="noopener noreferrer" class="script-action">📥 获取完整脚本</a>
                     </div>
-                </div>
+                </article>
+
             </div>
         </div>
     </section>
-
+    <!-- CTA -->
     <section class="page-cta">
         <div class="container">
             <h2>贡献你的安全脚本</h2>
@@ -958,6 +1114,7 @@ for r in results:
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -976,7 +1133,7 @@ for r in results:
                     <h4>快速链接</h4>
                     <ul>
                         <li><a href="about.html">关于我们</a></li>
-                        <li><a href="/#standards">安全标准</a></li>
+                        <li><a href="index.html#standards">安全标准</a></li>
                         <li><a href="laws.html">中国法规</a></li>
                         <li><a href="tutorials.html">合规仓库</a></li>
                     </ul>
@@ -1016,7 +1173,7 @@ for r in results:
             </div>
         </div>
     </footer>
-
+    <!-- Sponsor modal -->
     <div class="sponsor-modal-overlay" id="sponsorModal">
         <div class="sponsor-modal">
             <button class="sponsor-modal-close" onclick="closeSponsorModal()">&times;</button>
@@ -1044,6 +1201,37 @@ for r in results:
             setTimeout(function() { btn.textContent = '复制'; }, 2000);
         });
     }
+
+    (function() {
+        var allCards = Array.from(document.querySelectorAll('.script-card'));
+        var allSections = Array.from(document.querySelectorAll('[data-section]'));
+        document.getElementById('filterBar').addEventListener('click', function(e) {
+            var btn = e.target.closest('.filter-btn');
+            if (!btn) return;
+            var filter = btn.dataset.filter;
+            document.querySelectorAll('.filter-btn').forEach(function(b) {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+            if (filter === 'all') {
+                allCards.forEach(function(c) { c.style.display = ''; });
+                allSections.forEach(function(s) { s.style.display = ''; });
+            } else {
+                allCards.forEach(function(c) {
+                    c.style.display = (c.dataset.category === filter) ? '' : 'none';
+                });
+                allSections.forEach(function(s) {
+                    var hasVisible = Array.from(s.querySelectorAll('.script-card')).some(function(c) {
+                        return c.dataset.category === filter;
+                    });
+                    s.style.display = hasVisible ? '' : 'none';
+                });
+            }
+        });
+    }());
+
     function openSponsorModal(type) {
         var modal = document.getElementById('sponsorModal');
         var content = document.getElementById('sponsorModalContent');
@@ -1062,53 +1250,141 @@ for r in results:
     });
     </script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "CollectionPage",
-                "headline": "网络安全脚本工具库",
-                "description": "IHCCC安全脚本库，提供系统安全加固、合规检查、漏洞扫描等实用安全脚本和自动化工具",
-                "url": "https://ihccc.com/scripts.html",
-                "inLanguage": "zh-CN",
-                "author": {
-                    "@type": "Organization",
-                    "name": "IHCCC 中国互联网安全合规中心",
-                    "url": "https://ihccc.com"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "IHCCC 中国互联网安全合规中心",
-                    "url": "https://ihccc.com",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://ihccc.com/images/favicon.svg"
-                    }
-                },
-                "datePublished": "2024-01-01",
-                "dateModified": "2026-03-03",
-                "mainEntityOfPage": "https://ihccc.com/scripts.html",
-                "keywords": "安全脚本,安全自动化,安全加固脚本,合规检查脚本,漏洞扫描,Linux安全,Windows安全"
-            },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
+      "@type": "Organization",
+      "name": "IHCCC 中国互联网安全合规中心",
+      "alternateName": "Internet & Information Security Compliance Center of China",
+      "url": "https://ihccc.com",
+      "logo": "https://ihccc.com/images/favicon.svg",
+      "description": "IHCCC是非营利性开源组织，提供CIS、等保2.0等网络安全标准权威中文资源。",
+      "sameAs": ["https://github.com/mzwrt/ihccc"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@ihccc.com",
+        "contactType": "customer support"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "name": "安全加固脚本库 - IHCCC",
+      "headline": "IHCCC 安全加固脚本库",
+      "description": "IHCCC安全加固脚本库：Linux、Windows、Docker、Kubernetes、MySQL、AWS及Ansible批量加固脚本，基于CIS基准与等保2.0标准，开源免费。",
+      "url": "https://ihccc.com/scripts.html",
+      "inLanguage": "zh-CN",
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-03-01",
+      "keywords": "安全加固脚本,Linux加固,Windows加固,Docker安全,Kubernetes安全,等保2.0脚本,CIS基准脚本,Ansible安全",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IHCCC 中国互联网安全合规中心",
+        "url": "https://ihccc.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ihccc.com/images/favicon.svg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://ihccc.com/"},
+        {"@type": "ListItem", "position": 2, "name": "安全脚本", "item": "https://ihccc.com/scripts.html"}
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "IHCCC 安全加固脚本库",
+      "description": "提供Linux、Windows、Docker、Kubernetes、数据库、云平台等平台安全加固脚本",
+      "url": "https://ihccc.com/scripts.html",
+      "numberOfItems": 8,
+      "itemListElement": [
         {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "首页",
-            "item": "https://ihccc.com/"
+          "@type": "ListItem", "position": 1,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Ubuntu Linux 安全加固脚本",
+            "description": "基于CIS Ubuntu 22.04 LTS基准和等保2.0三级要求的Bash安全加固脚本，含200+配置项",
+            "programmingLanguage": "Bash",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/linux"
+          }
         },
         {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "安全脚本",
-            "item": "https://ihccc.com/scripts.html"
+          "@type": "ListItem", "position": 2,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Linux 安全合规审计脚本",
+            "description": "Python3合规审计脚本，生成HTML报告，覆盖120+检查项，支持CIS与等保2.0双标准映射",
+            "programmingLanguage": "Python",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/linux"
+          }
+        },
+        {
+          "@type": "ListItem", "position": 3,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "等保2.0 Linux 自检脚本",
+            "description": "针对GB/T 22239-2019技术要求的Bash自检脚本，覆盖五大技术控制域100+检查项",
+            "programmingLanguage": "Bash",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/linux"
+          }
+        },
+        {
+          "@type": "ListItem", "position": 4,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Windows Server 安全加固脚本",
+            "description": "基于CIS Windows Server 2022 Level 1的PowerShell加固脚本",
+            "programmingLanguage": "PowerShell",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/windows"
+          }
+        },
+        {
+          "@type": "ListItem", "position": 5,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Docker 安全审计脚本",
+            "description": "基于CIS Docker Benchmark的Bash审计脚本",
+            "programmingLanguage": "Bash",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/docker"
+          }
+        },
+        {
+          "@type": "ListItem", "position": 6,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Kubernetes CIS 合规检测",
+            "description": "使用kube-bench进行CIS Kubernetes基准合规检测，支持EKS/GKE/AKS等托管集群",
+            "programmingLanguage": "Bash",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/k8s"
+          }
+        },
+        {
+          "@type": "ListItem", "position": 7,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "MySQL 8.0 安全加固脚本",
+            "description": "基于CIS MySQL 8.0 Benchmark的Bash加固脚本",
+            "programmingLanguage": "Bash",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/database"
+          }
+        },
+        {
+          "@type": "ListItem", "position": 8,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Ansible 批量加固 Playbook",
+            "description": "基于CIS基准的Ansible Role，支持对数百台Linux服务器统一执行安全配置",
+            "programmingLanguage": "YAML",
+            "codeRepository": "https://github.com/mzwrt/ihccc/tree/main/scripts/ansible"
+          }
         }
-                ]
-            }
-        ]
+      ]
     }
+  ]
+}
     </script>
 </body>
 </html>
